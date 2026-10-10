@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+:root {
+  --color-soot: #1C1C1C;
+  --color-gold: #E7B23C;
+  --color-lace: #FFF8EE;
+  --color-red: #B42318;
+  --color-pine: #1F6B4A;
+}
+
+body {
+  background-color: var(--color-lace);
+  color: var(--color-soot);
+  font-family: system-ui, sans-serif;
+}
