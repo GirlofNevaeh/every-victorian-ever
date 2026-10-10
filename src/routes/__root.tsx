@@ -1,4 +1,4 @@
-import { createRootRoute, HeadContent, Link, Outlet, Scripts } from '@tanstack/react-router'
+import { createRootRoute, HeadContent, Link, Outlet, Scripts, useRouterState } from '@tanstack/react-router'
 import { useEffect, useState } from 'react'
 import appCss from '../styles/app.css?url'
 
@@ -43,6 +43,11 @@ const links = [
 
 function RootComponent() {
   const [showPWA, setShowPWA] = useState(false)
+  const pathname = useRouterState({ select: (state) => state.location.pathname })
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [pathname])
 
   useEffect(() => {
     if ('serviceWorker' in navigator) {
