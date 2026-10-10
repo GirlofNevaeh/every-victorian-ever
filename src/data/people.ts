@@ -1,4 +1,4 @@
-export type Role = 'Queen' | 'Prince' | 'Nurse' | 'Inventor' | 'Writer' | 'Scientist' | 'Explorer' | 'Reformer'
+export type Role = 'Queen' | 'Prince' | 'Nurse' | 'Inventor' | 'Writer' | 'Scientist' | 'Explorer' | 'Reformer' | 'Artist' | 'Preacher'
 export type Period = '1837-1860' | '1861-1880' | '1881-1901'
 
 export type Person = {
@@ -8,6 +8,9 @@ export type Person = {
   period: Period
   bio: string
   scottish: boolean
+  family: string
+  faith: string
+  more: string
 }
 
 export const people: Person[] = [
@@ -17,7 +20,10 @@ export const people: Person[] = [
     "role": "Queen",
     "period": "1837-1860",
     "bio": "Queen from 1837 to 1901. She loved Scotland and stayed at Balmoral. She had nine children.",
-    "scottish": true
+    "scottish": true,
+    "family": "She married Prince Albert in 1840. They had nine children. When he died in 1861, she wore black for the rest of her life. In Scotland she leaned on a friend named John Brown. Later an Indian teacher, Abdul Karim, became close to her too.",
+    "faith": "She was head of the Church of England. She liked a serious, Bible-reading faith, and she liked going to church at Balmoral.",
+    "more": "Her love for Albert became the family story of the age. She also liked the Highlands, tartan, and a holiday feeling of old Scotland."
   },
   {
     "id": "albert",
@@ -25,7 +31,10 @@ export const people: Person[] = [
     "role": "Prince",
     "period": "1837-1860",
     "bio": "Victoria's husband. He helped plan the Great Exhibition. He liked science and Scotland.",
-    "scottish": false
+    "scottish": false,
+    "family": "He came from Germany and loved Victoria deeply. He worked hard at being a good husband and father. He died of typhoid in 1861, only 42 years old.",
+    "faith": "He was a serious Protestant. He thought duty, science, and a good home belonged together.",
+    "more": "He helped plan the Great Exhibition of 1851. He wanted Britain to learn, invent, and care for working people."
   },
   {
     "id": "nightingale",
@@ -33,7 +42,10 @@ export const people: Person[] = [
     "role": "Nurse",
     "period": "1861-1880",
     "bio": "A nurse who made hospitals cleaner. People called her the Lady with the Lamp.",
-    "scottish": false
+    "scottish": false,
+    "family": "Her rich family did not want her to work. She did not marry. She said God had called her to nursing.",
+    "faith": "She believed God asked her to help the sick. She also used numbers to show that dirt was killing soldiers.",
+    "more": "In the Crimean War she walked the wards at night. People called her the Lady with the Lamp."
   },
   {
     "id": "seacole",
@@ -41,7 +53,10 @@ export const people: Person[] = [
     "role": "Nurse",
     "period": "1861-1880",
     "bio": "A nurse from Jamaica. She helped soldiers in the Crimean War with food and care.",
-    "scottish": false
+    "scottish": false,
+    "family": "She was born in Jamaica. Her mother ran a boarding house and knew healing plants. Mary had no husband in the war. She treated soldiers as her boys.",
+    "faith": "She was a Christian and trusted both prayer and practical care.",
+    "more": "Army leaders turned her away. She went anyway, paid her own way, and sold food and medicine near the front."
   },
   {
     "id": "brunel",
@@ -49,7 +64,10 @@ export const people: Person[] = [
     "role": "Inventor",
     "period": "1837-1860",
     "bio": "An engineer who built big bridges, tunnels, ships, and railways.",
-    "scottish": false
+    "scottish": false,
+    "family": "His father was an engineer too. Isambard nearly died in a tunnel flood when he was young. He later married Mary Horsley.",
+    "faith": "He was not famous for sermons. He put his trust in iron, steam, and daring plans.",
+    "more": "He built the Great Western Railway, the Clifton Suspension Bridge, and huge steamships. Some plans failed. Some changed travel."
   },
   {
     "id": "dickens",
@@ -57,7 +75,10 @@ export const people: Person[] = [
     "role": "Writer",
     "period": "1837-1860",
     "bio": "He wrote books such as Oliver Twist. His stories showed poor people in cities.",
-    "scottish": false
+    "scottish": false,
+    "family": "He married Catherine Hogarth and they had ten children. The marriage became unhappy and they lived apart. As a boy he had seen his father sent to prison for debt.",
+    "faith": "He grew up in church and kept a strong sense of right and wrong. He was harder on cruel rich people than on poor ones.",
+    "more": "Oliver Twist and A Christmas Carol asked readers to love neglected children. He made family, hunger, and kindness feel urgent."
   },
   {
     "id": "darwin",
@@ -65,7 +86,10 @@ export const people: Person[] = [
     "role": "Scientist",
     "period": "1861-1880",
     "bio": "A scientist who studied animals and plants. He wrote about how living things change.",
-    "scottish": false
+    "scottish": false,
+    "family": "He married his cousin Emma Wedgwood. They had many children and a close home. Emma believed in God. She worried his science might separate them after death. He still loved her.",
+    "faith": "He began as a man who expected to be a clergyman. Later he was not sure about a God who planned every creature. He stayed gentle with people who believed.",
+    "more": "On the Origin of Species said living things change over a very long time. That shook many churches. It did not stop him being buried in Westminster Abbey."
   },
   {
     "id": "bell",
@@ -73,7 +97,10 @@ export const people: Person[] = [
     "role": "Inventor",
     "period": "1881-1901",
     "bio": "A Scottish inventor of the telephone.",
-    "scottish": true
+    "scottish": true,
+    "family": "He was born in Edinburgh. His mother and his wife, Mabel, were deaf. That family fact pushed him to study sound and speech.",
+    "faith": "He was more interested in teaching than in church fights. Helping deaf students was a kind of vocation.",
+    "more": "In 1876 his telephone let one voice reach another house. It began as a tool for speech, then it tied families together across miles."
   },
   {
     "id": "maxwell",
@@ -81,7 +108,10 @@ export const people: Person[] = [
     "role": "Scientist",
     "period": "1861-1880",
     "bio": "A Scottish scientist. He linked electricity, magnetism, and light. He made an early colour photo.",
-    "scottish": true
+    "scottish": true,
+    "family": "He was a Scottish laird's son from Galloway. He married Katherine, and they were a quiet, loyal pair. He died at 48.",
+    "faith": "He was a serious Christian. He thought science was a way to study a world God had made.",
+    "more": "He showed that electricity, magnetism, and light belong to one family of waves. He also made an early colour photograph."
   },
   {
     "id": "lister",
@@ -89,7 +119,10 @@ export const people: Person[] = [
     "role": "Scientist",
     "period": "1861-1880",
     "bio": "A doctor who made surgery safer by keeping wounds clean.",
-    "scottish": false
+    "scottish": false,
+    "family": "He came from a Quaker family. He married Agnes, who helped with his notes and experiments.",
+    "faith": "The Quaker stress on a clean and honest life suited his fight against dirt in surgery.",
+    "more": "He used carbolic acid to keep wounds cleaner. Fewer people died after operations. The story is about care, not about gore."
   },
   {
     "id": "livingstone",
@@ -97,7 +130,10 @@ export const people: Person[] = [
     "role": "Explorer",
     "period": "1837-1860",
     "bio": "A Scottish explorer and missionary who traveled in Africa.",
-    "scottish": true
+    "scottish": true,
+    "family": "He was Scottish. His wife Mary and their children often waited while he travelled. That absence hurt the family. Mary died in Africa.",
+    "faith": "He was a missionary. He wanted people to hear the Christian gospel, and he wanted the slave trade to stop.",
+    "more": "He crossed huge parts of Africa and saw the waterfall he named Victoria Falls. He is remembered in Scotland as an explorer with a mission."
   },
   {
     "id": "slessor",
@@ -105,7 +141,10 @@ export const people: Person[] = [
     "role": "Reformer",
     "period": "1881-1901",
     "bio": "A Scottish missionary who worked in Africa and helped children.",
-    "scottish": true
+    "scottish": true,
+    "family": "She grew up poor in Dundee, one of many children. In Africa she adopted and protected children.",
+    "faith": "She was a Presbyterian missionary. She lived close to the people she served instead of in a grand mission house.",
+    "more": "She worked in Calabar, in what is now Nigeria, and challenged cruel treatment of twins and women. Scots still tell her story."
   },
   {
     "id": "stevenson",
@@ -113,7 +152,10 @@ export const people: Person[] = [
     "role": "Writer",
     "period": "1881-1901",
     "bio": "A Scottish writer of Treasure Island and other adventure books.",
-    "scottish": true
+    "scottish": true,
+    "family": "He was from Edinburgh. He was often ill. He married Fanny Osbourne, an American, after a long chase across seas. His parents were strict Presbyterians and worried about him.",
+    "faith": "He questioned the stern faith of his youth, but he still wrote about good, evil, and a divided self.",
+    "more": "Treasure Island and Dr Jekyll and Mr Hyde are not fairy books, but they are about hidden sides of a person. He later lived on Samoa."
   },
   {
     "id": "potter",
@@ -121,7 +163,10 @@ export const people: Person[] = [
     "role": "Writer",
     "period": "1881-1901",
     "bio": "A writer and artist. She made books about animals, including Peter Rabbit.",
-    "scottish": false
+    "scottish": false,
+    "family": "Peter Rabbit began as a picture letter to a sick child. Her parents did not want her to marry her editor, Norman Warne. He died before a wedding. She later married a country lawyer.",
+    "faith": "She was a Unitarian. Her family believed in a thoughtful, plain faith and in hard work.",
+    "more": "Her animal stories feel like tiny fairy tales of home, danger, and manners. She spent her book money saving Lake District farms."
   },
   {
     "id": "hardie",
@@ -129,7 +174,10 @@ export const people: Person[] = [
     "role": "Reformer",
     "period": "1881-1901",
     "bio": "A Scottish leader who helped start the Labour Party to help workers.",
-    "scottish": true
+    "scottish": true,
+    "family": "He was born in a one-room Scottish home and began work as a boy. He wanted other children to have a kinder start. He helped found the Labour Party.",
+    "faith": "He had a strong Christian socialist streak. He thought faith should show up as fair pay and enough bread.",
+    "more": "He was the first leader of the Labour Party in Parliament. He wore a plain cap, not a top hat, and spoke for miners and the poor."
   },
   {
     "id": "stephenson",
@@ -137,7 +185,10 @@ export const people: Person[] = [
     "role": "Inventor",
     "period": "1837-1860",
     "bio": "He built early railways and the Rocket locomotive.",
-    "scottish": false
+    "scottish": false,
+    "family": "He taught himself to read. His son Robert became an engineer beside him. The family business was railways.",
+    "faith": "He was a practical Methodist-leaning northerner. His chapel was the engine shed as much as the church.",
+    "more": "The Rocket helped prove that steam locomotives could be fast and useful. Rails then tied families, food, and post together."
   },
   {
     "id": "hill",
@@ -145,7 +196,10 @@ export const people: Person[] = [
     "role": "Inventor",
     "period": "1837-1860",
     "bio": "He started the Penny Post. The first stamp was the Penny Black in 1840.",
-    "scottish": false
+    "scottish": false,
+    "family": "He was a schoolteacher who wanted ordinary families to afford a letter. Before the Penny Post, a letter could cost a poor family a meal.",
+    "faith": "He came from a serious Christian home that valued useful reform.",
+    "more": "In 1840 the Penny Black let people send a letter for one penny. Love letters, job news, and family news suddenly travelled."
   },
   {
     "id": "bazalgette",
@@ -153,7 +207,10 @@ export const people: Person[] = [
     "role": "Inventor",
     "period": "1861-1880",
     "bio": "He built London's big sewers after the Great Stink of 1858. Cleaner water followed.",
-    "scottish": false
+    "scottish": false,
+    "family": "He was an engineer and a father. His great work was hidden under London: sewers for other people's children.",
+    "faith": "He treated clean water as a public duty, which many Christians of the time called practical charity.",
+    "more": "After the Great Stink of 1858, his sewers carried waste away from the Thames. Cholera became less of a terror."
   },
   {
     "id": "anderson",
@@ -161,7 +218,10 @@ export const people: Person[] = [
     "role": "Scientist",
     "period": "1861-1880",
     "bio": "The first British woman to qualify as a doctor. She helped women and children.",
-    "scottish": false
+    "scottish": false,
+    "family": "Her father supported her. Many other relatives and doctors did not. She married James Anderson and kept working as a doctor and a mother.",
+    "faith": "She wanted women to use their gifts. She did not think a woman's only holy place was the parlour.",
+    "more": "She was the first British woman to qualify as a doctor. She opened a medical school for women."
   },
   {
     "id": "lovelace",
@@ -169,7 +229,10 @@ export const people: Person[] = [
     "role": "Scientist",
     "period": "1837-1860",
     "bio": "She thought early about computers and math machines.",
-    "scottish": false
+    "scottish": false,
+    "family": "She was Ada Byron, daughter of the poet Lord Byron, who left when she was a baby. Her mother pushed maths so Ada would not become \"poetical and wild.\"",
+    "faith": "She was fascinated by the soul, numbers, and whether a machine could ever be imaginative.",
+    "more": "She wrote notes on Charles Babbage's Analytical Engine and saw that a machine might weave patterns, not only add up. She died at 36."
   },
   {
     "id": "morris",
@@ -177,7 +240,10 @@ export const people: Person[] = [
     "role": "Writer",
     "period": "1861-1880",
     "bio": "He designed patterns for wallpaper and books. He loved careful crafts.",
-    "scottish": false
+    "scottish": false,
+    "family": "He married Jane Burden, a woman he had painted as a medieval beauty. The marriage was famous and not always happy. He wanted the home itself to be a work of art.",
+    "faith": "He loved medieval churches and old stories more than strict doctrine. Later he preached a fairer common life.",
+    "more": "His wallpapers, books, and furniture look like a handmade fairy world of vines and birds. He hated ugly factory goods."
   },
   {
     "id": "carroll",
@@ -185,7 +251,10 @@ export const people: Person[] = [
     "role": "Writer",
     "period": "1861-1880",
     "bio": "He wrote Alice's Adventures in Wonderland.",
-    "scottish": false
+    "scottish": false,
+    "family": "His real name was Charles Dodgson. He was a maths teacher and a church deacon. He wrote Alice's Adventures in Wonderland for Alice Liddell and her sisters.",
+    "faith": "He took his deacon's role seriously and liked logic, kindness, and puzzles more than noisy argument.",
+    "more": "Alice falls into a dream world that behaves like a fairy tale told by a mathematician. The books made nonsense feel safe and funny."
   },
   {
     "id": "bronte-c",
@@ -193,7 +262,10 @@ export const people: Person[] = [
     "role": "Writer",
     "period": "1837-1860",
     "bio": "She wrote Jane Eyre.",
-    "scottish": false
+    "scottish": false,
+    "family": "Charlotte lived at a parsonage on the Yorkshire moors with her sisters Emily and Anne and their clergyman father. Their brother Branwell struggled and died young. Charlotte married her father's curate and died the next year.",
+    "faith": "The family faith was intense. Jane Eyre argues with stern religion and looks for a love that tells the truth.",
+    "more": "Jane Eyre is a love story about a poor governess who will not be treated as less than a person. Charlotte first published as Currer Bell."
   },
   {
     "id": "bronte-e",
@@ -201,7 +273,10 @@ export const people: Person[] = [
     "role": "Writer",
     "period": "1837-1860",
     "bio": "She wrote Wuthering Heights.",
-    "scottish": false
+    "scottish": false,
+    "family": "Emily stayed close to her sisters and the moors. She did not marry. The family home was full of stories they had invented since childhood.",
+    "faith": "She had a fierce, private faith. Wuthering Heights is not a church lesson. It is a storm about love, revenge, and belonging.",
+    "more": "Heathcliff and Cathy love each other in a way that hurts everyone near them. Emily shows that love can be loyal and also cruel."
   },
   {
     "id": "tennyson",
@@ -209,7 +284,10 @@ export const people: Person[] = [
     "role": "Writer",
     "period": "1837-1860",
     "bio": "A poet Queen Victoria liked. He wrote about nature and famous stories.",
-    "scottish": false
+    "scottish": false,
+    "family": "His great grief was the death of his friend Arthur Hallam. He later married Emily Sellwood after a long wait. Queen Victoria liked his poems of sorrow.",
+    "faith": "In Memoriam asks if a loving God can be real when a friend dies. He hopes, doubts, and hopes again.",
+    "more": "He became Poet Laureate. Victorians used his lines at funerals and at weddings. Grief and love were public feelings."
   },
   {
     "id": "faraday",
@@ -217,7 +295,10 @@ export const people: Person[] = [
     "role": "Scientist",
     "period": "1837-1860",
     "bio": "A scientist who studied electricity and magnets.",
-    "scottish": false
+    "scottish": false,
+    "family": "He married Sarah Barnard. They had no children. He stayed plain-spoken even when he was famous.",
+    "faith": "He belonged to a small Christian group, the Sandemanians. He thought the laws of electricity were part of a made world.",
+    "more": "His experiments with magnets and wires led toward electric motors and generators. He also gave Christmas lectures for children."
   },
   {
     "id": "kelvin",
@@ -225,7 +306,10 @@ export const people: Person[] = [
     "role": "Scientist",
     "period": "1861-1880",
     "bio": "A Scottish scientist who worked on heat and electricity.",
-    "scottish": true
+    "scottish": true,
+    "family": "William Thomson was born in Belfast and raised in Glasgow. He became Lord Kelvin. He married late in life after an earlier loss.",
+    "faith": "He was a churchman who thought the Earth was younger than many geologists said. Later evidence showed he was wrong about that age.",
+    "more": "He worked on heat, the Atlantic telegraph cable, and the compass. Scotland knew him as a scientist who still sat in church."
   },
   {
     "id": "hardy",
@@ -233,7 +317,10 @@ export const people: Person[] = [
     "role": "Writer",
     "period": "1881-1901",
     "bio": "He wrote stories about country life.",
-    "scottish": false
+    "scottish": false,
+    "family": "He wrote about country lovers, bad marriages, and people crushed by gossip. His own first marriage to Emma grew cold. After she died, he wrote painful poems of regret.",
+    "faith": "He had wanted to be a clergyman as a young man. Later his books sound unsure that the universe is kind.",
+    "more": "Far from the Madding Crowd and Tess of the D'Urbervilles show love in villages, not only in palaces."
   },
   {
     "id": "doyle",
@@ -241,7 +328,10 @@ export const people: Person[] = [
     "role": "Writer",
     "period": "1881-1901",
     "bio": "A Scottish writer of the Sherlock Holmes stories.",
-    "scottish": true
+    "scottish": true,
+    "family": "He was born in Edinburgh to an Irish Catholic family. He trained as a doctor. He loved his first wife, Louisa, and after her death he married Jean Leckie. Losses in the family made him long for the dead to still be near.",
+    "faith": "He left his childhood Catholicism. He came to believe in spiritualism: the idea that the living can hear from the dead. Many churches said that was wrong.",
+    "more": "He invented Sherlock Holmes, who trusts clues. Doyle himself wanted wonders. In 1922 he defended the Cottingley fairy photos. Two girls, Elsie Wright and Frances Griffiths, had taken them in 1917, after Victoria had died. They later said the fairies were paper cut-outs. Doyle had wanted them to be real."
   },
   {
     "id": "beeton",
@@ -249,7 +339,10 @@ export const people: Person[] = [
     "role": "Writer",
     "period": "1861-1880",
     "bio": "She wrote a famous book about running a home.",
-    "scottish": false
+    "scottish": false,
+    "family": "Isabella married a publisher and wrote the famous Book of Household Management. She had children and died at 28.",
+    "faith": "Her book treats a well-run home as a moral duty: feed people, keep them clean, and do not waste.",
+    "more": "She did not only print recipes. She told a middle-class wife how to direct servants, plan a budget, and make family life orderly."
   },
   {
     "id": "bessemer",
@@ -257,7 +350,10 @@ export const people: Person[] = [
     "role": "Inventor",
     "period": "1861-1880",
     "bio": "He found a better way to make steel.",
-    "scottish": false
+    "scottish": false,
+    "family": "He was an inventor from a Huguenot family, Protestants who had fled France long before. His steel made bridges and rails cheaper.",
+    "faith": "He trusted experiment. His family history was a story of faith seeking safety.",
+    "more": "The Bessemer process blew air through melted iron and made steel in large amounts. Railways and ships used it."
   },
   {
     "id": "swan",
@@ -265,7 +361,10 @@ export const people: Person[] = [
     "role": "Inventor",
     "period": "1881-1901",
     "bio": "He helped invent the electric light bulb.",
-    "scottish": false
+    "scottish": false,
+    "family": "Joseph Swan was from Sunderland. He worked for years on a glowing electric lamp, partly so homes could be brighter at night.",
+    "faith": "He was a practical chapel-and-workshop inventor, not a preacher.",
+    "more": "His light bulb, and Edison's in America, began to push gas lamps aside. Streets and parlours slowly changed colour at night."
   },
   {
     "id": "crapper",
@@ -273,7 +372,10 @@ export const people: Person[] = [
     "role": "Inventor",
     "period": "1881-1901",
     "bio": "He improved the flushing toilet.",
-    "scottish": false
+    "scottish": false,
+    "family": "He was a plumber who improved flushing toilets. A cleaner house was a family matter, not a joke he started.",
+    "faith": "He sold sanitary fittings as a public good. Less filth meant fewer sick children.",
+    "more": "He did not invent the first toilet, but his firm made flushing closets that worked better. His name stuck in the language."
   },
   {
     "id": "jennings",
@@ -281,7 +383,10 @@ export const people: Person[] = [
     "role": "Inventor",
     "period": "1861-1880",
     "bio": "He designed public toilets shown at the Great Exhibition.",
-    "scottish": false
+    "scottish": false,
+    "family": "He designed public toilets for the Great Exhibition. Visitors paid a penny. People still say \"spend a penny.\"",
+    "faith": "He argued that modesty and cleanliness should be available to everyone, not only to people with a big house.",
+    "more": "Public lavatories let women and men stay longer at fairs, stations, and shops. That was a quiet change in daily freedom."
   },
   {
     "id": "babbage",
@@ -289,7 +394,10 @@ export const people: Person[] = [
     "role": "Inventor",
     "period": "1837-1860",
     "bio": "He designed early calculating machines.",
-    "scottish": false
+    "scottish": false,
+    "family": "He designed calculating machines and argued with almost everyone, including organ-grinders outside his window. Ada Lovelace understood his ideas.",
+    "faith": "He wrote a book arguing that a creator had set up the laws of nature, then let them run.",
+    "more": "His Difference Engine and Analytical Engine were ancestors of the computer. The machines were hard to build with Victorian gears."
   },
   {
     "id": "owen",
@@ -297,7 +405,10 @@ export const people: Person[] = [
     "role": "Reformer",
     "period": "1837-1860",
     "bio": "A Scottish reformer who tried better factories and schools.",
-    "scottish": true
+    "scottish": true,
+    "family": "He ran mills at New Lanark in Scotland and made a school for the workers' children. He thought a child's character came from their surroundings.",
+    "faith": "He started as a chapel-going man of business. Later he distrusted churches and hoped for a new moral world without them.",
+    "more": "He tried model villages and shorter hours. Not every plan worked. Scots still visit New Lanark because the idea was kinder than most mills."
   },
   {
     "id": "octavia",
@@ -305,7 +416,10 @@ export const people: Person[] = [
     "role": "Reformer",
     "period": "1861-1880",
     "bio": "She worked for better homes for poor people.",
-    "scottish": false
+    "scottish": false,
+    "family": "Octavia Hill managed houses for poor families in London. She wanted a home to be safe, clean, and near a patch of beauty.",
+    "faith": "Her Christian faith, shaped by people like F. D. Maurice, said love of neighbour includes the rent book.",
+    "more": "She worked with John Ruskin, trained women housing visitors, and helped start the National Trust so families could reach green places."
   },
   {
     "id": "coutts",
@@ -313,7 +427,10 @@ export const people: Person[] = [
     "role": "Reformer",
     "period": "1861-1880",
     "bio": "A rich woman who gave money to charity.",
-    "scottish": false
+    "scottish": false,
+    "family": "Angela Burdett-Coutts inherited a banking fortune. She paid for churches, schools, and drinking fountains. A late marriage surprised society.",
+    "faith": "She was a strong Anglican and thought money was for charity, mission, and fixing streets.",
+    "more": "Queen Victoria made her a baroness. She also supported rehoming poor children and the RSPCA's care for animals."
   },
   {
     "id": "young",
@@ -321,7 +438,10 @@ export const people: Person[] = [
     "role": "Inventor",
     "period": "1861-1880",
     "bio": "A Scot who set up an early oil works.",
-    "scottish": true
+    "scottish": true,
+    "family": "James Young was a Scottish chemist. His paraffin works at Bathgate lit lamps in ordinary homes.",
+    "faith": "He was a man of applied science. Light on the table was his kind of gift.",
+    "more": "He distilled oil from shale and became known as Paraffin Young. Scotland's oil industry began before the car."
   },
   {
     "id": "somerville",
@@ -329,7 +449,10 @@ export const people: Person[] = [
     "role": "Scientist",
     "period": "1837-1860",
     "bio": "A Scottish science writer and maths expert.",
-    "scottish": true
+    "scottish": true,
+    "family": "Mary Somerville was Scottish. She taught herself maths when many people said it was not for girls. She married twice and had children while writing science.",
+    "faith": "She saw order in the stars and thought that order pointed beyond itself. She was not a preacher.",
+    "more": "Her books explained science clearly. Somerville College in Oxford is named for her. An Oxford college for women was part of her legacy."
   },
   {
     "id": "gladstone",
@@ -337,7 +460,10 @@ export const people: Person[] = [
     "role": "Reformer",
     "period": "1861-1880",
     "bio": "A prime minister who passed school laws.",
-    "scottish": false
+    "scottish": false,
+    "family": "He was prime minister four times. He was intensely religious at home, with family prayers and a huge library. He and his wife Catherine worked for years with women who needed rescue.",
+    "faith": "He was a High Anglican who thought politics should be moral. He also loosened some old rules that had hurt other churches.",
+    "more": "His school laws sent more children to school. He argued fiercely with Disraeli, and he struggled with the question of Ireland."
   },
   {
     "id": "disraeli",
@@ -345,7 +471,10 @@ export const people: Person[] = [
     "role": "Reformer",
     "period": "1861-1880",
     "bio": "A prime minister. In his time Victoria was made Empress of India.",
-    "scottish": false
+    "scottish": false,
+    "family": "He was born into a Jewish family and baptized in the Church of England as a boy. He adored his wife, Mary Anne, who was older than him and fiercely loyal.",
+    "faith": "He called Christianity the completed form of Judaism, which was his way of holding both stories. Not everyone agreed.",
+    "more": "As prime minister he made Victoria Empress of India. He liked empire, ceremony, and a good phrase. The empire was not fair to people already living in those lands."
   },
   {
     "id": "ruskin",
@@ -353,7 +482,10 @@ export const people: Person[] = [
     "role": "Writer",
     "period": "1861-1880",
     "bio": "An art critic and writer.",
-    "scottish": false
+    "scottish": false,
+    "family": "He married Effie Gray. They were unhappy, and the marriage was ended. Effie then married the painter John Everett Millais and had eight children. Ruskin's parents had been extremely close and controlling.",
+    "faith": "He began with a strong evangelical faith, loved Gothic churches, and later put his energy into beauty and social reform.",
+    "more": "He taught Victorians how to look at art. He also hated factories that made workers and rivers ugly. His failed marriage became a warning that a pretty idea of love is not the same as a kind one."
   },
   {
     "id": "lear",
@@ -361,7 +493,10 @@ export const people: Person[] = [
     "role": "Writer",
     "period": "1837-1860",
     "bio": "He wrote nonsense poems for children.",
-    "scottish": false
+    "scottish": false,
+    "family": "He was often ill and often lonely. He loved his cat, Foss. He wrote nonsense poems so children, and lonely adults, could laugh.",
+    "faith": "He was not a church spokesman. His poems treat silliness as a kind of kindness.",
+    "more": "The Owl and the Pussy-Cat is a love story in a pea-green boat. It is nonsense, and it is also about two unlike creatures choosing each other."
   },
   {
     "id": "greenaway",
@@ -369,7 +504,10 @@ export const people: Person[] = [
     "role": "Writer",
     "period": "1881-1901",
     "bio": "An artist who drew children's books.",
-    "scottish": false
+    "scottish": false,
+    "family": "Kate Greenaway drew children in soft old-fashioned clothes. Her pictures sold the idea of a gentle, pretty childhood.",
+    "faith": "She was not a preacher. Her faith, if it shows, is in innocence, gardens, and polite play.",
+    "more": "Mothers bought her books as a picture of the child they hoped to raise. Real poor children often lived a harder life than her drawings show."
   },
   {
     "id": "miller",
@@ -377,7 +515,10 @@ export const people: Person[] = [
     "role": "Scientist",
     "period": "1837-1860",
     "bio": "A Scottish geologist and writer.",
-    "scottish": true
+    "scottish": true,
+    "family": "Hugh Miller was a Scottish stonemason who taught himself geology and writing. He had a family in Edinburgh and edited a church newspaper.",
+    "faith": "He wanted rocks and Genesis to agree. He retold the Bible story so that the days could be long ages.",
+    "more": "The Old Red Sandstone made geology popular in Scotland. He became very ill and died in 1856. People kept reading his books."
   },
   {
     "id": "besant",
@@ -385,7 +526,10 @@ export const people: Person[] = [
     "role": "Reformer",
     "period": "1881-1901",
     "bio": "A reformer who helped workers and women.",
-    "scottish": false
+    "scottish": false,
+    "family": "She married a clergyman, Frank Besant, and was unhappy. She left that home, which was a scandal, and fought for her children.",
+    "faith": "She moved from a questioning Christianity to atheism, then to Theosophy, a new spiritual movement about hidden wisdom and universal brotherhood.",
+    "more": "She helped matchgirls strike for safer work. Later she lived much of her life in India and argued for Indian self-rule."
   },
   {
     "id": "rstephenson",
@@ -393,7 +537,10 @@ export const people: Person[] = [
     "role": "Inventor",
     "period": "1837-1860",
     "bio": "He built bridges and railways with his father, George.",
-    "scottish": false
+    "scottish": false,
+    "family": "Robert learned engineering from his father, George. Father and son built railways and bridges together.",
+    "faith": "Like his father, he was a practical builder more than a public preacher.",
+    "more": "He built the Britannia Bridge and worked on the London and Birmingham Railway. Their story is a family business that changed the map."
   },
   {
     "id": "paxton",
@@ -401,7 +548,10 @@ export const people: Person[] = [
     "role": "Inventor",
     "period": "1861-1880",
     "bio": "He designed the Crystal Palace for the Great Exhibition.",
-    "scottish": false
+    "scottish": false,
+    "family": "He began as a gardener's boy and rose to run the Duke of Devonshire's great gardens at Chatsworth. He married the housekeeper's daughter.",
+    "faith": "He was a doer. The Crystal Palace felt like a fairy palace, but it was a real iron-and-glass building.",
+    "more": "In 1851 his design housed the Great Exhibition. People walked under glass and looked at machines from around the world."
   },
   {
     "id": "eliot",
@@ -409,6 +559,372 @@ export const people: Person[] = [
     "role": "Writer",
     "period": "1861-1880",
     "bio": "The pen name of Mary Ann Evans. She wrote stories about ordinary people.",
-    "scottish": false
+    "scottish": false,
+    "family": "Mary Ann Evans wrote as George Eliot so readers would take her seriously. She loved George Henry Lewes. He was already married, so they could not wed. Many people refused to visit her.",
+    "faith": "She lost the evangelical faith of her youth and still wrote as if duty, pity, and love matter absolutely.",
+    "more": "Middlemarch is about marriage, work, and wanting to be good in an ordinary town. She made the inner life of women and men feel huge."
+  },
+  {
+    "id": "macdonald",
+    "name": "George MacDonald",
+    "role": "Writer",
+    "period": "1861-1880",
+    "scottish": true,
+    "bio": "A Scottish minister who wrote fairy stories such as The Princess and the Goblin and At the Back of the North Wind.",
+    "family": "He and his wife Louisa had a large family. Illness and a small income made the home hard, but it was full of stories.",
+    "faith": "He was a Congregational minister. He believed fairy tales could wake a child's sense of goodness, courage, and a loving God.",
+    "more": "He thought a fairy story should feel true even when the events are impossible. Later writers, including C. S. Lewis, loved his books."
+  },
+  {
+    "id": "lang",
+    "name": "Andrew Lang",
+    "role": "Writer",
+    "period": "1881-1901",
+    "scottish": true,
+    "bio": "A Scottish writer who collected fairy tales from many lands into the Blue Fairy Book and its colour sequels.",
+    "family": "He married Leonora Blanche Alleyne, who did a great deal of the quiet work on the fairy books. The famous name on the cover was his.",
+    "faith": "He was a man of letters who took myths seriously. He liked old beliefs and also liked evidence.",
+    "more": "The Colour Fairy Books put Cinderella, Scottish tales, and stories from far away on the same nursery shelf. He helped make fairy tales a shared childhood."
+  },
+  {
+    "id": "barrie",
+    "name": "J. M. Barrie",
+    "role": "Writer",
+    "period": "1881-1901",
+    "scottish": true,
+    "bio": "A Scottish writer who grew up in the Victorian years and later created Peter Pan, the boy who would not grow up.",
+    "family": "When he was a child, his older brother died. Their mother was crushed by grief. James tried to be the boy she missed. He later cared for the Llewelyn Davies boys.",
+    "faith": "He was not a preacher. His story is about childhood, death, and the wish that someone you love might stay.",
+    "more": "Peter Pan reached the stage in 1904, just after Victoria's reign. The idea came from a Victorian childhood in Kirriemuir, full of loss and make-believe."
+  },
+  {
+    "id": "ebrowning",
+    "name": "Elizabeth Barrett Browning",
+    "role": "Writer",
+    "period": "1837-1860",
+    "scottish": false,
+    "bio": "A poet who wrote about love, faith, and unfairness. Her Sonnets from the Portuguese are love poems to her husband.",
+    "family": "Her father forbade his children to marry. She secretly married Robert Browning and they left for Italy. She had a son, Pen.",
+    "faith": "She was a serious Christian who also hated slavery. She thought faith should make you brave about real wrongs.",
+    "more": "Her romance was one of the great Victorian love stories. She chose a husband, a country, and a voice of her own against a father's control."
+  },
+  {
+    "id": "rbrowning",
+    "name": "Robert Browning",
+    "role": "Writer",
+    "period": "1837-1860",
+    "scottish": false,
+    "bio": "A poet who married Elizabeth Barrett. He wrote dramatic poems that step inside another person's mind.",
+    "family": "He admired Elizabeth's poems before he met her. Their elopement became a legend of loyal love. After she died, he raised their son.",
+    "faith": "He kept a hopeful Christian belief, even in poems about doubt, murderers, and failed love.",
+    "more": "He showed that love is not only a feeling. In their letters it was also a decision to leave a locked house."
+  },
+  {
+    "id": "rossetti",
+    "name": "Christina Rossetti",
+    "role": "Writer",
+    "period": "1861-1880",
+    "scottish": false,
+    "bio": "A poet who wrote Goblin Market, a strange fairy tale in verse about sisters, temptation, and saving love.",
+    "family": "She lived among artists. She broke off engagements when the men did not share her faith. Sisterhood, in blood and in faith, mattered more to her than a grand marriage.",
+    "faith": "She was a devout High Anglican. She gave up loves that asked her to loosen her religion.",
+    "more": "Goblin Market looks like a fairy story of magic fruit. It is also about desire, danger, and one sister rescuing another."
+  },
+  {
+    "id": "wilde",
+    "name": "Oscar Wilde",
+    "role": "Writer",
+    "period": "1881-1901",
+    "scottish": false,
+    "bio": "An Irish writer in London who wrote fairy tales such as The Happy Prince and The Selfish Giant, and plays full of jokes.",
+    "family": "He married Constance Lloyd and they had two sons. He also loved men. The law then called that a crime. In 1895 he was sent to prison. Constance and the boys suffered too.",
+    "faith": "He was drawn to beauty, pity, and Catholic feeling. In prison he wrote about sorrow and Christ.",
+    "more": "The Happy Prince is a fairy tale about a statue who gives away his gold until he is blind and dull, because love means sharing. Wilde's own punishment showed how cruel that age could be about love."
+  },
+  {
+    "id": "wbooth",
+    "name": "William Booth",
+    "role": "Preacher",
+    "period": "1861-1880",
+    "scottish": false,
+    "bio": "He and his wife Catherine began the Salvation Army, a church that preached in the streets and fed hungry people.",
+    "family": "They had a large family, and their children grew up inside the mission. The Army used uniforms, bands, and a family language of officers and soldiers.",
+    "faith": "He was a Methodist preacher who believed you should save souls and also give bread, soap, and a bed.",
+    "more": "Not everyone liked street preaching. Booth kept going. The Army became one of the most visible faiths of late Victorian Britain."
+  },
+  {
+    "id": "cbooth",
+    "name": "Catherine Booth",
+    "role": "Preacher",
+    "period": "1861-1880",
+    "scottish": false,
+    "bio": "She preached, organised, and argued that women could speak in church. She was called the mother of the Salvation Army.",
+    "family": "She raised eight children while leading a mission. She and William were partners, not a preacher and a silent wife.",
+    "faith": "She believed the Bible allowed women to preach. She also hated alcohol because she saw what it did to families.",
+    "more": "Her life argued with the idea that a good woman only pours tea. She made pulpit, home, and charity into one job."
+  },
+  {
+    "id": "spurgeon",
+    "name": "Charles Spurgeon",
+    "role": "Preacher",
+    "period": "1861-1880",
+    "scottish": false,
+    "bio": "A Baptist preacher in London. Crowds filled the Metropolitan Tabernacle to hear him.",
+    "family": "He married Susannah, who was often ill. She still ran a book fund that sent his sermons to poor preachers.",
+    "faith": "He preached a plain evangelical gospel: people need forgiveness, and the Bible can be trusted. He disliked empty show.",
+    "more": "He also built orphan care and a college. For many families, his Sunday was the main event of the week."
+  },
+  {
+    "id": "newman",
+    "name": "John Henry Newman",
+    "role": "Preacher",
+    "period": "1837-1860",
+    "scottish": false,
+    "bio": "An Anglican priest who became a Roman Catholic and later a cardinal. He wrote about conscience and friendship.",
+    "family": "He did not marry. His deepest ties were friends, students, and his sisters. He treated friendship as a kind of vocation.",
+    "faith": "He led part of the Oxford Movement, which wanted the Church of England to recover older Catholic practices. In 1845 he joined the Roman Catholic Church.",
+    "more": "His hymn Lead, Kindly Light came from a time of fear and travel. Victorians sang it when they felt lost."
+  },
+  {
+    "id": "chalmers",
+    "name": "Thomas Chalmers",
+    "role": "Preacher",
+    "period": "1837-1860",
+    "scottish": true,
+    "bio": "A Scottish church leader. In 1843 he walked out of the national church in the Disruption and helped form the Free Church of Scotland.",
+    "family": "He was a minister, a professor, and a parish organiser. He wanted each neighbourhood to care for its own poor.",
+    "faith": "He believed a church should choose its own ministers, not take orders from landlords. That fight split Scottish religion.",
+    "more": "The Disruption was about faith and power. New churches rose across Scotland because people would not stay where they felt conscience was for sale."
+  },
+  {
+    "id": "shaftesbury",
+    "name": "Lord Shaftesbury",
+    "role": "Reformer",
+    "period": "1837-1860",
+    "scottish": false,
+    "bio": "Anthony Ashley-Cooper, Lord Shaftesbury, fought to shorten the working day for children in mills and mines.",
+    "family": "His own childhood was cold and lonely. He became determined that other children would be protected. He was a father as well as a reformer.",
+    "faith": "He was an evangelical Anglican. He said love of God had to show up in factory laws, lodging houses, and schools.",
+    "more": "Because of campaigns like his, children were slowly pulled out of the worst jobs and toward school. The change took decades."
+  },
+  {
+    "id": "barnardo",
+    "name": "Thomas Barnardo",
+    "role": "Reformer",
+    "period": "1881-1901",
+    "scottish": false,
+    "bio": "He opened homes for homeless children in the East End of London. His slogan was that no destitute child should be refused.",
+    "family": "He had planned to be a missionary in China. A child's need in London kept him. He and his wife Syrie ran a growing set of homes.",
+    "faith": "He was an evangelical. He believed a child was not a leftover. Prayer and a bed were both required.",
+    "more": "Some of his methods, including sending children overseas, are argued about now. The core Victorian fact remains: he made child homelessness visible."
+  },
+  {
+    "id": "pankhurst",
+    "name": "Emmeline Pankhurst",
+    "role": "Reformer",
+    "period": "1881-1901",
+    "scottish": false,
+    "bio": "She led the suffragettes, who demanded votes for women. Her campaign became famous in the years after 1903, but her beliefs were formed in Victorian radical homes.",
+    "family": "She and Richard Pankhurst raised daughters, including Christabel and Sylvia, inside a political family. The daughters did not always agree with their mother later.",
+    "faith": "Her driving faith was in justice and women's citizenship more than in one church. She came from a family that already argued about slavery and reform.",
+    "more": "She insisted that a mother and a wife was still a citizen. Love of family, for her, was not a reason to stay silent."
+  },
+  {
+    "id": "sewell",
+    "name": "Anna Sewell",
+    "role": "Writer",
+    "period": "1861-1880",
+    "scottish": false,
+    "bio": "She wrote Black Beauty, the life story of a horse, and made readers feel what cruelty feels like from the animal's side.",
+    "family": "She was often ill and lived with her mother, Mary Sewell, who also wrote. The book was a family labour of love.",
+    "faith": "She was a Quaker. Quaker ideas of kindness and plain truth sit under the story.",
+    "more": "Black Beauty changed how some people treated horses. It is a moral tale about work, pain, and who counts as a neighbour."
+  },
+  {
+    "id": "kingsley",
+    "name": "Charles Kingsley",
+    "role": "Writer",
+    "period": "1861-1880",
+    "scottish": false,
+    "bio": "A clergyman who wrote The Water-Babies, a children's fantasy about a chimney sweep who is given another chance.",
+    "family": "He was a husband, a father, and a busy parish priest. He liked the idea of a strong, outdoor Christian life.",
+    "faith": "He was an Anglican and a Christian socialist. He preached that dirty slums were an insult to God.",
+    "more": "The Water-Babies mixes fairies, science, and a lesson against cruelty to children. Tom the sweep is saved through a strange new world of water."
+  },
+  {
+    "id": "burne",
+    "name": "Edward Burne-Jones",
+    "role": "Artist",
+    "period": "1881-1901",
+    "scottish": false,
+    "bio": "A painter of myths, angels, and fairy-like legends. His pictures made the Middle Ages look dreamy and sad.",
+    "family": "He married Georgiana, an artist herself. He also had a painful attachment to other women. Georgiana kept the family and the home going.",
+    "faith": "He had meant to be a clergyman. Art became his religion of beauty. He painted knights, sleeping princesses, and angels.",
+    "more": "With William Morris he filled Victorian houses with stained glass and tapestry. Fairy stories moved from the nursery onto the wall."
+  },
+  {
+    "id": "paton",
+    "name": "Joseph Noel Paton",
+    "role": "Artist",
+    "period": "1861-1880",
+    "scottish": true,
+    "bio": "A Scottish painter famous for The Quarrel of Oberon and Titania and other crowded fairy pictures.",
+    "family": "He lived in Scotland and painted both fairy courts and religious scenes. The two subjects were not opposites for him.",
+    "faith": "He was a believing Christian who also loved Shakespeare's fairies. Wonder and worship sat side by side.",
+    "more": "His fairy paintings are packed with tiny winged people. They show how seriously Victorians could take a story that was not \"real.\""
+  },
+  {
+    "id": "rdoyle",
+    "name": "Richard Doyle",
+    "role": "Artist",
+    "period": "1837-1860",
+    "scottish": false,
+    "bio": "He drew fairies for Punch and for books such as In Fairyland. He was an uncle of Arthur Conan Doyle.",
+    "family": "The Doyle family was full of artists. Richard's nephew later wanted real fairies. The uncle had already made them famous on paper.",
+    "faith": "He was a Roman Catholic. He left Punch because it printed cartoons that mocked the Catholic Church and the pope.",
+    "more": "His fairy pictures taught a generation what a fairy should look like: insect wings, flowers, and a slightly wild wood."
+  },
+  {
+    "id": "tenniel",
+    "name": "John Tenniel",
+    "role": "Artist",
+    "period": "1861-1880",
+    "scottish": false,
+    "bio": "He drew the pictures for Alice's Adventures in Wonderland and Through the Looking-Glass.",
+    "family": "He was a Punch cartoonist as well as a children's illustrator. One eye had been hurt when he was young. He still drew with extraordinary care.",
+    "faith": "His public work was pictures, not sermons. He gave Alice a face that still means \"story time.\"",
+    "more": "Without Tenniel's drawings, the Cheshire Cat, the Queen of Hearts, and Alice herself would look different in our heads."
+  },
+  {
+    "id": "millais",
+    "name": "John Everett Millais",
+    "role": "Artist",
+    "period": "1861-1880",
+    "scottish": false,
+    "bio": "A painter of the Pre-Raphaelite group. He married Effie Gray after her unhappy marriage to John Ruskin ended.",
+    "family": "He and Effie had eight children. Their home was busy, successful, and a second chance after a marriage that had failed.",
+    "faith": "He painted religious scenes and also portraits of the rich. Beauty, for him, could be holy or simply splendid.",
+    "more": "His picture of a boy blowing bubbles, and his earlier religious work, hung in homes that wanted art to teach feeling."
+  },
+  {
+    "id": "effie",
+    "name": "Effie Gray",
+    "role": "Artist",
+    "period": "1861-1880",
+    "scottish": false,
+    "bio": "She married John Ruskin, was deeply unhappy, and later married John Everett Millais. She managed a large artistic household.",
+    "family": "The end of her first marriage was a public shock. Her second marriage brought eight children and a life inside the art world.",
+    "faith": "She was not a church leader. Her story mattered because Victorians had to admit a marriage could be wrong.",
+    "more": "People gossiped. She still built a family. Her life shows that love can fail, and that a woman could leave and begin again."
+  },
+  {
+    "id": "cameron",
+    "name": "Julia Margaret Cameron",
+    "role": "Artist",
+    "period": "1861-1880",
+    "scottish": false,
+    "bio": "A photographer who made soft, intense portraits and dressed friends as characters from poems and Bible stories.",
+    "family": "She began photography in her late forties, in a house full of children, visitors, and famous friends. Family and myth used the same rooms.",
+    "faith": "She photographed Madonnas, angels, and Tennyson's legends. She wanted a photo to feel like a prayer or a poem.",
+    "more": "Her pictures are a bridge between the real family album and the fairy-story book. A niece might pose as an angel before tea."
+  },
+  {
+    "id": "wallace",
+    "name": "Alfred Russel Wallace",
+    "role": "Scientist",
+    "period": "1861-1880",
+    "scottish": false,
+    "bio": "He worked out the idea of evolution by natural selection at the same time as Darwin. He also believed in spirits.",
+    "family": "He travelled dangerously to collect animals, then came home to write, marry, and argue. He never became as rich as his fame suggested.",
+    "faith": "He thought natural selection explained animals' bodies, but not the human mind. He believed seances showed a spirit world.",
+    "more": "He is the Victorian who held both a great scientific idea and a hope that the dead are not gone. Many friends thought he was half right."
+  },
+  {
+    "id": "gosse",
+    "name": "Philip Henry Gosse",
+    "role": "Scientist",
+    "period": "1837-1860",
+    "scottish": false,
+    "bio": "A brilliant writer about sea creatures who tried to fit geology with a word-for-word reading of Genesis.",
+    "family": "His son Edmund later wrote a sad book, Father and Son, about a loving father whose strict faith left little room for stories or doubt.",
+    "faith": "He suggested God might have created the Earth with the appearance of a long past already in the rocks. Few people, religious or scientific, liked that answer.",
+    "more": "His life is a family story about love and a belief that cannot bend. The rock pools he described are still wonderful. The argument hurt his son."
+  },
+  {
+    "id": "kingsley-m",
+    "name": "Mary Kingsley",
+    "role": "Explorer",
+    "period": "1881-1901",
+    "scottish": false,
+    "bio": "She travelled in West Africa, studied fish and local customs, and wrote frankly about empire.",
+    "family": "She spent years nursing her sick parents and only travelled after they died. Duty at home came before her own journey.",
+    "faith": "She criticised missionaries who scorned African beliefs, even though she came from a Christian culture. She wanted respect as well as religion.",
+    "more": "She climbed, canoed, and traded. She said British rule was often arrogant. She died nursing soldiers in the Boer War in 1900."
+  },
+  {
+    "id": "burnett",
+    "name": "Frances Hodgson Burnett",
+    "role": "Writer",
+    "period": "1881-1901",
+    "scottish": false,
+    "bio": "She wrote Little Lord Fauntleroy and later The Secret Garden. She knew both poverty and fame.",
+    "family": "She lost a son, Lionel, to illness. That grief sits under her stories of children who need love, a garden, or a second chance.",
+    "faith": "She became interested in the idea that thought and love can heal. Not everyone agreed. The feeling in her children's books is hope.",
+    "more": "Fauntleroy made velvet suits fashionable. The deeper Victorian note is a child restoring a bitter adult by being loved."
+  },
+  {
+    "id": "siddal",
+    "name": "Elizabeth Siddal",
+    "role": "Artist",
+    "period": "1837-1860",
+    "scottish": false,
+    "bio": "An artist and a poet, and a model for Pre-Raphaelite painters. She married Dante Gabriel Rossetti.",
+    "family": "Their love was intense and uneven. She was often ill. She died in 1862. Rossetti buried poems in her grave, then later had them dug up.",
+    "faith": "She was painted as heroines from old poems, including Shakespeare's Ophelia. Art turned a real woman into a legend.",
+    "more": "Her own drawings matter, not only her face in other people's pictures. Her story is about love, work, and a fame that came mostly after sadness."
+  },
+  {
+    "id": "patmore",
+    "name": "Coventry Patmore",
+    "role": "Writer",
+    "period": "1861-1880",
+    "scottish": false,
+    "bio": "He wrote The Angel in the House, a long poem about an ideal wife. The phrase stuck.",
+    "family": "He praised a gentle, self-forgetting wife. Real homes were more complicated, including his own after bereavements and a later marriage.",
+    "faith": "He became a Roman Catholic. He tried to make married love sound sacred.",
+    "more": "The \"angel in the house\" became a duty laid on women: be sweet, be home, do not want a public life. Later women argued with that picture."
+  },
+  {
+    "id": "fawcett",
+    "name": "Millicent Fawcett",
+    "role": "Reformer",
+    "period": "1881-1901",
+    "scottish": false,
+    "bio": "She led the law-abiding campaign for women's votes for many years. She believed argument could change Parliament.",
+    "family": "She married Henry Fawcett, a blind politician, and was his partner in public life as well as at home. Their daughter Philippa became a famous mathematician.",
+    "faith": "She wanted justice in this world. She did not think a woman's religion was only private.",
+    "more": "She disagreed with Emmeline Pankhurst about violent protest. Both wanted the vote. Their argument was about method, not about a woman's worth."
+  },
+  {
+    "id": "johnbrown",
+    "name": "John Brown",
+    "role": "Reformer",
+    "period": "1861-1880",
+    "scottish": true,
+    "bio": "A Scottish servant at Balmoral who became Queen Victoria's close friend after Albert died.",
+    "family": "He was not her husband. He was a Highland ghillie who spoke bluntly and made her feel safe outdoors. Gossips wondered how deep the love went.",
+    "faith": "He belonged to the Scottish world she romanticised: weather, horses, plain speech, and a Presbyterian country.",
+    "more": "Victoria published leaves from her Highland journal and defended him. When he died in 1883 she mourned hard. The friendship shows how loneliness and loyalty can look."
+  },
+  {
+    "id": "karim",
+    "name": "Abdul Karim",
+    "role": "Reformer",
+    "period": "1881-1901",
+    "scottish": false,
+    "bio": "An Indian clerk who became Queen Victoria's teacher, the Munshi. He taught her Urdu and Indian food.",
+    "family": "Victoria treated him as a friend and almost as family. Her household and her son often resented him and the power she gave him.",
+    "faith": "He was a Muslim. Victoria respected his faith and his teaching more than many of her courtiers did.",
+    "more": "Their bond is a story about affection across empire, and about prejudice inside the palace. After she died, the court tried to erase him."
   }
 ]

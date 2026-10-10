@@ -1,69 +1,54 @@
-import type { CSSProperties } from 'react'
+import { land, spots } from './map-data'
+
+const labels = [
+  ['Scotland', 230, 150],
+  ['England', 310, 470],
+  ['Wales', 214, 500],
+  ['Ireland', 118, 430],
+] as const
 
 export function BritainMap({ blank = false }: { blank?: boolean }) {
-  const label = (name: string) => (blank ? '\u00a0' : name)
-  const box: CSSProperties = {
-    position: 'relative',
-    margin: '0 auto',
-    height: 320,
-    width: '100%',
-    maxWidth: 340,
-    overflow: 'hidden',
-    borderRadius: 16,
-    border: '4px solid #1C1C1C',
-    background: '#d5eef8',
-  }
-  const region = (extra: CSSProperties): CSSProperties => ({
-    position: 'absolute',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    textAlign: 'center',
-    fontWeight: 800,
-    fontSize: 14,
-    padding: 4,
-    ...extra,
-  })
   return (
-    <div style={box}>
-      <div style={region({ left: '24%', top: 0, height: '30%', width: '52%', borderRadius: '12px 12px 0 0', background: '#1F6B4A', color: '#FFF8EE' })}>{label('Scotland')}</div>
-      <div style={region({ left: '28%', top: '30%', height: '42%', width: '46%', background: '#E7B23C', color: '#1C1C1C' })}>{label('England')}</div>
-      <div style={region({ left: '8%', top: '42%', height: '22%', width: '18%', background: '#2f6b3a', color: '#FFF8EE', fontSize: 12 })}>{label('Wales')}</div>
-      <div style={region({ left: 0, top: '36%', height: '28%', width: '12%', background: '#1d4d32', color: '#FFF8EE', fontSize: 11 })}>{label('Ireland')}</div>
-      {!blank && (
-        <>
-          <Dot top="8%" left="46%" name="Edinburgh" />
-          <Dot top="16%" left="34%" name="Glasgow" />
-          <Dot top="6%" left="62%" name="Balmoral" />
-          <Dot top="66%" left="40%" name="London" />
-        </>
-      )}
-    </div>
-  )
-}
-
-function Dot({ top, left, name }: { top: string; left: string; name: string }) {
-  return (
-    <div style={{ position: 'absolute', top, left, maxWidth: '42%' }}>
-      <div style={{ width: 12, height: 12, borderRadius: '50%', background: '#B42318', border: '2px solid #FFF8EE' }} />
-      <span style={{ display: 'block', fontSize: 11, fontWeight: 800, lineHeight: 1.1 }}>{name}</span>
-    </div>
+    <figure className="map-frame">
+      <svg viewBox="0 0 420 640" role="img" aria-label="Map of Britain and Ireland">
+        <rect width="420" height="640" fill="#d7eef8" />
+        {land.uk.map((d, index) => (
+          <path key={`uk-${index}`} d={d} fill="#1F6B4A" stroke="#1C1C1C" strokeWidth="1.4" />
+        ))}
+        {land.ireland.map((d, index) => (
+          <path key={`ie-${index}`} d={d} fill="#E7B23C" stroke="#1C1C1C" strokeWidth="1.4" />
+        ))}
+        <polyline
+          points={[spots.London, spots.Birmingham, spots.Edinburgh, spots.Glasgow].map((p) => p.join(',')).join(' ')}
+          fill="none"
+          stroke="#B42318"
+          strokeWidth="3"
+          strokeLinejoin="round"
+        />
+        {labels.map(([name, x, y]) => (
+          <text key={name} x={x} y={y} textAnchor="middle" fontSize="16" fontWeight="800" fill="#1C1C1C" stroke="#FFF8EE" strokeWidth="4" paintOrder="stroke">
+            {blank ? '' : name}
+          </text>
+        ))}
+        {Object.entries(spots).map(([name, [x, y]]) => (
+          <g key={name}>
+            <circle cx={x} cy={y} r="5" fill="#B42318" stroke="#FFF8EE" strokeWidth="2" />
+            <text x={x + 8} y={y - 8} fontSize="12" fontWeight="800" fill="#1C1C1C" stroke="#FFF8EE" strokeWidth="3" paintOrder="stroke">
+              {blank ? '' : name}
+            </text>
+            {blank && <line x1={x + 8} y1={y - 6} x2={x + 78} y2={y - 6} stroke="#1C1C1C" strokeWidth="2" />}
+          </g>
+        ))}
+      </svg>
+      <figcaption>
+        {blank
+          ? 'Green is Britain. Gold is Ireland. The red line is a railway from London toward Scotland. Write the missing names.'
+          : 'A real coastline. Green is Britain, including Northern Ireland. Gold is the rest of Ireland. The red line runs from London toward Scotland.'}
+      </figcaption>
+    </figure>
   )
 }
 
 export function RailwayMap() {
-  const stops = ['London', 'Birmingham', 'Edinburgh', 'Glasgow']
-  return (
-    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, minmax(0, 1fr))', gap: 4, alignItems: 'start' }}>
-      {stops.map((name, index) => (
-        <div key={name} style={{ textAlign: 'center', minWidth: 0 }}>
-          <div style={{ height: 4, background: '#1C1C1C', marginTop: 6, position: 'relative' }}>
-            <div style={{ width: 12, height: 12, borderRadius: '50%', background: '#B42318', position: 'absolute', left: '50%', top: -4, transform: 'translateX(-50%)' }} />
-          </div>
-          <div style={{ marginTop: 12, fontSize: 12, fontWeight: 800, wordBreak: 'break-word' }}>{name}</div>
-          {index < stops.length - 1 ? null : null}
-        </div>
-      ))}
-    </div>
-  )
+  return <BritainMap />
 }

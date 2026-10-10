@@ -21,7 +21,7 @@ function Home() {
   const found = useMemo(() => {
     const q = search.trim().toLowerCase()
     if (!q) return people.slice(0, 4)
-    return people.filter((person) => (person.name + person.bio).toLowerCase().includes(q)).slice(0, 6)
+    return people.filter((person) => (person.name + person.bio + person.family + person.more).toLowerCase().includes(q)).slice(0, 6)
   }, [search])
 
   return (
@@ -126,6 +126,28 @@ function Home() {
         </div>
       </section>
 
+      <section className="band band-cloud">
+        <div className="wrap">
+          <h2 className="display section-title">Love, faith, and fairies</h2>
+          <p className="lead">The people list is bigger now. Each life has a family story and a belief, not only a job.</p>
+          <div className="cards">
+            <Link to="/people/$personId" params={{ personId: 'macdonald' }} className="mini">
+              <h3 className="display">George MacDonald</h3>
+              <p className="copy">A Scottish minister who wrote fairy tales about courage and a loving God.</p>
+            </Link>
+            <Link to="/people/$personId" params={{ personId: 'doyle' }} className="mini">
+              <h3 className="display">Arthur Conan Doyle</h3>
+              <p className="copy">He invented Holmes, believed in spirits, and defended fairy photos that were not what they seemed.</p>
+            </Link>
+            <Link to="/people/$personId" params={{ personId: 'ebrowning' }} className="mini">
+              <h3 className="display">Elizabeth Barrett Browning</h3>
+              <p className="copy">She left a strict father and married the poet she loved.</p>
+            </Link>
+          </div>
+          <p className="copy"><Link to="/beliefs" style={{ fontWeight: 800 }}>Read the Beliefs page</Link></p>
+        </div>
+      </section>
+
       <section className="band band-paper">
         <div className="wrap">
           <h2 className="display section-title">People</h2>
@@ -138,7 +160,7 @@ function Home() {
               </Link>
             ))}
           </div>
-          <p className="copy"><Link to="/places" style={{ fontWeight: 800 }}>See places</Link></p>
+          <p className="copy"><Link to="/people" style={{ fontWeight: 800 }}>All {people.length} people</Link></p>
         </div>
       </section>
     </div>

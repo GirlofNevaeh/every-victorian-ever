@@ -16,15 +16,27 @@ function PersonPage() {
     )
   }
   return (
-    <article className="card" style={{ display: 'grid', gap: 8 }}>
+    <article className="page story">
       <h1>{person.name}</h1>
       <p className="tag">{person.role} · {person.period}{person.scottish ? ' · Scottish' : ''}</p>
-      <p>{person.bio}</p>
+      <section className="card">
+        <h2>The story</h2>
+        <p>{person.bio}</p>
+        <p>{person.more}</p>
+      </section>
+      <section className="panel gold">
+        <h2>Family and love</h2>
+        <p>{person.family}</p>
+      </section>
+      <section className="card">
+        <h2>Faith</h2>
+        <p>{person.faith}</p>
+      </section>
       <aside className="scotland">
         <strong>Scotland</strong>
-        <p>{person.scottish ? 'Scotland was part of this life.' : 'Scotland was part of Victorian Britain while this person lived.'}</p>
+        <p>{person.scottish ? 'Scotland was part of this life, not a side note.' : 'This life belongs to Victorian Britain, and Scotland was part of that same kingdom. Balmoral, Glasgow, and Edinburgh were in the news while this person lived.'}</p>
       </aside>
-      <Link to="/people">Back to people</Link>
+      <Link to="/people" className="big-btn">Back to people</Link>
     </article>
   )
 }

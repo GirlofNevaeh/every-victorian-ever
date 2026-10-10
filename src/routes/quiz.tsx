@@ -102,8 +102,8 @@ function Quiz() {
           />
         </label>
         <div className="actions" style={{ justifyContent: 'center' }}>
-          <button type="button" onClick={() => start(10)} style={{ background: 'var(--color-pine)' }}>Quick 10</button>
-          <button type="button" onClick={() => start(25)} style={{ background: 'var(--color-red)' }}>Mega 25</button>
+          <button type="button" onClick={() => start(10)}>Quick 10</button>
+          <button type="button" className="alt" onClick={() => start(25)}>Mega 25</button>
         </div>
         {winner !== null && <p style={{ fontSize: '1.4rem', fontWeight: 800 }}>CONGRATULATIONS Team {winner + 1}</p>}
         {draw && <p>It is a draw after three clean tied rounds.</p>}

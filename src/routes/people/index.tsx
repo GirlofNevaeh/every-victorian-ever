@@ -6,7 +6,7 @@ export const Route = createFileRoute('/people/')({
   component: PeoplePage,
 })
 
-const roles: Role[] = ['Queen', 'Prince', 'Nurse', 'Inventor', 'Writer', 'Scientist', 'Explorer', 'Reformer']
+const roles: Role[] = ['Queen', 'Prince', 'Nurse', 'Inventor', 'Writer', 'Scientist', 'Explorer', 'Reformer', 'Artist', 'Preacher']
 const periods: Period[] = ['1837-1860', '1861-1880', '1881-1901']
 
 function PeoplePage() {
@@ -15,7 +15,7 @@ function PeoplePage() {
   const [period, setPeriod] = useState<Period | ''>('')
 
   const matches = (person: (typeof people)[number], skipRole = false, skipPeriod = false) => {
-    const text = (person.name + person.bio).toLowerCase().includes(search.trim().toLowerCase())
+    const text = (person.name + person.bio + person.family + person.faith + person.more).toLowerCase().includes(search.trim().toLowerCase())
     const roleOk = skipRole || !role || person.role === role
     const periodOk = skipPeriod || !period || person.period === period
     return text && roleOk && periodOk
@@ -38,26 +38,24 @@ function PeoplePage() {
       <h1>People</h1>
       <aside className="scotland">
         <strong>Scotland</strong>
-        <p>Scottish names here include Bell, Maxwell, Livingstone, Slessor, Stevenson, Hardie, Kelvin, and more.</p>
+        <p>Scottish names here include Victoria's Highlands, Bell, Maxwell, Livingstone, Slessor, Stevenson, Hardie, MacDonald, Lang, Barrie, Paton, and Chalmers.</p>
       </aside>
       <input className="field" value={search} onChange={(event) => setSearch(event.target.value)} placeholder="Search names or stories" />
-      <div className="actions">
-        <select className="field" value={role} onChange={(event) => setRole(event.target.value as Role | '')} style={{ width: 'auto' }}>
-          <option value="">All roles</option>
-          {roles.map((item) => (
-            <option key={item} value={item} disabled={roleCounts[item] === 0}>
-              {item}
-            </option>
-          ))}
-        </select>
-        <select className="field" value={period} onChange={(event) => setPeriod(event.target.value as Period | '')} style={{ width: 'auto' }}>
-          <option value="">All years</option>
-          {periods.map((item) => (
-            <option key={item} value={item} disabled={periodCounts[item] === 0}>
-              {item}
-            </option>
-          ))}
-        </select>
+      <div className="chips">
+        <button type="button" className={role === '' ? 'chip on' : 'chip'} onClick={() => setRole('')}>All roles</button>
+        {roles.map((item) => (
+          <button key={item} type="button" className={role === item ? 'chip on' : 'chip'} onClick={() => setRole(item)} disabled={roleCounts[item] === 0}>
+            {item}
+          </button>
+        ))}
+      </div>
+      <div className="chips">
+        <button type="button" className={period === '' ? 'chip on' : 'chip'} onClick={() => setPeriod('')}>All years</button>
+        {periods.map((item) => (
+          <button key={item} type="button" className={period === item ? 'chip on' : 'chip'} onClick={() => setPeriod(item)} disabled={periodCounts[item] === 0}>
+            {item}
+          </button>
+        ))}
       </div>
       <div className="person-grid">
         {shown.map((person) => (

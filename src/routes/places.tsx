@@ -12,8 +12,8 @@ function Places() {
       <section className="card">
         <h2>Britain</h2>
         <BritainMap />
-        <p>Scotland is the pine green part in the north. England is gold. Wales and Ireland are marked too.</p>
-        <p>City stops: Edinburgh, Glasgow, Balmoral, and London.</p>
+        <p>This is a real coastline, not a stack of boxes. Scotland is the north of the green island. England is larger, to the south and east. Wales is the western bump. Northern Ireland is the green part of the western island. The gold land is the rest of Ireland.</p>
+        <p>The red line is a railway from London through Birmingham toward Edinburgh and Glasgow. Balmoral sits in the Highlands, north of Edinburgh.</p>
       </section>
       <section className="panel cream">
         <h2>Railway toward Scotland</h2>

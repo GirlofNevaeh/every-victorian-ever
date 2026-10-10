@@ -69,7 +69,15 @@ function RootComponent() {
         </div>
         <nav className="site-nav" aria-label="Main">
           {links.map(([to, label]) => (
-            <Link key={to} to={to} className="nav-btn">{label}</Link>
+            <Link
+              key={to}
+              to={to}
+              className="nav-btn"
+              activeOptions={{ exact: to === '/' }}
+              activeProps={{ className: 'nav-btn active' }}
+            >
+              {label}
+            </Link>
           ))}
         </nav>
       </header>
