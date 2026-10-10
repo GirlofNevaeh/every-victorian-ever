@@ -1,6 +1,5 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
 import { people } from '../../data/people'
-import { ScotlandNote } from '../../components/ScotlandNote'
 
 export const Route = createFileRoute('/people/$personId')({
   component: PersonPage,
@@ -17,12 +16,15 @@ function PersonPage() {
     )
   }
   return (
-    <article className="mx-auto max-w-2xl space-y-3 rounded-lg bg-white p-5 shadow">
-      <h1 className="text-2xl font-bold">{person.name}</h1>
-      <p className="text-[var(--color-pine)]">{person.role} · {person.period}{person.scottish ? ' · Scottish' : ''}</p>
+    <article className="card" style={{ display: 'grid', gap: 8 }}>
+      <h1>{person.name}</h1>
+      <p className="tag">{person.role} · {person.period}{person.scottish ? ' · Scottish' : ''}</p>
       <p>{person.bio}</p>
-      <ScotlandNote text={person.scottish ? 'Scotland was part of this life.' : 'Scotland was part of Victorian Britain while this person lived.'} />
-      <Link to="/people" className="inline-block underline text-[var(--color-pine)]">Back to people</Link>
+      <aside className="scotland">
+        <strong>Scotland</strong>
+        <p>{person.scottish ? 'Scotland was part of this life.' : 'Scotland was part of Victorian Britain while this person lived.'}</p>
+      </aside>
+      <Link to="/people">Back to people</Link>
     </article>
   )
 }

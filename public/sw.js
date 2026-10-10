@@ -1,14 +1,30 @@
-self.addEventListener('install', event => {
-  self.skipWaiting();
-});
+const CACHE = 'victorian-v4'
 
-self.addEventListener('fetch', event => {
+self.addEventListener('install', (event) => {
+  self.skipWaiting()
+  event.waitUntil(Promise.resolve())
+})
+
+self.addEventListener('activate', (event) => {
+  event.waitUntil(
+    caches.keys().then((keys) =>
+      Promise.all(keys.filter((key) => key !== CACHE).map((key) => caches.delete(key))),
+    ).then(() => self.clients.claim()),
+  )
+})
+
+self.addEventListener('fetch', (event) => {
+  const request = event.request
+  if (request.method !== 'GET') return
   event.respondWith(
-    caches.open('victorian-cache').then(cache =>
-      cache.match(event.request).then(response => response || fetch(event.request).then(res => {
-        if (res.ok) cache.put(event.request, res.clone());
-        return res;
-      }))
-    )
-  );
-});
+    fetch(request)
+      .then((response) => {
+        if (response.ok) {
+          const copy = response.clone()
+          caches.open(CACHE).then((cache) => cache.put(request, copy))
+        }
+        return response
+      })
+      .catch(() => caches.match(request)),
+  )
+})

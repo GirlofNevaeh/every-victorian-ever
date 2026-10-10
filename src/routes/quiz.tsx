@@ -2,7 +2,6 @@ import { createFileRoute } from '@tanstack/react-router'
 import { useState } from 'react'
 import { quizQuestions } from '../data/questions'
 import { QuizFaces } from '../components/Faces'
-import { ScotlandNote } from '../components/ScotlandNote'
 
 export const Route = createFileRoute('/quiz')({
   component: Quiz,
@@ -87,10 +86,10 @@ function Quiz() {
 
   if (phase === 'setup' || phase === 'done') {
     return (
-      <div className="mx-auto max-w-lg space-y-4 text-center">
-        <h1 className="text-2xl font-bold">Quiz</h1>
+      <div style={{ display: 'grid', gap: 12, textAlign: 'center' }}>
+        <h1>Quiz</h1>
         <p>Quick 10 or Mega 25. One player, or up to 10 teams.</p>
-        <label className="block">
+        <label>
           Teams
           <input
             type="number"
@@ -98,17 +97,21 @@ function Quiz() {
             max={10}
             value={teams}
             onChange={(event) => setTeams(Math.min(10, Math.max(1, Number(event.target.value) || 1)))}
-            className="ml-2 w-16 rounded border p-1"
+            className="field"
+            style={{ width: 80, marginLeft: 8 }}
           />
         </label>
-        <div className="flex justify-center gap-2">
-          <button type="button" onClick={() => start(10)} className="rounded bg-[var(--color-pine)] px-4 py-2 text-[var(--color-lace)]">Quick 10</button>
-          <button type="button" onClick={() => start(25)} className="rounded bg-[var(--color-red)] px-4 py-2 text-[var(--color-lace)]">Mega 25</button>
+        <div className="actions" style={{ justifyContent: 'center' }}>
+          <button type="button" onClick={() => start(10)} style={{ background: 'var(--color-pine)' }}>Quick 10</button>
+          <button type="button" onClick={() => start(25)} style={{ background: 'var(--color-red)' }}>Mega 25</button>
         </div>
-        {winner !== null && <p className="text-xl font-bold">CONGRATULATIONS Team {winner + 1}</p>}
+        {winner !== null && <p style={{ fontSize: '1.4rem', fontWeight: 800 }}>CONGRATULATIONS Team {winner + 1}</p>}
         {draw && <p>It is a draw after three clean tied rounds.</p>}
-        <p className="text-sm">{quizQuestions.length} questions are ready.</p>
-        <ScotlandNote text="Questions include Balmoral, Glasgow ships, and Edinburgh schools." />
+        <p>{quizQuestions.length} questions are ready.</p>
+        <aside className="scotland" style={{ textAlign: 'left' }}>
+          <strong>Scotland</strong>
+          <p>Questions include Balmoral, Glasgow ships, and Edinburgh schools.</p>
+        </aside>
       </div>
     )
   }
@@ -116,31 +119,30 @@ function Quiz() {
   const card = deck[index]
   const team = index % scores.length
   return (
-    <div className="mx-auto max-w-xl space-y-3">
-      <h1 className="text-xl font-bold">Question {index + 1}</h1>
-      {sudden && <p className="text-[var(--color-red)]">Sudden death</p>}
-      <p className="text-sm">Team {team + 1} answers.</p>
+    <div style={{ display: 'grid', gap: 12 }}>
+      <h1>Question {index + 1}</h1>
+      {sudden && <p className="red" style={{ display: 'inline-block', padding: '4px 8px', borderRadius: 8 }}>Sudden death</p>}
+      <p>Team {team + 1} answers.</p>
       <QuizFaces index={index} />
-      <p className="text-lg">{card.question}</p>
-      <div className="space-y-2">
+      <p style={{ fontSize: '1.2rem', fontWeight: 800 }}>{card.question}</p>
+      <div style={{ display: 'grid', gap: 8 }}>
         {card.options.map((option, optionIndex) => (
           <button
             key={option}
             type="button"
             disabled={picked !== null}
             onClick={() => choose(optionIndex)}
-            className={`block w-full rounded border p-3 text-left ${
-              picked === null ? 'bg-white' : optionIndex === card.answer ? 'bg-green-100' : picked === optionIndex ? 'bg-red-100' : 'bg-white'
-            }`}
+            className="choice"
+            style={picked === null ? undefined : optionIndex === card.answer ? { background: '#d9f5e3' } : picked === optionIndex ? { background: '#f8d0cc' } : undefined}
           >
             {option}
           </button>
         ))}
       </div>
-      {note && <p className="text-center font-bold">{note}</p>}
-      <div className="flex flex-wrap justify-center gap-3 text-sm">
+      {note && <p style={{ textAlign: 'center', fontWeight: 800 }}>{note}</p>}
+      <div className="actions" style={{ justifyContent: 'center' }}>
         {scores.map((score, i) => (
-          <span key={i}>Team {i + 1}: {score}</span>
+          <span key={i} className="card" style={{ padding: 8 }}>Team {i + 1}: {score}</span>
         ))}
       </div>
     </div>

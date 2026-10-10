@@ -1,7 +1,6 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
 import { useMemo, useState } from 'react'
 import { people, type Period, type Role } from '../../data/people'
-import { ScotlandNote } from '../../components/ScotlandNote'
 
 export const Route = createFileRoute('/people/')({
   component: PeoplePage,
@@ -35,35 +34,37 @@ function PeoplePage() {
   }, [search, role])
 
   return (
-    <div className="mx-auto max-w-4xl space-y-4">
-      <h1 className="text-2xl font-bold">People</h1>
-      <ScotlandNote text="Scottish names here include Bell, Maxwell, Livingstone, Slessor, Stevenson, Hardie, Kelvin, and more." />
-      <input value={search} onChange={(event) => setSearch(event.target.value)} placeholder="Search names or stories" className="w-full rounded border p-2" />
-      <div className="flex flex-wrap gap-2">
-        <select value={role} onChange={(event) => setRole(event.target.value as Role | '')} className="rounded border p-2">
+    <div style={{ display: 'grid', gap: 12 }}>
+      <h1>People</h1>
+      <aside className="scotland">
+        <strong>Scotland</strong>
+        <p>Scottish names here include Bell, Maxwell, Livingstone, Slessor, Stevenson, Hardie, Kelvin, and more.</p>
+      </aside>
+      <input className="field" value={search} onChange={(event) => setSearch(event.target.value)} placeholder="Search names or stories" />
+      <div className="actions">
+        <select className="field" value={role} onChange={(event) => setRole(event.target.value as Role | '')} style={{ width: 'auto' }}>
           <option value="">All roles</option>
           {roles.map((item) => (
-            <option key={item} value={item} disabled={roleCounts[item] === 0} className={roleCounts[item] === 0 ? 'text-gray-400' : ''}>
+            <option key={item} value={item} disabled={roleCounts[item] === 0}>
               {item}
             </option>
           ))}
         </select>
-        <select value={period} onChange={(event) => setPeriod(event.target.value as Period | '')} className="rounded border p-2">
+        <select className="field" value={period} onChange={(event) => setPeriod(event.target.value as Period | '')} style={{ width: 'auto' }}>
           <option value="">All years</option>
           {periods.map((item) => (
-            <option key={item} value={item} disabled={periodCounts[item] === 0} className={periodCounts[item] === 0 ? 'text-gray-400' : ''}>
+            <option key={item} value={item} disabled={periodCounts[item] === 0}>
               {item}
             </option>
           ))}
         </select>
       </div>
-      <div className="grid gap-3 sm:grid-cols-2">
+      <div className="person-grid">
         {shown.map((person) => (
-          <Link key={person.id} to="/people/$personId" params={{ personId: person.id }} className="rounded bg-white p-3 shadow">
-            <h2 className="font-bold">{person.name}</h2>
-            <p className="text-sm">{person.role} · {person.period}</p>
-            <p className="mt-1 text-sm">{person.bio}</p>
-            {person.scottish && <p className="text-xs text-[var(--color-pine)]">Scottish</p>}
+          <Link key={person.id} to="/people/$personId" params={{ personId: person.id }} className="person-card">
+            <h2>{person.name}</h2>
+            <p className="tag">{person.role} · {person.period}{person.scottish ? ' · Scottish' : ''}</p>
+            <p>{person.bio}</p>
           </Link>
         ))}
       </div>

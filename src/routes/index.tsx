@@ -1,7 +1,6 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
 import { useMemo, useState } from 'react'
 import { people } from '../data/people'
-import { ScotlandNote } from '../components/ScotlandNote'
 
 export const Route = createFileRoute('/')({
   component: Home,
@@ -32,107 +31,80 @@ function Home() {
   )
 
   return (
-    <div className="mx-auto max-w-4xl space-y-6">
-      <section className="grid gap-3 md:grid-cols-2">
-        <article className="rounded-lg bg-white p-4 shadow">
-          <h2 className="text-xl font-bold">Queen Victoria</h2>
+    <div style={{ display: 'grid', gap: 14 }}>
+      <section className="grid-2">
+        <article className="card">
+          <h2>Queen Victoria</h2>
           <p>Queen Victoria ruled from 1837 to 1901. She loved Scotland. She stayed at Balmoral Castle.</p>
-          <QueenArt />
+          <img className="scene" src="/art/castle.jpg" alt="A sunny Highland castle" />
         </article>
-        <article className="rounded-lg bg-white p-4 shadow">
-          <h2 className="text-xl font-bold">Ordinary homes</h2>
+        <article className="card">
+          <h2>Ordinary homes</h2>
           <p>A rich home had many rooms. A poor home might have one room. Families lived in both.</p>
-          <HomeArt />
+          <img className="scene" src="/art/homes.jpg" alt="A big house beside a one-room home" />
         </article>
       </section>
 
-      <section className="rounded-lg bg-white p-4 shadow">
-        <h2 className="text-xl font-bold">Railway</h2>
+      <section className="card">
+        <h2>Railway</h2>
         <p>Railways let people travel faster than horses. Trains went from London toward Scotland.</p>
-        <div className="mt-2 h-16 rounded bg-[var(--color-soot)] text-[var(--color-gold)] flex items-center justify-center font-bold">A steam train</div>
+        <img className="scene" src="/art/train.jpg" alt="A green steam train on a hill" />
       </section>
 
-      <section className="rounded-lg bg-[#fff1c9] p-4">
-        <h2 className="text-xl font-bold">School</h2>
+      <section className="panel cream">
+        <h2>School</h2>
         <p>Early on, many children worked long days. Later laws sent more children to school.</p>
+        <img className="scene" src="/art/school.jpg" alt="A bright schoolroom" />
       </section>
 
-      <ScotlandNote text="Balmoral is a Highland castle. Glasgow built ships and engines. Edinburgh had schools, publishers, and a New Town. Many clan tartans became popular because Victorians liked a Highland holiday look." />
+      <aside className="scotland">
+        <strong>Scotland</strong>
+        <p>Balmoral is a Highland castle. Glasgow built ships and engines. Edinburgh had schools, publishers, and a New Town.</p>
+        <p>Many clan tartans became popular because Victorians liked a Highland holiday look.</p>
+        <img className="scene" src="/art/ships.jpg" alt="A ship in a riverside yard" />
+      </aside>
 
-      <section className="grid gap-3 md:grid-cols-2">
-        <article className="rounded-lg border border-[var(--color-soot)] p-4">
-          <h2 className="text-xl font-bold">Daily life</h2>
+      <section className="grid-2">
+        <article className="panel gold">
+          <h2>Daily life</h2>
           <p>Rich people had big houses and servants. Poor people worked hard. Gas lamps lit the streets.</p>
+          <img className="scene" src="/art/lamps.jpg" alt="A street of glowing gas lamps" />
         </article>
-        <article className="rounded-lg border border-[var(--color-soot)] p-4">
-          <h2 className="text-xl font-bold">Inventions</h2>
+        <article className="card">
+          <h2>Inventions</h2>
           <p>Railways, stamps, photographs, street lamps, clean sewers, and drinking water changed life.</p>
+          <img className="scene" src="/art/inventions.jpg" alt="A stamp, a camera, water, and a lamp" />
         </article>
       </section>
 
       <section>
-        <h2 className="text-xl font-bold">Time</h2>
-        <div className="flex gap-2 overflow-x-auto py-2">
+        <h2>Time</h2>
+        <div className="time-strip">
           {['1837 Queen', '1840 Stamps', '1851 Exhibition', '1870 Schools', '1901 End'].map((item) => (
-            <div key={item} className="min-w-[110px] rounded bg-[var(--color-red)] px-2 py-3 text-center text-sm text-[var(--color-lace)]">
-              {item}
-            </div>
+            <div key={item} className="time-pill">{item}</div>
           ))}
         </div>
+        <img className="scene" src="/art/palace.jpg" alt="A glass palace on a green lawn" />
       </section>
 
-      <section className="rounded-lg bg-white p-4 shadow">
-        <h2 className="text-xl font-bold">Find a person</h2>
-        <input
-          value={search}
-          onChange={(event) => setSearch(event.target.value)}
-          placeholder="Search people"
-          className="mb-2 w-full rounded border p-2"
-        />
-        <ul className="space-y-1">
+      <section className="card">
+        <h2>Find a person</h2>
+        <input className="field" value={search} onChange={(event) => setSearch(event.target.value)} placeholder="Search people" />
+        <ul>
           {(search ? found : people.slice(0, 4)).map((person) => (
             <li key={person.id}>
-              <Link to="/people/$personId" params={{ personId: person.id }} className="underline text-[var(--color-pine)]">
-                {person.name}
-              </Link>
-              {' '}
-              {person.role}
+              <Link to="/people/$personId" params={{ personId: person.id }}>{person.name}</Link>
+              {' · '}{person.role}
             </li>
           ))}
         </ul>
-        <Link to="/places" className="mt-3 inline-block underline text-[var(--color-pine)]">See places</Link>
+        <Link to="/places">See places</Link>
       </section>
 
-      <button
-        type="button"
-        className="rounded bg-[var(--color-red)] px-4 py-2 text-[var(--color-lace)]"
-        onClick={() => setSurprise(facts[Math.floor(Math.random() * facts.length)])}
-      >
+      <button type="button" className="big-btn" style={{ background: 'var(--color-red)', color: 'var(--color-lace)', textAlign: 'center' }} onClick={() => setSurprise(facts[Math.floor(Math.random() * facts.length)])}>
         Surprise me
       </button>
-      {surprise && <p className="rounded bg-white p-3">{surprise}</p>}
+      {surprise && <p className="card">{surprise}</p>}
     </div>
-  )
-}
-
-function QueenArt() {
-  return (
-    <svg viewBox="0 0 120 70" className="mt-2 h-20 w-full" role="img" aria-label="A friendly drawing of a queen">
-      <rect width="120" height="70" fill="#E7B23C" />
-      <circle cx="40" cy="28" r="12" fill="#F3D2B3" />
-      <path d="M28 22 L34 10 L40 20 L46 8 L52 22" fill="#B42318" />
-      <rect x="28" y="40" width="24" height="22" rx="4" fill="#1F6B4A" />
-    </svg>
-  )
-}
-
-function HomeArt() {
-  return (
-    <svg viewBox="0 0 120 70" className="mt-2 h-20 w-full" role="img" aria-label="A small home with one room">
-      <rect width="120" height="70" fill="#FFF8EE" />
-      <path d="M20 40 L60 16 L100 40" fill="#1F6B4A" />
-      <rect x="36" y="40" width="48" height="22" fill="#E7B23C" />
-      <rect x="54" y="48" width="12" height="14" fill="#1C1C1C" />
-    </svg>
   )
 }
