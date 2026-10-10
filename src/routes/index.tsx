@@ -13,98 +13,134 @@ const facts = [
   'The first stamp was the Penny Black in 1840.',
   'Many children worked long days early on. Later more went to school.',
   'Mary Seacole helped soldiers with food and care.',
-  'Charles Darwin studied animals and plants.',
-  'Clean sewers and drinking water helped stop disease.',
 ]
 
 function Home() {
   const [search, setSearch] = useState('')
   const [surprise, setSurprise] = useState('')
-  const found = useMemo(
-    () =>
-      people
-        .filter((person) =>
-          (person.name + person.bio).toLowerCase().includes(search.trim().toLowerCase()),
-        )
-        .slice(0, 5),
-    [search],
-  )
+  const found = useMemo(() => {
+    const q = search.trim().toLowerCase()
+    if (!q) return people.slice(0, 4)
+    return people.filter((person) => (person.name + person.bio).toLowerCase().includes(q)).slice(0, 6)
+  }, [search])
 
   return (
-    <div style={{ display: 'grid', gap: 14 }}>
-      <section className="grid-2">
-        <article className="card">
-          <h2>Queen Victoria</h2>
-          <p>Queen Victoria ruled from 1837 to 1901. She loved Scotland. She stayed at Balmoral Castle.</p>
-          <img className="scene" src="/art/castle.jpg" alt="A sunny Highland castle" />
-        </article>
-        <article className="card">
-          <h2>Ordinary homes</h2>
-          <p>A rich home had many rooms. A poor home might have one room. Families lived in both.</p>
-          <img className="scene" src="/art/homes.jpg" alt="A big house beside a one-room home" />
-        </article>
-      </section>
-
-      <section className="card">
-        <h2>Railway</h2>
-        <p>Railways let people travel faster than horses. Trains went from London toward Scotland.</p>
-        <img className="scene" src="/art/train.jpg" alt="A green steam train on a hill" />
-      </section>
-
-      <section className="panel cream">
-        <h2>School</h2>
-        <p>Early on, many children worked long days. Later laws sent more children to school.</p>
-        <img className="scene" src="/art/school.jpg" alt="A bright schoolroom" />
-      </section>
-
-      <aside className="scotland">
-        <strong>Scotland</strong>
-        <p>Balmoral is a Highland castle. Glasgow built ships and engines. Edinburgh had schools, publishers, and a New Town.</p>
-        <p>Many clan tartans became popular because Victorians liked a Highland holiday look.</p>
-        <img className="scene" src="/art/ships.jpg" alt="A ship in a riverside yard" />
-      </aside>
-
-      <section className="grid-2">
-        <article className="panel gold">
-          <h2>Daily life</h2>
-          <p>Rich people had big houses and servants. Poor people worked hard. Gas lamps lit the streets.</p>
-          <img className="scene" src="/art/lamps.jpg" alt="A street of glowing gas lamps" />
-        </article>
-        <article className="card">
-          <h2>Inventions</h2>
-          <p>Railways, stamps, photographs, street lamps, clean sewers, and drinking water changed life.</p>
-          <img className="scene" src="/art/inventions.jpg" alt="A stamp, a camera, water, and a lamp" />
-        </article>
-      </section>
-
-      <section>
-        <h2>Time</h2>
-        <div className="time-strip">
-          {['1837 Queen', '1840 Stamps', '1851 Exhibition', '1870 Schools', '1901 End'].map((item) => (
-            <div key={item} className="time-pill">{item}</div>
-          ))}
+    <div>
+      <section className="band band-pine">
+        <div className="wrap split">
+          <div>
+            <p className="display" style={{ color: 'var(--gold)', fontSize: '1.2rem' }}>Ages 5–12</p>
+            <h1 className="display hero-title">Every Victorian Ever</h1>
+            <p className="lead">A bright guide to Britain from 1837 to 1901. Scotland is part of the story.</p>
+            <div className="search-box">
+              <label htmlFor="home-search">Find a person</label>
+              <input id="home-search" className="field" value={search} onChange={(event) => setSearch(event.target.value)} placeholder="Type a name, like Mary Seacole" />
+              <div className="results">
+                {found.map((person) => (
+                  <Link key={person.id} to="/people/$personId" params={{ personId: person.id }}>{person.name}</Link>
+                ))}
+              </div>
+            </div>
+          </div>
+          <img className="scene" src="/art/castle.jpg" alt="A sunny Highland castle" width={1200} height={675} />
         </div>
-        <img className="scene" src="/art/palace.jpg" alt="A glass palace on a green lawn" />
       </section>
 
-      <section className="card">
-        <h2>Find a person</h2>
-        <input className="field" value={search} onChange={(event) => setSearch(event.target.value)} placeholder="Search people" />
-        <ul>
-          {(search ? found : people.slice(0, 4)).map((person) => (
-            <li key={person.id}>
-              <Link to="/people/$personId" params={{ personId: person.id }}>{person.name}</Link>
-              {' · '}{person.role}
-            </li>
-          ))}
-        </ul>
-        <Link to="/places">See places</Link>
+      <section className="band band-paper">
+        <div className="wrap">
+          <button type="button" className="surprise" onClick={() => setSurprise(facts[Math.floor(Math.random() * facts.length)])}>
+            <strong>Surprise me</strong>
+            <span>{surprise || 'Tap for a Victorian fact.'}</span>
+          </button>
+        </div>
       </section>
 
-      <button type="button" className="big-btn" style={{ background: 'var(--color-red)', color: 'var(--color-lace)', textAlign: 'center' }} onClick={() => setSurprise(facts[Math.floor(Math.random() * facts.length)])}>
-        Surprise me
-      </button>
-      {surprise && <p className="card">{surprise}</p>}
+      <section className="band band-gold">
+        <div className="wrap split">
+          <img className="scene" src="/art/homes.jpg" alt="A big house beside a one-room home" width={1200} height={675} />
+          <div>
+            <h2 className="display section-title">Queen and home</h2>
+            <p className="lead">Queen Victoria ruled from 1837 to 1901. She loved Scotland and stayed at Balmoral.</p>
+            <p className="copy">A rich home had many rooms. A poor home might have one room. Families lived in both.</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="band band-pine">
+        <div className="wrap split">
+          <div>
+            <h2 className="display section-title">Railway</h2>
+            <p className="lead">Railways let people travel faster than horses.</p>
+            <p className="copy">Trains went from London toward Scotland. Glasgow built ships and engines.</p>
+          </div>
+          <img className="scene" src="/art/train.jpg" alt="A green steam train" width={1200} height={675} />
+        </div>
+      </section>
+
+      <section className="band band-paper">
+        <div className="wrap split">
+          <img className="scene" src="/art/school.jpg" alt="A bright schoolroom" width={1200} height={675} />
+          <div>
+            <h2 className="display section-title">School</h2>
+            <p className="lead">Early on, many children worked long days.</p>
+            <p className="copy">Later laws sent more children to school.</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="band band-red">
+        <div className="wrap split">
+          <div>
+            <h2 className="display section-title">Scotland</h2>
+            <p className="lead">Balmoral is a Highland castle. Edinburgh had schools, publishers, and a New Town.</p>
+            <p className="copy">Many clan tartans became popular because Victorians liked a Highland holiday look.</p>
+            <p className="note note-gold">Glasgow built ships and engines.</p>
+          </div>
+          <img className="scene" src="/art/ships.jpg" alt="A ship in a riverside yard" width={1200} height={675} />
+        </div>
+      </section>
+
+      <section className="band band-cloud">
+        <div className="wrap split">
+          <img className="scene" src="/art/lamps.jpg" alt="A street of gas lamps" width={1200} height={675} />
+          <div>
+            <h2 className="display section-title">Daily life</h2>
+            <p className="lead">Gas lamps lit the streets.</p>
+            <p className="copy">Rich people had servants and many rooms. Poor people worked hard in small homes.</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="band band-gold">
+        <div className="wrap split">
+          <div>
+            <h2 className="display section-title">Inventions</h2>
+            <p className="lead">Railways, stamps, photographs, street lamps, clean sewers, and drinking water changed life.</p>
+            <div className="time-strip">
+              {['1837 Queen', '1840 Stamps', '1851 Exhibition', '1870 Schools', '1901 End'].map((item) => (
+                <div key={item} className="time-pill">{item}</div>
+              ))}
+            </div>
+          </div>
+          <img className="scene" src="/art/inventions.jpg" alt="A stamp, a camera, water, and a lamp" width={900} height={900} />
+        </div>
+      </section>
+
+      <section className="band band-paper">
+        <div className="wrap">
+          <h2 className="display section-title">People</h2>
+          <div className="cards">
+            {people.slice(0, 6).map((person) => (
+              <Link key={person.id} to="/people/$personId" params={{ personId: person.id }} className="mini">
+                <h3 className="display">{person.name}</h3>
+                <p className="tag">{person.role}</p>
+                <p className="copy">{person.bio}</p>
+              </Link>
+            ))}
+          </div>
+          <p className="copy"><Link to="/places" style={{ fontWeight: 800 }}>See places</Link></p>
+        </div>
+      </section>
     </div>
   )
 }

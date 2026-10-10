@@ -7,7 +7,7 @@ export const Route = createFileRoute('/work')({
 
 function Work() {
   return (
-    <div style={{ display: 'grid', gap: 16 }}>
+    <div className="page">
       <h1>Work</h1>
       <section className="card">
         <h2>Label the map</h2>

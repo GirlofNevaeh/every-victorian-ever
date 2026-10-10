@@ -6,7 +6,7 @@ export const Route = createFileRoute('/beliefs')({
 
 function Beliefs() {
   return (
-    <div style={{ display: 'grid', gap: 14 }}>
+    <div className="page">
       <h1>Beliefs</h1>
       <img className="scene" src="/art/lamps.jpg" alt="Gas lamps on a quiet street" />
       <section className="card">

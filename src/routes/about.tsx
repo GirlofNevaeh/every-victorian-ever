@@ -6,7 +6,7 @@ export const Route = createFileRoute('/about')({
 
 function About() {
   return (
-    <div style={{ display: 'grid', gap: 12 }}>
+    <div className="page">
       <h1>About</h1>
       <img className="scene" src="/art/castle.jpg" alt="A Highland castle" />
       <p>Victorian life ran from 1837 to 1901 in Britain.</p>

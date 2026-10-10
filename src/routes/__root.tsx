@@ -9,6 +9,7 @@ export const Route = createRootRoute({
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { title: 'Every Victorian Ever' },
       { name: 'description', content: 'A bright guide to Victorian life and times in Britain, 1837 to 1901.' },
+      { name: 'theme-color', content: '#E7B23C' },
     ],
     links: [{ rel: 'stylesheet', href: appCss }],
   }),
@@ -59,14 +60,16 @@ function RootComponent() {
   }, [])
 
   return (
-    <div className="site-wrap">
+    <div>
+      <a className="skip" href="#main">Skip to content</a>
       <header className="site-header">
-        <div className="site-title">Every Victorian Ever</div>
-        <nav className="site-nav" aria-label="Pages">
+        <div className="bar">
+          <Link to="/" className="brand">Every Victorian Ever</Link>
+          <p className="age">Ages 5–12</p>
+        </div>
+        <nav className="site-nav" aria-label="Main">
           {links.map(([to, label]) => (
-            <Link key={to} to={to} className="nav-btn">
-              {label}
-            </Link>
+            <Link key={to} to={to} className="nav-btn">{label}</Link>
           ))}
         </nav>
       </header>
@@ -76,7 +79,7 @@ function RootComponent() {
           <button type="button" onClick={() => setShowPWA(false)}>Close</button>
         </div>
       )}
-      <main className="site-main">
+      <main id="main">
         <Outlet />
       </main>
     </div>

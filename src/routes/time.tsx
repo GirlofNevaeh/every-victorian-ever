@@ -20,7 +20,7 @@ function Time() {
   const [step, setStep] = useState(0)
   const [year, text, image] = events[step]
   return (
-    <div style={{ display: 'grid', gap: 12, textAlign: 'center' }}>
+    <div className="page" style={{ textAlign: 'center' }}>
       <h1>Time</h1>
       <div className="card">
         <p className="red" style={{ display: 'inline-block', borderRadius: 12, padding: '8px 16px', fontSize: '2rem', fontWeight: 800 }}>{year}</p>

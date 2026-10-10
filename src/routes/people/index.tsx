@@ -34,7 +34,7 @@ function PeoplePage() {
   }, [search, role])
 
   return (
-    <div style={{ display: 'grid', gap: 12 }}>
+    <div className="page">
       <h1>People</h1>
       <aside className="scotland">
         <strong>Scotland</strong>

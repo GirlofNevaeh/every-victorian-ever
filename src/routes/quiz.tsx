@@ -86,7 +86,7 @@ function Quiz() {
 
   if (phase === 'setup' || phase === 'done') {
     return (
-      <div style={{ display: 'grid', gap: 12, textAlign: 'center' }}>
+      <div className="page" style={{ textAlign: 'center' }}>
         <h1>Quiz</h1>
         <p>Quick 10 or Mega 25. One player, or up to 10 teams.</p>
         <label>
@@ -119,7 +119,7 @@ function Quiz() {
   const card = deck[index]
   const team = index % scores.length
   return (
-    <div style={{ display: 'grid', gap: 12 }}>
+    <div className="page">
       <h1>Question {index + 1}</h1>
       {sudden && <p className="red" style={{ display: 'inline-block', padding: '4px 8px', borderRadius: 8 }}>Sudden death</p>}
       <p>Team {team + 1} answers.</p>
