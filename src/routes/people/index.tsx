@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
 import { useMemo, useState } from 'react'
+import { PersonSearch } from '../../components/PersonSearch'
 import { people, type Period, type Role } from '../../data/people'
 
 export const Route = createFileRoute('/people/')({
@@ -40,7 +41,7 @@ function PeoplePage() {
         <strong>Scotland</strong>
         <p>Scottish names here include Victoria's Highlands, Bell, Maxwell, Livingstone, Slessor, Stevenson, Hardie, MacDonald, Lang, Barrie, Paton, and Chalmers.</p>
       </aside>
-      <input className="field" value={search} onChange={(event) => setSearch(event.target.value)} placeholder="Search names or stories" />
+      <PersonSearch id="people-search" label="Search names or stories" onApply={setSearch} />
       <div className="chips">
         <button type="button" className={role === '' ? 'chip on' : 'chip'} onClick={() => setRole('')}>All roles</button>
         {roles.map((item) => (

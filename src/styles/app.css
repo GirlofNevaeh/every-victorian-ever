@@ -195,8 +195,37 @@ img { max-width: 100%; height: auto; display: block; }
   padding: 8px 12px;
 }
 
-.results { margin-top: 10px; display: grid; gap: 6px; }
-.results a { font-weight: 800; text-decoration: underline; }
+.search-row { display: flex; gap: 8px; align-items: stretch; }
+.search-row .field { flex: 1; min-width: 0; }
+.search-row button {
+  flex: none;
+  border: 4px solid var(--ink);
+  border-radius: 16px;
+  background: var(--pine);
+  color: var(--paper);
+  font: inherit;
+  font-weight: 800;
+  padding: 0 16px;
+  cursor: pointer;
+}
+.search-hit {
+  margin-top: 12px;
+  display: grid;
+  gap: 8px;
+  background: var(--cloud);
+  color: var(--ink);
+  border: 4px solid var(--ink);
+  border-radius: 16px;
+  padding: 12px;
+}
+.search-card {
+  display: grid;
+  gap: 2px;
+  text-decoration: none;
+  color: var(--ink);
+  font-weight: 700;
+}
+.search-card strong { font-size: 1.15rem; }
 
 .surprise {
   width: 100%;

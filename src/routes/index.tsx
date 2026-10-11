@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
-import { useMemo, useState } from 'react'
+import { useState } from 'react'
+import { PersonSearch } from '../components/PersonSearch'
 import { people } from '../data/people'
 
 export const Route = createFileRoute('/')({
@@ -16,13 +17,7 @@ const facts = [
 ]
 
 function Home() {
-  const [search, setSearch] = useState('')
   const [surprise, setSurprise] = useState('')
-  const found = useMemo(() => {
-    const q = search.trim().toLowerCase()
-    if (!q) return people.slice(0, 4)
-    return people.filter((person) => (person.name + person.bio + person.family + person.more).toLowerCase().includes(q)).slice(0, 6)
-  }, [search])
 
   return (
     <div>
@@ -32,15 +27,7 @@ function Home() {
             <p className="display" style={{ color: 'var(--gold)', fontSize: '1.2rem' }}>Ages 5–12</p>
             <h1 className="display hero-title">Every Victorian Ever</h1>
             <p className="lead">A bright guide to Britain from 1837 to 1901. Scotland is part of the story.</p>
-            <div className="search-box">
-              <label htmlFor="home-search">Find a person</label>
-              <input id="home-search" className="field" value={search} onChange={(event) => setSearch(event.target.value)} placeholder="Type a name, like Mary Seacole" />
-              <div className="results">
-                {found.map((person) => (
-                  <Link key={person.id} to="/people/$personId" params={{ personId: person.id }}>{person.name}</Link>
-                ))}
-              </div>
-            </div>
+            <PersonSearch id="home-search" />
           </div>
           <img className="scene" src="/art/castle.jpg" alt="A sunny Highland castle" width={1200} height={675} />
         </div>
