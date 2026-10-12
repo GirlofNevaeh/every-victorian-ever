@@ -1,4 +1,4 @@
-const CACHE = 'victorian-v9'
+const CACHE = 'victorian-v10'
 
 self.addEventListener('install', (event) => {
   self.skipWaiting()

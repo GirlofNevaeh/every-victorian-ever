@@ -1,4 +1,4 @@
-import { createFileRoute } from '@tanstack/react-router'
+import { createFileRoute, Link } from '@tanstack/react-router'
 import { BritainMap } from '../components/BritainMap'
 
 export const Route = createFileRoute('/work')({
@@ -10,6 +10,7 @@ function Work() {
     <div className="page">
       <h1>Work</h1>
       <p>Print this page. Write on the lines. Ask a grown-up if you want help with the harder questions.</p>
+      <p>For bigger tasks, open <Link to="/projects">Projects</Link>. There is work for Primary 1 to Primary 7.</p>
 
       <section className="card">
         <h2>Label the map</h2>
