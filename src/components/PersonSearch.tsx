@@ -1,9 +1,11 @@
 import { Link } from '@tanstack/react-router'
 import { useMemo, useState, type FormEvent } from 'react'
 import { people, type Person } from '../data/people'
+import { useT } from '../i18n/language'
 
-function matches(person: Person, query: string) {
-  return (person.name + ' ' + person.bio + ' ' + person.family + ' ' + person.faith + ' ' + person.more).toLowerCase().includes(query)
+function matches(person: Person, query: string, t: (text: string) => string) {
+  const blob = [person.name, person.role, t(person.role), person.bio, t(person.bio), person.family, t(person.family), person.faith, t(person.faith), person.more, t(person.more)].join(' ').toLowerCase()
+  return blob.includes(query)
 }
 
 function completePerson(query: string) {
@@ -15,6 +17,7 @@ function completePerson(query: string) {
 }
 
 export function PersonSearch({ id, label = 'Find a person', onApply }: { id: string; label?: string; onApply?: (query: string) => void }) {
+  const t = useT()
   const [term, setTerm] = useState('')
   const [applied, setApplied] = useState('')
   const query = term.trim().toLowerCase()
@@ -25,8 +28,8 @@ export function PersonSearch({ id, label = 'Find a person', onApply }: { id: str
     if (complete) return [complete]
     const q = applied.trim().toLowerCase()
     if (!q) return []
-    return people.filter((person) => matches(person, q)).slice(0, 8)
-  }, [applied, complete, ready])
+    return people.filter((person) => matches(person, q, t)).slice(0, 8)
+  }, [applied, complete, ready, t])
 
   function run(event: FormEvent) {
     event.preventDefault()
@@ -37,7 +40,7 @@ export function PersonSearch({ id, label = 'Find a person', onApply }: { id: str
 
   return (
     <form className="search-box" onSubmit={run}>
-      <label htmlFor={id}>{label}</label>
+      <label htmlFor={id}>{t(label)}</label>
       <div className="search-row">
         <input
           id={id}
@@ -49,20 +52,20 @@ export function PersonSearch({ id, label = 'Find a person', onApply }: { id: str
             const hit = completePerson(next.trim().toLowerCase())
             if (hit) onApply?.(hit.name)
           }}
-          placeholder="Type a full name, like Mary Seacole"
+          placeholder={t('Type a full name, like Mary Seacole')}
           autoComplete="off"
         />
-        <button type="submit">SEARCH</button>
+        <button type="submit">{t('SEARCH')}</button>
       </div>
       {ready && (
         <div className="search-hit" aria-live="polite">
-          <p className="tag">SEARCH</p>
-          {found.length === 0 && <p>No one matches that term. Try a full name or a surname, like Seacole.</p>}
+          <p className="tag">{t('SEARCH')}</p>
+          {found.length === 0 && <p>{t('No one matches that term. Try a full name or a surname, like Seacole.')}</p>}
           {found.map((person) => (
             <Link key={person.id} to="/people/$personId" params={{ personId: person.id }} className="search-card">
               <strong>{person.name}</strong>
-              <span>{person.role}{person.scottish ? ' · Scottish' : ''}</span>
-              <span>{person.bio}</span>
+              <span>{t(person.role)}{person.scottish ? ` · ${t('Scottish')}` : ''}</span>
+              <span>{t(person.bio)}</span>
             </Link>
           ))}
         </div>

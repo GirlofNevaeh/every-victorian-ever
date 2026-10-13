@@ -2,6 +2,7 @@ import { createRootRoute, HeadContent, Link, Outlet, Scripts, useRouterState } f
 import { useEffect, useState } from 'react'
 import appCss from '../styles/app.css?url'
 import { siteImages } from '../data/images'
+import { LanguageProvider, languages, useLanguage, type Lang } from '../i18n/language'
 
 export const Route = createRootRoute({
   head: () => ({
@@ -48,11 +49,23 @@ const links = [
 ] as const
 
 function RootComponent() {
+  return (
+    <LanguageProvider>
+      <RootShell />
+    </LanguageProvider>
+  )
+}
+
+function RootShell() {
+  const { lang, setLang, t } = useLanguage()
+  const [open, setOpen] = useState(false)
   const [showPWA, setShowPWA] = useState(false)
   const pathname = useRouterState({ select: (state) => state.location.pathname })
+  const current = languages.find((item) => item.code === lang) ?? languages[0]
 
   useEffect(() => {
     window.scrollTo(0, 0)
+    setOpen(false)
   }, [pathname])
 
   useEffect(() => {
@@ -70,13 +83,42 @@ function RootComponent() {
 
   return (
     <div>
-      <a className="skip" href="#main">Skip to content</a>
+      <a className="skip" href="#main">{t('Skip to content')}</a>
       <header className="site-header">
         <div className="bar">
-          <Link to="/" className="brand">Every Victorian Ever</Link>
-          <p className="age">Ages 5–12</p>
+          <Link to="/" className="brand">{t('Every Victorian Ever')}</Link>
+          <button
+            type="button"
+            className="lang-btn"
+            aria-expanded={open}
+            aria-haspopup="listbox"
+            aria-label={t('Choose a language')}
+            onClick={() => setOpen((value) => !value)}
+          >
+            {current.native}
+          </button>
+          <p className="age">{t('Ages 5–12')}</p>
         </div>
-        <nav className="site-nav" aria-label="Main">
+        {open && (
+          <div className="lang-menu" role="listbox" aria-label={t('Choose a language')}>
+            {languages.map((item) => (
+              <button
+                key={item.code}
+                type="button"
+                role="option"
+                aria-selected={item.code === lang}
+                className={item.code === lang ? 'chip on' : 'chip'}
+                onClick={() => {
+                  setLang(item.code as Lang)
+                  setOpen(false)
+                }}
+              >
+                {item.native}
+              </button>
+            ))}
+          </div>
+        )}
+        <nav className="site-nav" aria-label={t('Main')}>
           {links.map(([to, label]) => (
             <Link
               key={to}
@@ -85,15 +127,15 @@ function RootComponent() {
               activeOptions={{ exact: to === '/' }}
               activeProps={{ className: 'nav-btn active' }}
             >
-              {label}
+              {t(label)}
             </Link>
           ))}
         </nav>
       </header>
       {showPWA && (
         <div className="pwa-note">
-          To add to iPhone or iPad: Tap Share, then Add to Home Screen.
-          <button type="button" onClick={() => setShowPWA(false)}>Close</button>
+          {t('To add to iPhone or iPad: Tap Share, then Add to Home Screen.')}
+          <button type="button" onClick={() => setShowPWA(false)}>{t('Close')}</button>
         </div>
       )}
       <main id="main">

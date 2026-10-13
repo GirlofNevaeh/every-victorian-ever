@@ -1,5 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { Picture } from '../components/Picture'
+import { useT } from '../i18n/language'
 
 export const Route = createFileRoute('/projects')({
   component: Projects,
@@ -375,10 +376,11 @@ const stages: { id: string; years: string; age: string; note: string; image: str
 ]
 
 function Projects() {
+  const t = useT()
   return (
     <div className="page">
-      <h1>Projects</h1>
-      <p>Work for Primary 1 to Primary 7. Individual means you. Team means a group. Scotland is part of every stage.</p>
+      <h1>{t('Projects')}</h1>
+      <p>{t('Work for Primary 1 to Primary 7. Individual means you. Team means a group. Scotland is part of every stage.')}</p>
       <nav className="chips" aria-label="Primary stages">
         {stages.map((stage) => (
           <a key={stage.id} className="chip" href={`#${stage.id}`}>{stage.id}</a>
@@ -386,19 +388,19 @@ function Projects() {
       </nav>
       {stages.map((stage) => (
         <section key={stage.id} id={stage.id} className="card">
-          <p className="tag">{stage.age}</p>
-          <h2>{stage.years}</h2>
+          <p className="tag">{t(stage.age)}</p>
+          <h2>{t(stage.years)}</h2>
           <Picture src={stage.image} alt={stage.imageAlt} />
-          <p>{stage.note}</p>
+          <p>{t(stage.note)}</p>
           <div className="grid-2">
             <div>
-              <h3>Individual</h3>
+              <h3>{t('Individual')}</h3>
               {stage.alone.map((task) => (
                 <TaskCard key={task.title} task={task} />
               ))}
             </div>
             <div>
-              <h3>Team</h3>
+              <h3>{t('Team')}</h3>
               {stage.team.map((task) => (
                 <TaskCard key={task.title} task={task} />
               ))}
@@ -407,21 +409,22 @@ function Projects() {
         </section>
       ))}
       <aside className="scotland">
-        <strong>Scotland in the projects</strong>
-        <p>Balmoral, the Clyde, Edinburgh’s New Town, and the church split in 1843 are not extras. If a project forgets Scotland, it is not finished.</p>
+        <strong>{t('Scotland in the projects')}</strong>
+        <p>{t('Balmoral, the Clyde, Edinburgh’s New Town, and the church split in 1843 are not extras. If a project forgets Scotland, it is not finished.')}</p>
       </aside>
     </div>
   )
 }
 
 function TaskCard({ task }: { task: Task }) {
+  const t = useT()
   return (
     <article className="panel cream">
-      <h3>{task.title}</h3>
-      <p className="tag">{task.time}</p>
+      <h3>{t(task.title)}</h3>
+      <p className="tag">{t(task.time)}</p>
       <ol>
         {task.steps.map((step) => (
-          <li key={step}>{step}</li>
+          <li key={step}>{t(step)}</li>
         ))}
       </ol>
     </article>

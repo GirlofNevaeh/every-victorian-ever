@@ -1,6 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { useEffect, useState } from 'react'
 import { Picture } from '../components/Picture'
+import { useT } from '../i18n/language'
 
 export const Route = createFileRoute('/time')({
   component: Time,
@@ -18,6 +19,7 @@ const events = [
 ] as const
 
 function Time() {
+  const t = useT()
   const [step, setStep] = useState(0)
   const [year, text, image] = events[step]
   useEffect(() => {
@@ -28,20 +30,20 @@ function Time() {
   }, [])
   return (
     <div className="page" style={{ textAlign: 'center' }}>
-      <h1>Time</h1>
+      <h1>{t('Time')}</h1>
       <div className="card">
         <p className="red" style={{ display: 'inline-block', borderRadius: 12, padding: '8px 16px', fontSize: '2rem', fontWeight: 800 }}>{year}</p>
-        <p>{text}</p>
+        <p>{t(text)}</p>
         <Picture src={image} alt={text} priority />
       </div>
       <div className="step" style={{ display: 'flex', justifyContent: 'center', gap: 8 }}>
-        <button type="button" disabled={step === 0} onClick={() => setStep(step - 1)} style={{ background: 'var(--color-pine)' }}>Previous</button>
-        <button type="button" disabled={step === events.length - 1} onClick={() => setStep(step + 1)} style={{ background: 'var(--color-red)' }}>Next</button>
+        <button type="button" disabled={step === 0} onClick={() => setStep(step - 1)} style={{ background: 'var(--color-pine)' }}>{t('Previous')}</button>
+        <button type="button" disabled={step === events.length - 1} onClick={() => setStep(step + 1)} style={{ background: 'var(--color-red)' }}>{t('Next')}</button>
       </div>
-      <p>{step + 1} of {events.length}</p>
+      <p>{step + 1} {t('of')} {events.length}</p>
       <aside className="scotland" style={{ textAlign: 'left' }}>
-        <strong>Scotland</strong>
-        <p>These years include Victoria's Scottish visits, railways, the Great Exhibition, schools, and Scottish industry.</p>
+        <strong>{t('Scotland')}</strong>
+        <p>{t("These years include Victoria's Scottish visits, railways, the Great Exhibition, schools, and Scottish industry.")}</p>
       </aside>
     </div>
   )

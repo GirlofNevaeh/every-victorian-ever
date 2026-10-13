@@ -3,6 +3,7 @@ import { spots } from './map-data'
 import { regionShapes } from './region-shapes'
 import { imageBySrc } from '../data/images'
 import { regions, type RegionId } from '../data/regions'
+import { useT } from '../i18n/language'
 
 const cityRegion = {
   London: 'england',
@@ -18,6 +19,7 @@ const cityRegion = {
 export function InteractiveMap() {
   const [selected, setSelected] = useState<RegionId>('scotland')
   const [place, setPlace] = useState('Balmoral')
+  const t = useT()
   const region = regions.find((item) => item.id === selected) ?? regions[0]
 
   useEffect(() => {
@@ -40,7 +42,7 @@ export function InteractiveMap() {
     <div className="map-layout">
       <div>
         <figure className="map-frame">
-          <svg viewBox="0 0 420 640" role="group" aria-label="Map of Britain and Ireland. Choose a region.">
+          <svg viewBox="0 0 420 640" role="group" aria-label={t('Map of Britain and Ireland. Choose a region.')}>
             <rect width="420" height="640" fill="#d7eef8" />
             {(Object.keys(regionShapes) as RegionId[]).map((id) => (
               <g key={id}>
@@ -54,7 +56,7 @@ export function InteractiveMap() {
                     style={{ cursor: 'pointer' }}
                     onClick={() => choose(id)}
                   >
-                    <title>{regions.find((item) => item.id === id)?.name}</title>
+                    <title>{t(regions.find((item) => item.id === id)?.name || '')}</title>
                   </path>
                 ))}
               </g>
@@ -75,43 +77,43 @@ export function InteractiveMap() {
                   <circle cx={x} cy={y} r="14" fill="transparent" />
                   <circle cx={x} cy={y} r="5.5" fill="#B42318" stroke="#FFF8EE" strokeWidth="2" />
                   <text x={x + 8} y={y - 8} fontSize="12" fontWeight="800" fill="#1C1C1C" stroke="#FFF8EE" strokeWidth="3" paintOrder="stroke">
-                    {name}
+                    {t(name)}
                   </text>
                 </g>
               )
             })}
           </svg>
-          <figcaption>Tap a coloured land or a red dot. The red line is the railway from London toward Scotland.</figcaption>
+          <figcaption>{t('Tap a coloured land or a red dot. The red line is the railway from London toward Scotland.')}</figcaption>
         </figure>
         <div className="chips" role="tablist" aria-label="Regions">
           {regions.map((item) => (
             <button key={item.id} type="button" className={item.id === selected ? 'chip on' : 'chip'} onClick={() => choose(item.id)}>
-              {item.name}
+              {t(item.name)}
             </button>
           ))}
         </div>
       </div>
 
       <article className="card story" id="region-detail">
-        <p className="tag">{region.years}</p>
-        <h2>{region.name}</h2>
-        <p>{region.summary}</p>
+        <p className="tag">{t(region.years)}</p>
+        <h2>{t(region.name)}</h2>
+        <p>{t(region.summary)}</p>
         {region.sections.map((section) => (
           <section key={section.title}>
-            <h3>{section.title}</h3>
-            <p>{section.text}</p>
+            <h3>{t(section.title)}</h3>
+            <p>{t(section.text)}</p>
           </section>
         ))}
-        <h3>On the map</h3>
+        <h3>{t('On the map')}</h3>
         {region.places.map((item) => (
-          <p key={item.name}><strong>{item.name}.</strong> {item.text}</p>
+          <p key={item.name}><strong>{t(item.name)}.</strong> {t(item.text)}</p>
         ))}
-        {place && <p className="note note-gold">You chose {place}.</p>}
+        {place && <p className="note note-gold">{t('You chose')} {t(place)}.</p>}
         <div className="photo-grid">
           {region.photos.map((photo) => (
             <figure key={photo.src}>
-              <img src={photo.src} alt={photo.alt} width={imageBySrc[photo.src]?.width} height={imageBySrc[photo.src]?.height} decoding="async" />
-              <figcaption>{photo.caption}</figcaption>
+              <img src={photo.src} alt={t(photo.alt)} width={imageBySrc[photo.src]?.width} height={imageBySrc[photo.src]?.height} decoding="async" />
+              <figcaption>{t(photo.caption)}</figcaption>
             </figure>
           ))}
         </div>

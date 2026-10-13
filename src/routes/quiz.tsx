@@ -2,6 +2,7 @@ import { createFileRoute } from '@tanstack/react-router'
 import { useState } from 'react'
 import { quizQuestions } from '../data/questions'
 import { QuizFaces } from '../components/Faces'
+import { useT } from '../i18n/language'
 
 export const Route = createFileRoute('/quiz')({
   component: Quiz,
@@ -22,6 +23,7 @@ function Quiz() {
   const [tiedRounds, setTiedRounds] = useState(0)
   const [winner, setWinner] = useState<number | null>(null)
   const [draw, setDraw] = useState(false)
+  const t = useT()
 
   function start(count: number) {
     const shuffled = [...quizQuestions].sort(() => Math.random() - 0.5).slice(0, count)
@@ -87,10 +89,10 @@ function Quiz() {
   if (phase === 'setup' || phase === 'done') {
     return (
       <div className="page" style={{ textAlign: 'center' }}>
-        <h1>Quiz</h1>
-        <p>Quick 10 or Mega 25. One player, or up to 10 teams.</p>
+        <h1>{t('Quiz')}</h1>
+        <p>{t('Quick 10 or Mega 25. One player, or up to 10 teams.')}</p>
         <label>
-          Teams
+          {t('Teams')}
           <input
             type="number"
             min={1}
@@ -102,15 +104,15 @@ function Quiz() {
           />
         </label>
         <div className="actions" style={{ justifyContent: 'center' }}>
-          <button type="button" onClick={() => start(10)}>Quick 10</button>
-          <button type="button" className="alt" onClick={() => start(25)}>Mega 25</button>
+          <button type="button" onClick={() => start(10)}>{t('Quick 10')}</button>
+          <button type="button" className="alt" onClick={() => start(25)}>{t('Mega 25')}</button>
         </div>
-        {winner !== null && <p style={{ fontSize: '1.4rem', fontWeight: 800 }}>CONGRATULATIONS Team {winner + 1}</p>}
-        {draw && <p>It is a draw after three clean tied rounds.</p>}
-        <p>{quizQuestions.length} questions are ready.</p>
+        {winner !== null && <p style={{ fontSize: '1.4rem', fontWeight: 800 }}>{t('CONGRATULATIONS')} {t('Team')} {winner + 1}</p>}
+        {draw && <p>{t('It is a draw after three clean tied rounds.')}</p>}
+        <p>{quizQuestions.length} {t('questions are ready.')}</p>
         <aside className="scotland" style={{ textAlign: 'left' }}>
-          <strong>Scotland</strong>
-          <p>Questions include Balmoral, Glasgow ships, and Edinburgh schools.</p>
+          <strong>{t('Scotland')}</strong>
+          <p>{t('Questions include Balmoral, Glasgow ships, and Edinburgh schools.')}</p>
         </aside>
       </div>
     )
@@ -120,11 +122,11 @@ function Quiz() {
   const team = index % scores.length
   return (
     <div className="page">
-      <h1>Question {index + 1}</h1>
-      {sudden && <p className="red" style={{ display: 'inline-block', padding: '4px 8px', borderRadius: 8 }}>Sudden death</p>}
-      <p>Team {team + 1} answers.</p>
+      <h1>{t('Question')} {index + 1}</h1>
+      {sudden && <p className="red" style={{ display: 'inline-block', padding: '4px 8px', borderRadius: 8 }}>{t('Sudden death')}</p>}
+      <p>{t('Team')} {team + 1} {t('answers.')}</p>
       <QuizFaces index={index} />
-      <p style={{ fontSize: '1.2rem', fontWeight: 800 }}>{card.question}</p>
+      <p style={{ fontSize: '1.2rem', fontWeight: 800 }}>{t(card.question)}</p>
       <div style={{ display: 'grid', gap: 8 }}>
         {card.options.map((option, optionIndex) => (
           <button
@@ -135,14 +137,14 @@ function Quiz() {
             className="choice"
             style={picked === null ? undefined : optionIndex === card.answer ? { background: '#d9f5e3' } : picked === optionIndex ? { background: '#f8d0cc' } : undefined}
           >
-            {option}
+            {t(option)}
           </button>
         ))}
       </div>
-      {note && <p style={{ textAlign: 'center', fontWeight: 800 }}>{note}</p>}
+      {note && <p style={{ textAlign: 'center', fontWeight: 800 }}>{t(note)}</p>}
       <div className="actions" style={{ justifyContent: 'center' }}>
         {scores.map((score, i) => (
-          <span key={i} className="card" style={{ padding: 8 }}>Team {i + 1}: {score}</span>
+          <span key={i} className="card" style={{ padding: 8 }}>{t('Team')} {i + 1}: {score}</span>
         ))}
       </div>
     </div>

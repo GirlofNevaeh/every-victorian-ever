@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
 import { people } from '../../data/people'
+import { useT } from '../../i18n/language'
 
 export const Route = createFileRoute('/people/$personId')({
   component: PersonPage,
@@ -8,35 +9,36 @@ export const Route = createFileRoute('/people/$personId')({
 function PersonPage() {
   const { personId } = Route.useParams()
   const person = people.find((item) => item.id === personId)
+  const t = useT()
   if (!person) {
     return (
       <p>
-        That person is not in the list. <Link to="/people" className="underline">Back to people</Link>
+        {t('That person is not in the list.')} <Link to="/people" className="underline">{t('Back to people')}</Link>
       </p>
     )
   }
   return (
     <article className="page story">
       <h1>{person.name}</h1>
-      <p className="tag">{person.role} · {person.period}{person.scottish ? ' · Scottish' : ''}</p>
+      <p className="tag">{t(person.role)} · {person.period}{person.scottish ? ` · ${t('Scottish')}` : ''}</p>
       <section className="card">
-        <h2>The story</h2>
-        <p>{person.bio}</p>
-        <p>{person.more}</p>
+        <h2>{t('The story')}</h2>
+        <p>{t(person.bio)}</p>
+        <p>{t(person.more)}</p>
       </section>
       <section className="panel gold">
-        <h2>Family and love</h2>
-        <p>{person.family}</p>
+        <h2>{t('Family and love')}</h2>
+        <p>{t(person.family)}</p>
       </section>
       <section className="card">
-        <h2>Faith</h2>
-        <p>{person.faith}</p>
+        <h2>{t('Faith')}</h2>
+        <p>{t(person.faith)}</p>
       </section>
       <aside className="scotland">
-        <strong>Scotland</strong>
-        <p>{person.scottish ? 'Scotland was part of this life, not a side note.' : 'This life belongs to Victorian Britain, and Scotland was part of that same kingdom. Balmoral, Glasgow, and Edinburgh were in the news while this person lived.'}</p>
+        <strong>{t('Scotland')}</strong>
+        <p>{t(person.scottish ? 'Scotland was part of this life, not a side note.' : 'This life belongs to Victorian Britain, and Scotland was part of that same kingdom. Balmoral, Glasgow, and Edinburgh were in the news while this person lived.')}</p>
       </aside>
-      <Link to="/people" className="big-btn">Back to people</Link>
+      <Link to="/people" className="big-btn">{t('Back to people')}</Link>
     </article>
   )
 }

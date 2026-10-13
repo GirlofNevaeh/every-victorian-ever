@@ -2,6 +2,7 @@ import { createFileRoute, Link } from '@tanstack/react-router'
 import { useMemo, useState } from 'react'
 import { PersonSearch } from '../../components/PersonSearch'
 import { people, type Period, type Role } from '../../data/people'
+import { useT } from '../../i18n/language'
 
 export const Route = createFileRoute('/people/')({
   component: PeoplePage,
@@ -14,9 +15,10 @@ function PeoplePage() {
   const [search, setSearch] = useState('')
   const [role, setRole] = useState<Role | ''>('')
   const [period, setPeriod] = useState<Period | ''>('')
+  const t = useT()
 
   const matches = (person: (typeof people)[number], skipRole = false, skipPeriod = false) => {
-    const text = (person.name + person.bio + person.family + person.faith + person.more).toLowerCase().includes(search.trim().toLowerCase())
+    const text = [person.name, person.bio, t(person.bio), person.family, t(person.family), person.faith, t(person.faith), person.more, t(person.more)].join(' ').toLowerCase().includes(search.trim().toLowerCase())
     const roleOk = skipRole || !role || person.role === role
     const periodOk = skipPeriod || !period || person.period === period
     return text && roleOk && periodOk
@@ -27,31 +29,31 @@ function PeoplePage() {
     const counts: Record<string, number> = {}
     for (const item of roles) counts[item] = people.filter((person) => person.role === item && matches(person, true, false)).length
     return counts
-  }, [search, period])
+  }, [search, period, t])
   const periodCounts = useMemo(() => {
     const counts: Record<string, number> = {}
     for (const item of periods) counts[item] = people.filter((person) => person.period === item && matches(person, false, true)).length
     return counts
-  }, [search, role])
+  }, [search, role, t])
 
   return (
     <div className="page">
-      <h1>People</h1>
+      <h1>{t('People')}</h1>
       <aside className="scotland">
-        <strong>Scotland</strong>
-        <p>Scottish names here include Victoria's Highlands, Bell, Maxwell, Livingstone, Slessor, Stevenson, Hardie, MacDonald, Lang, Barrie, Paton, and Chalmers.</p>
+        <strong>{t('Scotland')}</strong>
+        <p>{t("Scottish names here include Victoria's Highlands, Bell, Maxwell, Livingstone, Slessor, Stevenson, Hardie, MacDonald, Lang, Barrie, Paton, and Chalmers.")}</p>
       </aside>
       <PersonSearch id="people-search" label="Search names or stories" onApply={setSearch} />
       <div className="chips">
-        <button type="button" className={role === '' ? 'chip on' : 'chip'} onClick={() => setRole('')}>All roles</button>
+        <button type="button" className={role === '' ? 'chip on' : 'chip'} onClick={() => setRole('')}>{t('All roles')}</button>
         {roles.map((item) => (
           <button key={item} type="button" className={role === item ? 'chip on' : 'chip'} onClick={() => setRole(item)} disabled={roleCounts[item] === 0}>
-            {item}
+            {t(item)}
           </button>
         ))}
       </div>
       <div className="chips">
-        <button type="button" className={period === '' ? 'chip on' : 'chip'} onClick={() => setPeriod('')}>All years</button>
+        <button type="button" className={period === '' ? 'chip on' : 'chip'} onClick={() => setPeriod('')}>{t('All years')}</button>
         {periods.map((item) => (
           <button key={item} type="button" className={period === item ? 'chip on' : 'chip'} onClick={() => setPeriod(item)} disabled={periodCounts[item] === 0}>
             {item}
@@ -62,12 +64,12 @@ function PeoplePage() {
         {shown.map((person) => (
           <Link key={person.id} to="/people/$personId" params={{ personId: person.id }} className="person-card">
             <h2>{person.name}</h2>
-            <p className="tag">{person.role} · {person.period}{person.scottish ? ' · Scottish' : ''}</p>
-            <p>{person.bio}</p>
+            <p className="tag">{t(person.role)} · {person.period}{person.scottish ? ` · ${t('Scottish')}` : ''}</p>
+            <p>{t(person.bio)}</p>
           </Link>
         ))}
       </div>
-      {shown.length === 0 && <p>No people match. Try another search.</p>}
+      {shown.length === 0 && <p>{t('No people match. Try another search.')}</p>}
     </div>
   )
 }
