@@ -51,7 +51,7 @@ export function Paywall() {
               <li>Real people from Victorian Britain, with family and faith.</li>
               <li>A map of Britain and Ireland, including Scotland.</li>
               <li>A class quiz, a timeline, and printable work.</li>
-              <li>Projects for Age 5-6 to Age 11-12.</li>
+              <li>Projects for Age 5-12.</li>
             </ul>
             <div className="note note-gold">
               <p>The rest of this site is locked.</p>

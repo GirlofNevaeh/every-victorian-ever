@@ -709,7 +709,7 @@ function Projects() {
   return (
     <div className="page">
       <h1>{t('Projects')}</h1>
-      <p>{t('Work for Age 5-6 to Age 11-12. Individual means you. Team means a group. Scotland is part of every stage.')}</p>
+      <p>{t('Work for Age 5-12. Individual means you. Team means a group. Scotland is part of every stage.')}</p>
       <nav className="chips" aria-label="Age groups">
         {stages.map((stage) => (
           <a key={stage.id} className="chip" href={`#${stage.id}`}>{t(stage.years)}</a>

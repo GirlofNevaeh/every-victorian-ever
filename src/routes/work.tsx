@@ -13,7 +13,7 @@ function Work() {
     <div className="page">
       <h1>{t('Work')}</h1>
       <p>{t('Print this page. Write on the lines. Ask a grown-up if you want help with the harder questions.')}</p>
-      <p>{t('For bigger tasks, open')} <Link to="/projects">{t('Projects')}</Link>. {t('There is work for Age 5-6 to Age 11-12.')}</p>
+      <p>{t('For bigger tasks, open')} <Link to="/projects">{t('Projects')}</Link>. {t('There is work for Age 5-12.')}</p>
 
       <section className="card">
         <h2>{t('Label the map')}</h2>
