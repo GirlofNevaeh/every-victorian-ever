@@ -35,6 +35,34 @@ const stages: { id: string; years: string; age: string; note: string; image: str
           'Say one more: she loved Scotland and stayed at Balmoral.',
         ],
       },
+      {
+        title: "Balmoral in the hills",
+        time: "One sitting",
+        steps: [
+          "Draw a castle with hills behind it.",
+          "Say: this is Balmoral, in Scotland.",
+          "Say one more true thing: Queen Victoria liked to stay there.",
+        ],
+      },
+      {
+        title: "Sunday bells",
+        time: "One sitting",
+        steps: [
+          "Draw a church or a chapel.",
+          "Say that many families went there on Sunday.",
+          "Point to one person in your drawing and say who they might be.",
+        ],
+      },
+      {
+        title: "A lamp for the street",
+        time: "One sitting",
+        steps: [
+          "Draw a street with one lamp.",
+          "Say that gas lamps lit many streets.",
+          "Say whether the street feels safe or dark, and why.",
+        ],
+      },
+
     ],
     team: [
       {
@@ -55,6 +83,25 @@ const stages: { id: string; years: string; age: string; note: string; image: str
           'Tell the class one sound you would hear.',
         ],
       },
+      {
+        title: "Build Balmoral",
+        time: "One afternoon",
+        steps: [
+          "Use boxes to make one castle.",
+          "Put it on green paper for the Highlands.",
+          "Tell the class one true thing about Queen Victoria and Scotland.",
+        ],
+      },
+      {
+        title: "The Clyde boats",
+        time: "One afternoon",
+        steps: [
+          "Each child folds or draws one boat.",
+          "Put the boats on a blue strip called the Clyde.",
+          "Say that Glasgow built ships. Say that your boat is only a model.",
+        ],
+      },
+
     ],
   },
   {
@@ -83,6 +130,34 @@ const stages: { id: string; years: string; age: string; note: string; image: str
           'Read it aloud.',
         ],
       },
+      {
+        title: "A letter home",
+        time: "One sitting",
+        steps: [
+          "Draw a stamp and a short letter.",
+          "Write or say one sentence a child might send to Scotland.",
+          "Tell a partner why a penny stamp mattered.",
+        ],
+      },
+      {
+        title: "Church or chapel",
+        time: "One sitting",
+        steps: [
+          "Draw where a family might go on Sunday.",
+          "Write the words church or chapel.",
+          "Say one kind thing people did to help a neighbour.",
+        ],
+      },
+      {
+        title: "Nine children",
+        time: "One sitting",
+        steps: [
+          "Draw Queen Victoria and Prince Albert.",
+          "Add nine small figures for their children.",
+          "Say the years 1837 and 1901 out loud.",
+        ],
+      },
+
     ],
     team: [
       {
@@ -104,6 +179,25 @@ const stages: { id: string; years: string; age: string; note: string; image: str
           'Colour Scotland at the top. Tell the class why the line matters.',
         ],
       },
+      {
+        title: "Lamp street",
+        time: "One afternoon",
+        steps: [
+          "Each child makes one paper lamp.",
+          "Stand the lamps along a paper street.",
+          "Say what a night walk was like before electric bulbs.",
+        ],
+      },
+      {
+        title: "Train names",
+        time: "One afternoon",
+        steps: [
+          "Make station cards for London, Edinburgh, and Glasgow.",
+          "Walk the cards from south to north.",
+          "Stop at Edinburgh and say one thing the city had: schools, publishers, or the New Town.",
+        ],
+      },
+
     ],
   },
   {
@@ -133,6 +227,34 @@ const stages: { id: string; years: string; age: string; note: string; image: str
           'Add one real job from Glasgow or Edinburgh that tartan does not show.',
         ],
       },
+      {
+        title: "Clyde label",
+        time: "One sitting",
+        steps: [
+          "Draw a ship. Write River Clyde and Glasgow on the label.",
+          "Write one sentence: Glasgow built ships and engines.",
+          "Read the sentence to a partner. Change any word that is not true.",
+        ],
+      },
+      {
+        title: "1843 in two sentences",
+        time: "One sitting",
+        steps: [
+          "Read the Beliefs note about the Disruption.",
+          "Write two sentences. Name Thomas Chalmers and Scotland.",
+          "Say what the ministers wanted: a congregation should choose its minister.",
+        ],
+      },
+      {
+        title: "Map words",
+        time: "One sitting",
+        steps: [
+          "Write Scotland, England, Wales, and Ireland on a page.",
+          "Add London and Edinburgh in the right countries.",
+          "Check the Places map before you finish.",
+        ],
+      },
+
     ],
     team: [
       {
@@ -155,6 +277,25 @@ const stages: { id: string; years: string; age: string; note: string; image: str
           'The class says one way the cities were different and one way both were Victorian Scotland.',
         ],
       },
+      {
+        title: "New Town walk",
+        time: "One afternoon",
+        steps: [
+          "Plan a pretend walk through Edinburgh’s New Town.",
+          "One child is the guide. Others ask one question each.",
+          "The guide may use only facts from this site.",
+        ],
+      },
+      {
+        title: "Two Sundays",
+        time: "One afternoon",
+        steps: [
+          "One group acts a church Sunday. One group acts a chapel Sunday.",
+          "Each group says who is there and what they do.",
+          "End by saying that Victorians did not all worship in the same way.",
+        ],
+      },
+
     ],
   },
   {
@@ -184,6 +325,34 @@ const stages: { id: string; years: string; age: string; note: string; image: str
           'Write one sentence about why Balmoral is in the Highlands, not in London.',
         ],
       },
+      {
+        title: "Albert’s years",
+        time: "One sitting",
+        steps: [
+          "Make a short line: 1840, 1851, 1861.",
+          "Write what happened: the wedding, the Great Exhibition, Albert’s death.",
+          "Add one sentence about Victoria wearing black after 1861.",
+        ],
+      },
+      {
+        title: "Sunday school card",
+        time: "One sitting",
+        steps: [
+          "Make a card a Sunday school child might take home.",
+          "Put one Bible-story picture and one sentence about reading.",
+          "Say how this is different from a whole day at work.",
+        ],
+      },
+      {
+        title: "Tartan, true or not",
+        time: "One sitting",
+        steps: [
+          "Write one true sentence about tartan and holidays.",
+          "Write one false sentence, then cross it out.",
+          "Tell a partner why the Highland look was fashion, not the whole of Scottish life.",
+        ],
+      },
+
     ],
     team: [
       {
@@ -206,6 +375,25 @@ const stages: { id: string; years: string; age: string; note: string; image: str
           'End by saying this was a fight about faith and power in Scotland.',
         ],
       },
+      {
+        title: "Scotland at the Exhibition",
+        time: "Two afternoons",
+        steps: [
+          "Set a table for 1851.",
+          "Show one Scottish thing: a Clyde engine, a Highland picture, or a book from Edinburgh.",
+          "Visitors must hear the year 1851 and the words Crystal Palace.",
+        ],
+      },
+      {
+        title: "Fact choir",
+        time: "One afternoon",
+        steps: [
+          "Each child speaks one short true sentence.",
+          "At least two sentences must be about Scotland.",
+          "The class repeats only the sentences everyone can check on this site.",
+        ],
+      },
+
     ],
   },
   {
@@ -235,6 +423,34 @@ const stages: { id: string; years: string; age: string; note: string; image: str
           'Do not add gory detail. Do not blame a whole people. Say what you know and what you are guessing.',
         ],
       },
+      {
+        title: "Check the fairy date",
+        time: "One sitting",
+        steps: [
+          "Write 1901 and 1917 on a line.",
+          "Mark the year Victoria died and the year of the Cottingley photographs.",
+          "Write one sentence: the fairy photos came after the Victorian age.",
+        ],
+      },
+      {
+        title: "Four lines on a family",
+        time: "Two sittings",
+        steps: [
+          "Choose one person from the People pages.",
+          "Write who they were, whom they loved, what they believed, and one Scottish link if the page has one.",
+          "If the page has no Scottish link, write “This life was not mainly in Scotland.”",
+        ],
+      },
+      {
+        title: "A fair sentence on empire",
+        time: "One sitting",
+        steps: [
+          "Read what Mary Kingsley said about empire.",
+          "Write one sentence that shows pride in invention and one that shows harm.",
+          "Do not write that nobody lived in the lands Britain ruled.",
+        ],
+      },
+
     ],
     team: [
       {
@@ -259,6 +475,25 @@ const stages: { id: string; years: string; age: string; note: string; image: str
           'End with a class sentence that can hold two truths.',
         ],
       },
+      {
+        title: "Eight quiz cards",
+        time: "Two afternoons",
+        steps: [
+          "Write eight questions with four answers each.",
+          "Two questions must be about Scotland. Two must be about family or faith.",
+          "Another group tries the cards. Fix any question that is only a trick.",
+        ],
+      },
+      {
+        title: "One room or many",
+        time: "One afternoon",
+        steps: [
+          "Two teams describe a rich home and a poor home.",
+          "Use facts, not jokes about hunger.",
+          "End with one way Sunday might feel different in each house.",
+        ],
+      },
+
     ],
   },
   {
@@ -291,6 +526,34 @@ const stages: { id: string; years: string; age: string; note: string; image: str
           'Say whether it is a photograph or a painting, and why that matters.',
         ],
       },
+      {
+        title: "Chalmers in a paragraph",
+        time: "Two sittings",
+        steps: [
+          "Write one paragraph about Thomas Chalmers and 1843.",
+          "Include the Free Church of Scotland and the word congregation.",
+          "Read it aloud and cut any sentence you cannot support.",
+        ],
+      },
+      {
+        title: "Two nurses",
+        time: "Two sittings",
+        steps: [
+          "Compare Florence Nightingale and Mary Seacole.",
+          "Write what each did, and where Mary Seacole came from.",
+          "Do not say they did the same job in the same place.",
+        ],
+      },
+      {
+        title: "Caption a photograph",
+        time: "One sitting",
+        steps: [
+          "Choose one photograph on this site.",
+          "Write a caption with a place and, if the page gives it, a year.",
+          "Add one sentence a careful child should not guess.",
+        ],
+      },
+
     ],
     team: [
       {
@@ -314,6 +577,25 @@ const stages: { id: string; years: string; age: string; note: string; image: str
           'Meet and compare. Where do the hopes clash? Where do families in all three cities still want the same things?',
         ],
       },
+      {
+        title: "A paper for 1843",
+        time: "Two afternoons",
+        steps: [
+          "Make a one-page newspaper about the Disruption.",
+          "Include a headline, a picture, and two short reports.",
+          "A fact checker marks anything that is not on this site.",
+        ],
+      },
+      {
+        title: "Fairy evidence",
+        time: "Two afternoons",
+        steps: [
+          "One side argues that Doyle wanted the fairies to be real.",
+          "The other side shows the date 1917 and the paper cut-outs.",
+          "The class writes a verdict in three sentences.",
+        ],
+      },
+
     ],
   },
   {
@@ -346,6 +628,34 @@ const stages: { id: string; years: string; age: string; note: string; image: str
           'List what this website does not know.',
         ],
       },
+      {
+        title: "A cruel law",
+        time: "Two sittings",
+        steps: [
+          "Read the lines about Oscar Wilde on the Beliefs page.",
+          "Write what the law did, and who else suffered.",
+          "Keep the tone serious. Do not turn a prison story into a joke.",
+        ],
+      },
+      {
+        title: "Darwin and Emma",
+        time: "Two sittings",
+        steps: [
+          "Write what Charles Darwin studied.",
+          "Write what worried Emma, and say that they stayed loving.",
+          "Add one sentence on Alfred Russel Wallace, who shared the idea.",
+        ],
+      },
+      {
+        title: "Progress, with a limit",
+        time: "Two sittings",
+        steps: [
+          "List three changes that saved or eased lives: trains, lamps, or drains.",
+          "List one way empire was not fair.",
+          "Close with a sentence that can hold both ideas.",
+        ],
+      },
+
     ],
     team: [
       {
@@ -371,6 +681,25 @@ const stages: { id: string; years: string; age: string; note: string; image: str
           'Fix any question that good readers still miss for an unfair reason.',
         ],
       },
+      {
+        title: "Teach a younger class",
+        time: "Two afternoons",
+        steps: [
+          "Choose one true story for Age 5-6.",
+          "Tell it in short sentences. Include Scotland once.",
+          "Ask the listeners one question with a checkable answer.",
+        ],
+      },
+      {
+        title: "Labels for a Scottish case",
+        time: "Two afternoons",
+        steps: [
+          "Make four museum labels: Balmoral, the Clyde, the New Town, and 1843.",
+          "Each label has a fact and a limit: what the label does not prove.",
+          "A visitor from another team must find one missing fact.",
+        ],
+      },
+
     ],
   },
 ]

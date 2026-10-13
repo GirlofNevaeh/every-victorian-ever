@@ -110,6 +110,9 @@ function Quiz() {
         {winner !== null && <p style={{ fontSize: '1.4rem', fontWeight: 800 }}>{t('CONGRATULATIONS')} {t('Team')} {winner + 1}</p>}
         {draw && <p>{t('It is a draw after three clean tied rounds.')}</p>}
         <p>{quizQuestions.length} {t('questions are ready.')}</p>
+        <p>
+          <a href="/quiz.pdf">{t('Download the full quiz')}</a>
+        </p>
         <aside className="scotland" style={{ textAlign: 'left' }}>
           <strong>{t('Scotland')}</strong>
           <p>{t('Questions include Balmoral, Glasgow ships, and Edinburgh schools.')}</p>

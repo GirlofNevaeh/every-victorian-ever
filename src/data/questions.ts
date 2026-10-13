@@ -27,7 +27,7 @@ export const quizQuestions: Question[] = [
       "She made hospitals cleaner",
       "She was queen from 1837 to 1901",
       "She helped soldiers with food and care",
-      "He built bridges, ships, and railways"
+      "She built bridges, ships, and railways"
     ],
     "answer": 1
   },
@@ -48,7 +48,7 @@ export const quizQuestions: Question[] = [
     "category": "People",
     "question": "What did Prince Albert do?",
     "options": [
-      "She helped soldiers with food and care",
+      "He helped soldiers with food and care",
       "He built bridges, ships, and railways",
       "He wrote stories about poor people in cities",
       "He helped plan the Great Exhibition"
@@ -72,10 +72,10 @@ export const quizQuestions: Question[] = [
     "category": "People",
     "question": "What did Florence Nightingale do?",
     "options": [
-      "He built bridges, ships, and railways",
+      "She built bridges, ships, and railways",
       "She made hospitals cleaner",
-      "He wrote stories about poor people in cities",
-      "He studied animals and plants"
+      "She wrote stories about poor people in cities",
+      "She studied animals and plants"
     ],
     "answer": 1
   },
@@ -96,9 +96,9 @@ export const quizQuestions: Question[] = [
     "category": "People",
     "question": "What did Mary Seacole do?",
     "options": [
-      "He wrote stories about poor people in cities",
-      "He studied animals and plants",
-      "He invented the telephone",
+      "She wrote stories about poor people in cities",
+      "She studied animals and plants",
+      "She invented the telephone",
       "She helped soldiers with food and care"
     ],
     "answer": 3
@@ -183,7 +183,7 @@ export const quizQuestions: Question[] = [
       "He linked electricity, magnetism, and light",
       "He made surgery safer by keeping wounds clean",
       "He studied animals and plants",
-      "He traveled in Africa"
+      "He travelled in Africa"
     ],
     "answer": 2
   },
@@ -206,8 +206,8 @@ export const quizQuestions: Question[] = [
     "options": [
       "He invented the telephone",
       "He made surgery safer by keeping wounds clean",
-      "He traveled in Africa",
-      "She helped children in Africa"
+      "He travelled in Africa",
+      "He helped children in Africa"
     ],
     "answer": 0
   },
@@ -240,8 +240,8 @@ export const quizQuestions: Question[] = [
     "category": "People",
     "question": "What did James Clerk Maxwell do?",
     "options": [
-      "He traveled in Africa",
-      "She helped children in Africa",
+      "He travelled in Africa",
+      "He helped children in Africa",
       "He wrote Treasure Island",
       "He linked electricity, magnetism, and light"
     ],
@@ -276,17 +276,17 @@ export const quizQuestions: Question[] = [
     "category": "People",
     "question": "What did Joseph Lister do?",
     "options": [
-      "She helped children in Africa",
+      "He helped children in Africa",
       "He wrote Treasure Island",
       "He made surgery safer by keeping wounds clean",
-      "She made the Peter Rabbit books"
+      "He made the Peter Rabbit books"
     ],
     "answer": 2
   },
   {
     "id": 24,
     "category": "People",
-    "question": "Who traveled in Africa?",
+    "question": "Who travelled in Africa?",
     "options": [
       "Mary Slessor",
       "Robert Louis Stevenson",
@@ -300,9 +300,9 @@ export const quizQuestions: Question[] = [
     "category": "People",
     "question": "What did David Livingstone do?",
     "options": [
-      "He traveled in Africa",
+      "He travelled in Africa",
       "He wrote Treasure Island",
-      "She made the Peter Rabbit books",
+      "He made the Peter Rabbit books",
       "He helped start the Labour Party"
     ],
     "answer": 0
@@ -337,8 +337,8 @@ export const quizQuestions: Question[] = [
     "question": "What did Mary Slessor do?",
     "options": [
       "She made the Peter Rabbit books",
-      "He helped start the Labour Party",
-      "He built the Rocket locomotive",
+      "She helped start the Labour Party",
+      "She built the Rocket locomotive",
       "She helped children in Africa"
     ],
     "answer": 3
@@ -408,10 +408,10 @@ export const quizQuestions: Question[] = [
     "category": "People",
     "question": "What did Beatrix Potter do?",
     "options": [
-      "He built the Rocket locomotive",
+      "She built the Rocket locomotive",
       "She made the Peter Rabbit books",
-      "He started the Penny Post",
-      "He built London's new sewers"
+      "She started the Penny Post",
+      "She built London's new sewers"
     ],
     "answer": 1
   },
@@ -434,7 +434,7 @@ export const quizQuestions: Question[] = [
     "options": [
       "He started the Penny Post",
       "He built London's new sewers",
-      "She was the first British woman to qualify as a doctor",
+      "He qualified as a doctor in Britain",
       "He helped start the Labour Party"
     ],
     "answer": 3
@@ -469,9 +469,9 @@ export const quizQuestions: Question[] = [
     "question": "What did George Stephenson do?",
     "options": [
       "He built London's new sewers",
-      "She was the first British woman to qualify as a doctor",
+      "He qualified as a doctor in Britain",
       "He built the Rocket locomotive",
-      "She thought about early computers"
+      "He thought about early computers"
     ],
     "answer": 2
   },
@@ -493,8 +493,8 @@ export const quizQuestions: Question[] = [
     "question": "What did Rowland Hill do?",
     "options": [
       "He started the Penny Post",
-      "She was the first British woman to qualify as a doctor",
-      "She thought about early computers",
+      "He qualified as a doctor in Britain",
+      "He thought about early computers",
       "He designed wallpaper and books"
     ],
     "answer": 0
@@ -516,7 +516,7 @@ export const quizQuestions: Question[] = [
     "category": "People",
     "question": "What did Joseph Bazalgette do?",
     "options": [
-      "She thought about early computers",
+      "He thought about early computers",
       "He designed wallpaper and books",
       "He built London's new sewers",
       "He wrote Alice's Adventures in Wonderland"
@@ -541,8 +541,8 @@ export const quizQuestions: Question[] = [
     "question": "What did Elizabeth Garrett Anderson do?",
     "options": [
       "She was the first British woman to qualify as a doctor",
-      "He designed wallpaper and books",
-      "He wrote Alice's Adventures in Wonderland",
+      "She designed wallpaper and books",
+      "She wrote Alice's Adventures in Wonderland",
       "She wrote Jane Eyre"
     ],
     "answer": 0
@@ -564,7 +564,7 @@ export const quizQuestions: Question[] = [
     "category": "People",
     "question": "What did Ada Lovelace do?",
     "options": [
-      "He wrote Alice's Adventures in Wonderland",
+      "She wrote Alice's Adventures in Wonderland",
       "She wrote Jane Eyre",
       "She thought about early computers",
       "She wrote Wuthering Heights"
@@ -589,8 +589,8 @@ export const quizQuestions: Question[] = [
     "question": "What did William Morris do?",
     "options": [
       "He designed wallpaper and books",
-      "She wrote Jane Eyre",
-      "She wrote Wuthering Heights",
+      "He wrote Jane Eyre",
+      "He wrote Wuthering Heights",
       "He was a poet Queen Victoria liked"
     ],
     "answer": 0
@@ -612,7 +612,7 @@ export const quizQuestions: Question[] = [
     "category": "People",
     "question": "What did Lewis Carroll do?",
     "options": [
-      "She wrote Wuthering Heights",
+      "He wrote Wuthering Heights",
       "He was a poet Queen Victoria liked",
       "He wrote Alice's Adventures in Wonderland",
       "He studied electricity and magnets"
@@ -637,9 +637,9 @@ export const quizQuestions: Question[] = [
     "question": "What did Charlotte Bronte do?",
     "options": [
       "She wrote Jane Eyre",
-      "He was a poet Queen Victoria liked",
-      "He studied electricity and magnets",
-      "He worked on heat and electricity"
+      "She was a poet Queen Victoria liked",
+      "She studied electricity and magnets",
+      "She worked on heat and electricity"
     ],
     "answer": 0
   },
@@ -660,10 +660,10 @@ export const quizQuestions: Question[] = [
     "category": "People",
     "question": "What did Emily Bronte do?",
     "options": [
-      "He studied electricity and magnets",
-      "He worked on heat and electricity",
+      "She studied electricity and magnets",
+      "She worked on heat and electricity",
       "She wrote Wuthering Heights",
-      "He wrote stories about country life"
+      "She wrote stories about country life"
     ],
     "answer": 2
   },
@@ -711,7 +711,7 @@ export const quizQuestions: Question[] = [
       "He wrote stories about country life",
       "He wrote the Sherlock Holmes stories",
       "He studied electricity and magnets",
-      "She wrote a book about running a home"
+      "He wrote a book about running a home"
     ],
     "answer": 2
   },
@@ -734,7 +734,7 @@ export const quizQuestions: Question[] = [
     "options": [
       "He worked on heat and electricity",
       "He wrote the Sherlock Holmes stories",
-      "She wrote a book about running a home",
+      "He wrote a book about running a home",
       "He found a better way to make steel"
     ],
     "answer": 0
@@ -768,7 +768,7 @@ export const quizQuestions: Question[] = [
     "category": "People",
     "question": "What did Thomas Hardy do?",
     "options": [
-      "She wrote a book about running a home",
+      "He wrote a book about running a home",
       "He found a better way to make steel",
       "He helped invent the electric light bulb",
       "He wrote stories about country life"
@@ -829,9 +829,9 @@ export const quizQuestions: Question[] = [
     "question": "What did Isabella Beeton do?",
     "options": [
       "She wrote a book about running a home",
-      "He helped invent the electric light bulb",
-      "He improved the flushing toilet",
-      "He designed public toilets for the Great Exhibition"
+      "She helped invent the electric light bulb",
+      "She improved the flushing toilet",
+      "She designed public toilets for the Great Exhibition"
     ],
     "answer": 0
   },
@@ -903,7 +903,7 @@ export const quizQuestions: Question[] = [
       "He designed early calculating machines",
       "He tried better factories and schools",
       "He improved the flushing toilet",
-      "She worked for better homes for poor people"
+      "He worked for better homes for poor people"
     ],
     "answer": 2
   },
@@ -926,8 +926,8 @@ export const quizQuestions: Question[] = [
     "options": [
       "He designed public toilets for the Great Exhibition",
       "He tried better factories and schools",
-      "She worked for better homes for poor people",
-      "She gave money to help poor people"
+      "He worked for better homes for poor people",
+      "He gave money to help poor people"
     ],
     "answer": 0
   },
@@ -948,8 +948,8 @@ export const quizQuestions: Question[] = [
     "category": "People",
     "question": "What did Charles Babbage do?",
     "options": [
-      "She worked for better homes for poor people",
-      "She gave money to help poor people",
+      "He worked for better homes for poor people",
+      "He gave money to help poor people",
       "He designed early calculating machines",
       "He set up an early oil works"
     ],
@@ -973,9 +973,9 @@ export const quizQuestions: Question[] = [
     "question": "What did Robert Owen do?",
     "options": [
       "He tried better factories and schools",
-      "She gave money to help poor people",
+      "He gave money to help poor people",
       "He set up an early oil works",
-      "She wrote about science and maths"
+      "He wrote about science and maths"
     ],
     "answer": 0
   },
@@ -1008,9 +1008,9 @@ export const quizQuestions: Question[] = [
     "category": "People",
     "question": "What did Octavia Hill do?",
     "options": [
-      "He set up an early oil works",
+      "She set up an early oil works",
       "She wrote about science and maths",
-      "He passed laws that sent more children to school",
+      "She passed laws that sent more children to school",
       "She worked for better homes for poor people"
     ],
     "answer": 3
@@ -1034,8 +1034,8 @@ export const quizQuestions: Question[] = [
     "options": [
       "She wrote about science and maths",
       "She gave money to help poor people",
-      "He passed laws that sent more children to school",
-      "He was prime minister when Victoria became Empress of India"
+      "She passed laws that sent more children to school",
+      "She was prime minister when Victoria became Empress of India"
     ],
     "answer": 1
   },
@@ -1092,10 +1092,10 @@ export const quizQuestions: Question[] = [
     "category": "People",
     "question": "What did Mary Somerville do?",
     "options": [
-      "He was prime minister when Victoria became Empress of India",
-      "He wrote about art",
+      "She was prime minister when Victoria became Empress of India",
+      "She wrote about art",
       "She wrote about science and maths",
-      "He wrote nonsense poems for children"
+      "She wrote nonsense poems for children"
     ],
     "answer": 2
   },
@@ -1131,7 +1131,7 @@ export const quizQuestions: Question[] = [
       "He wrote about art",
       "He passed laws that sent more children to school",
       "He wrote nonsense poems for children",
-      "She drew pictures for children's books"
+      "He drew pictures for children's books"
     ],
     "answer": 1
   },
@@ -1153,7 +1153,7 @@ export const quizQuestions: Question[] = [
     "question": "What did Benjamin Disraeli do?",
     "options": [
       "He wrote nonsense poems for children",
-      "She drew pictures for children's books",
+      "He drew pictures for children's books",
       "He studied rocks and wrote about them",
       "He was prime minister when Victoria became Empress of India"
     ],
@@ -1176,10 +1176,10 @@ export const quizQuestions: Question[] = [
     "category": "People",
     "question": "What did John Ruskin do?",
     "options": [
-      "She drew pictures for children's books",
+      "He drew pictures for children's books",
       "He wrote about art",
       "He studied rocks and wrote about them",
-      "She helped workers and women"
+      "He helped workers and women"
     ],
     "answer": 1
   },
@@ -1201,7 +1201,7 @@ export const quizQuestions: Question[] = [
     "question": "What did Edward Lear do?",
     "options": [
       "He studied rocks and wrote about them",
-      "She helped workers and women",
+      "He helped workers and women",
       "He built bridges and railways",
       "He wrote nonsense poems for children"
     ],
@@ -1226,8 +1226,8 @@ export const quizQuestions: Question[] = [
     "options": [
       "She helped workers and women",
       "She drew pictures for children's books",
-      "He built bridges and railways",
-      "He designed the Crystal Palace"
+      "She built bridges and railways",
+      "She designed the Crystal Palace"
     ],
     "answer": 1
   },
@@ -1250,7 +1250,7 @@ export const quizQuestions: Question[] = [
     "options": [
       "He built bridges and railways",
       "He designed the Crystal Palace",
-      "She wrote stories about ordinary people",
+      "He wrote stories about ordinary people",
       "He studied rocks and wrote about them"
     ],
     "answer": 3
@@ -1284,7 +1284,7 @@ export const quizQuestions: Question[] = [
     "category": "People",
     "question": "What did Annie Besant do?",
     "options": [
-      "He designed the Crystal Palace",
+      "She designed the Crystal Palace",
       "She wrote stories about ordinary people",
       "She helped workers and women",
       "She was queen from 1837 to 1901"
@@ -1309,8 +1309,8 @@ export const quizQuestions: Question[] = [
     "question": "What did Robert Stephenson do?",
     "options": [
       "He built bridges and railways",
-      "She wrote stories about ordinary people",
-      "She was queen from 1837 to 1901",
+      "He wrote stories about ordinary people",
+      "He ruled Britain from 1837 to 1901",
       "He helped plan the Great Exhibition"
     ],
     "answer": 0
@@ -1332,10 +1332,10 @@ export const quizQuestions: Question[] = [
     "category": "People",
     "question": "What did Joseph Paxton do?",
     "options": [
-      "She was queen from 1837 to 1901",
+      "He ruled Britain from 1837 to 1901",
       "He helped plan the Great Exhibition",
       "He designed the Crystal Palace",
-      "She made hospitals cleaner"
+      "He made hospitals cleaner"
     ],
     "answer": 2
   },
@@ -1358,7 +1358,7 @@ export const quizQuestions: Question[] = [
     "options": [
       "She wrote stories about ordinary people",
       "She was queen from 1837 to 1901",
-      "He helped plan the Great Exhibition",
+      "She helped plan the Great Exhibition",
       "She made hospitals cleaner"
     ],
     "answer": 0
@@ -1498,7 +1498,7 @@ export const quizQuestions: Question[] = [
   {
     "id": 125,
     "category": "Scotland",
-    "question": "Scotland is in which part of Britain?",
+    "question": "Which part of Britain is Scotland in?",
     "options": [
       "The north",
       "The far south only",
@@ -1786,7 +1786,7 @@ export const quizQuestions: Question[] = [
   {
     "id": 149,
     "category": "Scotland",
-    "question": "David Livingstone traveled as which kind of Scottish worker?",
+    "question": "David Livingstone is remembered as which kind of Scottish worker?",
     "options": [
       "Explorer",
       "Stamp maker",
@@ -2029,7 +2029,7 @@ export const quizQuestions: Question[] = [
     "question": "Did every Victorian believe the same thing?",
     "options": [
       "No",
-      "Yes, every one",
+      "Yes, everyone did",
       "Only children decided",
       "Ideas were not allowed"
     ],
@@ -2050,7 +2050,7 @@ export const quizQuestions: Question[] = [
   {
     "id": 171,
     "category": "Places",
-    "question": "A railway a child can follow starts in which city?",
+    "question": "Which city does the railway on the map start in?",
     "options": [
       "Balmoral",
       "Paris",
@@ -2110,7 +2110,7 @@ export const quizQuestions: Question[] = [
   {
     "id": 176,
     "category": "Time",
-    "question": "Victorian times in Britain ran from when to when?",
+    "question": "When did the Victorian age in Britain begin and end?",
     "options": [
       "1066 to 1215",
       "1914 to 1918",
@@ -2406,5 +2406,605 @@ export const quizQuestions: Question[] = [
       "Photographs"
     ],
     "answer": 3
+  },
+  {
+    "id": 201,
+    "category": "Scotland",
+    "question": "In which year did Victoria marry Prince Albert?",
+    "options": [
+      "1837",
+      "1840",
+      "1851",
+      "1901"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 202,
+    "category": "Queen",
+    "question": "What colour did Queen Victoria wear after Prince Albert died?",
+    "options": [
+      "Only tartan",
+      "White",
+      "Black",
+      "Green"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 203,
+    "category": "Scotland",
+    "question": "John Brown was a friend of Queen Victoria in which country?",
+    "options": [
+      "Jamaica",
+      "France",
+      "Scotland",
+      "Spain"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 204,
+    "category": "People",
+    "question": "Abdul Karim, a teacher close to Queen Victoria, came from which country?",
+    "options": [
+      "Scotland",
+      "India",
+      "France",
+      "Wales"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 205,
+    "category": "Beliefs",
+    "question": "Queen Victoria was head of which church?",
+    "options": [
+      "The Free Church of Scotland",
+      "A Glasgow shipyard",
+      "The Church of England",
+      "The Penny Post"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 206,
+    "category": "Scotland",
+    "question": "In Victorian Scotland, most families were which kind of Christian?",
+    "options": [
+      "Presbyterian",
+      "Stamp collectors",
+      "Railway companies",
+      "Only actors"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 207,
+    "category": "Scotland",
+    "question": "In which year did the Disruption split the Scottish church?",
+    "options": [
+      "1837",
+      "1843",
+      "1851",
+      "1901"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 208,
+    "category": "Scotland",
+    "question": "Who led the Disruption in 1843?",
+    "options": [
+      "Prince Albert",
+      "Mary Seacole",
+      "Thomas Chalmers",
+      "Beatrix Potter"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 209,
+    "category": "Beliefs",
+    "question": "In 1843, many ministers said who should choose the minister?",
+    "options": [
+      "A London railway",
+      "The congregation",
+      "Only the queen’s horses",
+      "A stamp printer"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 210,
+    "category": "Scotland",
+    "question": "What was the church formed after the Disruption called?",
+    "options": [
+      "The Penny Black",
+      "The Free Church of Scotland",
+      "The Crystal Palace",
+      "The Rocket"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 211,
+    "category": "Beliefs",
+    "question": "Who took preaching into the streets with the Salvation Army?",
+    "options": [
+      "Brunel and Bell",
+      "William and Catherine Booth",
+      "Lear and Potter",
+      "Darwin and Maxwell"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 212,
+    "category": "People",
+    "question": "Who left a strict father and married Robert Browning?",
+    "options": [
+      "Queen Victoria",
+      "Elizabeth Barrett",
+      "Mary Slessor",
+      "Ada Lovelace"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 213,
+    "category": "People",
+    "question": "Who wrote The Princess and the Goblin?",
+    "options": [
+      "Charles Dickens",
+      "Lewis Carroll",
+      "George MacDonald",
+      "Alfred Tennyson"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 214,
+    "category": "Scotland",
+    "question": "George MacDonald was a minister from which country?",
+    "options": [
+      "Jamaica",
+      "France",
+      "Scotland",
+      "Wales"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 215,
+    "category": "People",
+    "question": "In The Water-Babies, which child enters a magical world?",
+    "options": [
+      "A queen",
+      "A chimney sweep",
+      "A ship owner",
+      "A stamp printer"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 216,
+    "category": "People",
+    "question": "Who wrote the poem Goblin Market?",
+    "options": [
+      "Christina Rossetti",
+      "John Ruskin",
+      "Keir Hardie",
+      "Joseph Lister"
+    ],
+    "answer": 0
+  },
+  {
+    "id": 217,
+    "category": "Scotland",
+    "question": "J. M. Barrie grew up in which Scottish place?",
+    "options": [
+      "Paris",
+      "Kirriemuir",
+      "Jamaica",
+      "Cardiff"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 218,
+    "category": "Time",
+    "question": "Peter Pan was first staged in which year?",
+    "options": [
+      "1837",
+      "1840",
+      "1851",
+      "1904"
+    ],
+    "answer": 3
+  },
+  {
+    "id": 219,
+    "category": "Beliefs",
+    "question": "The Cottingley fairy photographs were taken in which year?",
+    "options": [
+      "1840",
+      "1851",
+      "1917",
+      "1837"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 220,
+    "category": "People",
+    "question": "Who defended the Cottingley fairy photographs?",
+    "options": [
+      "Joseph Lister",
+      "Arthur Conan Doyle",
+      "Rowland Hill",
+      "George Stephenson"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 221,
+    "category": "Beliefs",
+    "question": "What did Elsie Wright and Frances Griffiths later say they had used?",
+    "options": [
+      "A real fairy",
+      "A Glasgow ship",
+      "Paper cut-outs",
+      "A new sewer"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 222,
+    "category": "Time",
+    "question": "Why does 1917 matter for the Cottingley photographs?",
+    "options": [
+      "Victoria became queen that year",
+      "It was the year of the Penny Black",
+      "Victoria had already died",
+      "It was the Great Exhibition"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 223,
+    "category": "People",
+    "question": "Who did much of the work on Andrew Lang’s fairy books?",
+    "options": [
+      "Queen Victoria",
+      "His wife Leonora",
+      "Brunel",
+      "The Rocket"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 224,
+    "category": "Scotland",
+    "question": "Who painted the quarrel of Oberon and Titania in Scotland?",
+    "options": [
+      "Joseph Noel Paton",
+      "Joseph Bazalgette",
+      "Keir Hardie",
+      "Rowland Hill"
+    ],
+    "answer": 0
+  },
+  {
+    "id": 225,
+    "category": "People",
+    "question": "Who drew woods full of winged people?",
+    "options": [
+      "Charles Darwin",
+      "Richard Doyle",
+      "David Livingstone",
+      "Henry Bessemer"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 226,
+    "category": "Beliefs",
+    "question": "The poem The Angel in the House told women to be what?",
+    "options": [
+      "Ship builders",
+      "Sweet and self-forgetting",
+      "Prime ministers",
+      "Explorers in Africa"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 227,
+    "category": "People",
+    "question": "Who wrote The Angel in the House?",
+    "options": [
+      "Mary Seacole",
+      "George Stephenson",
+      "Coventry Patmore",
+      "Joseph Swan"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 228,
+    "category": "People",
+    "question": "Effie Gray later married which painter?",
+    "options": [
+      "Brunel",
+      "Millais",
+      "Bell",
+      "Lister"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 229,
+    "category": "Beliefs",
+    "question": "The law sent Oscar Wilde to prison because he loved whom?",
+    "options": [
+      "A new stamp",
+      "Men",
+      "A Highland castle",
+      "A railway"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 230,
+    "category": "People",
+    "question": "Who suffered when Oscar Wilde was sent to prison?",
+    "options": [
+      "Only a train",
+      "The Penny Black",
+      "His wife Constance and their sons",
+      "A Glasgow crane"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 231,
+    "category": "Scotland",
+    "question": "Which river is linked with Glasgow’s ships?",
+    "options": [
+      "The Seine",
+      "The Clyde",
+      "The Tagus",
+      "Only a palace pond"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 232,
+    "category": "Places",
+    "question": "Cardiff is a city in which country?",
+    "options": [
+      "Scotland",
+      "France",
+      "Wales",
+      "Jamaica"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 233,
+    "category": "Places",
+    "question": "Dublin is a city in which country?",
+    "options": [
+      "Scotland",
+      "Ireland",
+      "Wales",
+      "France"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 234,
+    "category": "Places",
+    "question": "London is a city in which country?",
+    "options": [
+      "Scotland",
+      "Wales",
+      "England",
+      "Jamaica"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 235,
+    "category": "Scotland",
+    "question": "Balmoral is which kind of place?",
+    "options": [
+      "A London sewer",
+      "A postage stamp",
+      "A Highland castle",
+      "A school board"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 236,
+    "category": "Time",
+    "question": "In which year did Prince Albert die?",
+    "options": [
+      "1837",
+      "1840",
+      "1861",
+      "1901"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 237,
+    "category": "Schools",
+    "question": "Sunday schools taught Bible stories and which other skill?",
+    "options": [
+      "Only shipbuilding",
+      "Reading",
+      "Only steel making",
+      "Only tartan weaving"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 238,
+    "category": "Beliefs",
+    "question": "Mary Kingsley said empire could be what?",
+    "options": [
+      "A fairy tale",
+      "A postage stamp",
+      "Arrogant",
+      "Always kind"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 239,
+    "category": "Beliefs",
+    "question": "Some people held seances because they hoped to hear from whom?",
+    "options": [
+      "A new stamp",
+      "Someone who had died",
+      "A railway engine",
+      "Only the moon"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 240,
+    "category": "People",
+    "question": "Alfred Russel Wallace shared Darwin’s idea about what?",
+    "options": [
+      "How to print a stamp",
+      "How living things change",
+      "How to build the Rocket",
+      "How to wear a crown"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 241,
+    "category": "People",
+    "question": "What was the name of Charles Darwin’s wife?",
+    "options": [
+      "Victoria",
+      "Emma",
+      "Florence",
+      "Beatrice"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 242,
+    "category": "Beliefs",
+    "question": "Philip Henry Gosse tried to make the rocks match what?",
+    "options": [
+      "A ship timetable",
+      "A very literal Bible",
+      "A tartan pattern",
+      "A penny stamp"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 243,
+    "category": "Inventions",
+    "question": "New drains in Victorian cities helped to save what?",
+    "options": [
+      "Only crowns",
+      "Lives",
+      "Only horses’ hats",
+      "Fairy photographs"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 244,
+    "category": "People",
+    "question": "Mary Ann Evans wrote under which pen name?",
+    "options": [
+      "George Stephenson",
+      "Robert Stephenson",
+      "George Eliot",
+      "Lewis Carroll"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 245,
+    "category": "Scotland",
+    "question": "Joseph Noel Paton painted in which country?",
+    "options": [
+      "Jamaica",
+      "France",
+      "Scotland",
+      "Spain"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 246,
+    "category": "Scotland",
+    "question": "A fight about choosing a minister shook Scotland in which year?",
+    "options": [
+      "1600",
+      "1843",
+      "1066",
+      "1918"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 247,
+    "category": "Beliefs",
+    "question": "William and Catherine Booth are linked with which group?",
+    "options": [
+      "The Salvation Army",
+      "The Penny Black",
+      "The Rocket",
+      "A Glasgow crane"
+    ],
+    "answer": 0
+  },
+  {
+    "id": 248,
+    "category": "Scotland",
+    "question": "Kirriemuir, where J. M. Barrie grew up, is in which country?",
+    "options": [
+      "Wales",
+      "Jamaica",
+      "Scotland",
+      "France"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 249,
+    "category": "Beliefs",
+    "question": "Paper cut-outs were the real secret of which pictures?",
+    "options": [
+      "The Penny Black",
+      "The Cottingley fairy photographs",
+      "The Crystal Palace",
+      "The Rocket"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 250,
+    "category": "People",
+    "question": "Leonora Lang helped to make which kind of books?",
+    "options": [
+      "Sewer maps",
+      "Warships",
+      "Fairy books",
+      "Only crowns"
+    ],
+    "answer": 2
   }
 ]
