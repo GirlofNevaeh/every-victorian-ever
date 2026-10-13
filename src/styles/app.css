@@ -43,9 +43,6 @@ img { max-width: 100%; height: auto; display: block; object-fit: contain; object
 }
 
 .site-header {
-  position: sticky;
-  top: 0;
-  z-index: 40;
   background: var(--gold);
   color: var(--ink);
   border-bottom: 4px solid var(--ink);
