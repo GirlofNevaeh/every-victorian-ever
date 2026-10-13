@@ -1,6 +1,7 @@
 import { createRootRoute, HeadContent, Link, Outlet, Scripts, useRouterState } from '@tanstack/react-router'
 import { useEffect, useState } from 'react'
 import appCss from '../styles/app.css?url'
+import { siteImages } from '../data/images'
 
 export const Route = createRootRoute({
   head: () => ({
@@ -11,7 +12,10 @@ export const Route = createRootRoute({
       { name: 'description', content: 'A bright guide to Victorian life and times in Britain, 1837 to 1901.' },
       { name: 'theme-color', content: '#E7B23C' },
     ],
-    links: [{ rel: 'stylesheet', href: appCss }],
+    links: [
+      { rel: 'stylesheet', href: appCss },
+      ...siteImages.map((image) => ({ rel: 'preload', href: image.src, as: 'image' })),
+    ],
   }),
   shellComponent: RootDocument,
   component: RootComponent,
@@ -54,6 +58,10 @@ function RootComponent() {
   useEffect(() => {
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('/sw.js').catch(() => {})
+    }
+    for (const image of siteImages) {
+      const preload = new Image()
+      preload.src = image.src
     }
     const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent)
     const isStandalone = window.matchMedia('(display-mode: standalone)').matches

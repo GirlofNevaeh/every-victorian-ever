@@ -1,4 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router'
+import { Picture } from '../components/Picture'
 
 export const Route = createFileRoute('/projects')({
   component: Projects,
@@ -6,12 +7,14 @@ export const Route = createFileRoute('/projects')({
 
 type Task = { title: string; time: string; steps: string[] }
 
-const stages: { id: string; years: string; age: string; note: string; alone: Task[]; team: Task[] }[] = [
+const stages: { id: string; years: string; age: string; note: string; image: string; imageAlt: string; alone: Task[]; team: Task[] }[] = [
   {
     id: 'P1',
     years: 'Primary 1',
     age: 'About age 5–6',
     note: 'A grown-up stays close. Talking counts as much as writing.',
+    image: '/art/homes.jpg',
+    imageAlt: 'A big house beside a small home, shown in full',
     alone: [
       {
         title: 'Two homes',
@@ -58,6 +61,8 @@ const stages: { id: string; years: string; age: string; note: string; alone: Tas
     years: 'Primary 2',
     age: 'About age 6–7',
     note: 'Short sentences. Pictures can hold the idea.',
+    image: '/art/inventions.jpg',
+    imageAlt: 'A stamp, a camera, water, and a lamp, shown in full',
     alone: [
       {
         title: 'My Penny Black',
@@ -105,6 +110,8 @@ const stages: { id: string; years: string; age: string; note: string; alone: Tas
     years: 'Primary 3',
     age: 'About age 7–8',
     note: 'Use the People pages. Copy facts. Do not invent a new life story.',
+    image: '/photos/edinburgh.jpg',
+    imageAlt: 'Edinburgh Castle in 1861, the whole picture',
     alone: [
       {
         title: 'Scottish fact file',
@@ -154,6 +161,8 @@ const stages: { id: string; years: string; age: string; note: string; alone: Tas
     years: 'Primary 4',
     age: 'About age 8–9',
     note: 'Keep the diary kind. Do not joke about hunger or dangerous work.',
+    image: '/photos/balmoral.jpg',
+    imageAlt: 'Balmoral Castle, the whole painting',
     alone: [
       {
         title: 'One day diary',
@@ -203,6 +212,8 @@ const stages: { id: string; years: string; age: string; note: string; alone: Tas
     years: 'Primary 5',
     age: 'About age 9–10',
     note: 'Use evidence from this site. If you are not sure, write “the page does not say”.',
+    image: '/photos/dublin.jpg',
+    imageAlt: 'Sackville Street, Dublin, in 1853, shown in full',
     alone: [
       {
         title: 'Family and faith',
@@ -254,6 +265,8 @@ const stages: { id: string; years: string; age: string; note: string; alone: Tas
     years: 'Primary 6',
     age: 'About age 10–11',
     note: 'Dates matter. A story can be famous and still be untrue.',
+    image: '/photos/london.jpg',
+    imageAlt: 'Fleet Street about 1890, the whole photograph',
     alone: [
       {
         title: 'Fairy or fact?',
@@ -307,6 +320,8 @@ const stages: { id: string; years: string; age: string; note: string; alone: Tas
     years: 'Primary 7',
     age: 'About age 11–12',
     note: 'This is the year to hold a hard idea without flattening it.',
+    image: '/photos/glasgow.jpg',
+    imageAlt: 'Shipping on the Clyde in 1881, the whole painting',
     alone: [
       {
         title: 'Progress was real, and it was not fair',
@@ -373,6 +388,7 @@ function Projects() {
         <section key={stage.id} id={stage.id} className="card">
           <p className="tag">{stage.age}</p>
           <h2>{stage.years}</h2>
+          <Picture src={stage.image} alt={stage.imageAlt} />
           <p>{stage.note}</p>
           <div className="grid-2">
             <div>

@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
+import { Picture } from '../components/Picture'
 
 export const Route = createFileRoute('/beliefs')({
   component: Beliefs,
@@ -20,6 +21,7 @@ function Beliefs() {
       <section className="scotland">
         <strong>A split in Scotland</strong>
         <p>In 1843 Thomas Chalmers led the Disruption. Hundreds of ministers left the national church and formed the Free Church of Scotland. They said landlords should not pick the minister. New churches rose in towns and glens. Faith and power were the same argument.</p>
+        <Picture src="/photos/edinburgh.jpg" alt="Edinburgh Castle firing the noon gun in 1861, shown in full" />
       </section>
 
       <section className="panel gold">

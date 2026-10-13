@@ -1,5 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { Picture } from '../components/Picture'
 
 export const Route = createFileRoute('/time')({
   component: Time,
@@ -19,13 +20,19 @@ const events = [
 function Time() {
   const [step, setStep] = useState(0)
   const [year, text, image] = events[step]
+  useEffect(() => {
+    for (const event of events) {
+      const preload = new Image()
+      preload.src = event[2]
+    }
+  }, [])
   return (
     <div className="page" style={{ textAlign: 'center' }}>
       <h1>Time</h1>
       <div className="card">
         <p className="red" style={{ display: 'inline-block', borderRadius: 12, padding: '8px 16px', fontSize: '2rem', fontWeight: 800 }}>{year}</p>
         <p>{text}</p>
-        <img className="scene" src={image} alt="" />
+        <Picture src={image} alt={text} priority />
       </div>
       <div className="step" style={{ display: 'flex', justifyContent: 'center', gap: 8 }}>
         <button type="button" disabled={step === 0} onClick={() => setStep(step - 1)} style={{ background: 'var(--color-pine)' }}>Previous</button>

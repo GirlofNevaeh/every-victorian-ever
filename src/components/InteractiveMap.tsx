@@ -1,6 +1,7 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { spots } from './map-data'
 import { regionShapes } from './region-shapes'
+import { imageBySrc } from '../data/images'
 import { regions, type RegionId } from '../data/regions'
 
 const cityRegion = {
@@ -18,6 +19,15 @@ export function InteractiveMap() {
   const [selected, setSelected] = useState<RegionId>('scotland')
   const [place, setPlace] = useState('Balmoral')
   const region = regions.find((item) => item.id === selected) ?? regions[0]
+
+  useEffect(() => {
+    for (const item of regions) {
+      for (const photo of item.photos) {
+        const preload = new Image()
+        preload.src = photo.src
+      }
+    }
+  }, [])
 
   function choose(id: RegionId, placeName?: string) {
     setSelected(id)
@@ -100,7 +110,7 @@ export function InteractiveMap() {
         <div className="photo-grid">
           {region.photos.map((photo) => (
             <figure key={photo.src}>
-              <img src={photo.src} alt={photo.alt} />
+              <img src={photo.src} alt={photo.alt} width={imageBySrc[photo.src]?.width} height={imageBySrc[photo.src]?.height} decoding="async" />
               <figcaption>{photo.caption}</figcaption>
             </figure>
           ))}

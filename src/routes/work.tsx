@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
 import { BritainMap } from '../components/BritainMap'
+import { Picture } from '../components/Picture'
 
 export const Route = createFileRoute('/work')({
   component: Work,
@@ -21,7 +22,7 @@ function Work() {
 
       <section className="panel cream">
         <h2>Two homes</h2>
-        <img className="scene" src="/art/homes.jpg" alt="A big house and a small home" />
+        <Picture src="/art/homes.jpg" alt="A big house and a small home, shown in full" />
         <p>How are these homes different? Who might live in each one? What would Sunday feel like in each house?</p>
       </section>
 
@@ -45,7 +46,7 @@ function Work() {
         <p>Glasgow built ships and engines. Edinburgh had schools, publishers, and a New Town.</p>
         <p>In 1843 the Disruption split the Scottish church. Thomas Chalmers said a congregation should choose its own minister.</p>
         <p>Tartan became popular because many Victorians liked a Highland holiday look. That is fashion, not the whole of Scottish life.</p>
-        <img className="scene" src="/art/castle.jpg" alt="A Highland castle" />
+        <Picture src="/photos/balmoral.jpg" alt="Balmoral Castle, the whole painting" />
       </section>
     </div>
   )

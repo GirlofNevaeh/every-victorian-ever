@@ -5,7 +5,7 @@ export function QuizFaces({ index }: { index: number }) {
   return (
     <div className="faces" aria-hidden="true">
       {shown.map((src) => (
-        <img key={src} src={src} alt="" width={64} height={64} />
+        <img key={src} src={src} alt="" width={280} height={280} decoding="async" />
       ))}
     </div>
   )

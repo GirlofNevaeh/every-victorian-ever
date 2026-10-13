@@ -1,6 +1,8 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
 import { useState } from 'react'
+import { Picture } from '../components/Picture'
 import { PersonSearch } from '../components/PersonSearch'
+import { regions } from '../data/regions'
 import { people } from '../data/people'
 
 export const Route = createFileRoute('/')({
@@ -29,7 +31,7 @@ function Home() {
             <p className="lead">A bright guide to Britain from 1837 to 1901. Scotland is part of the story.</p>
             <PersonSearch id="home-search" />
           </div>
-          <img className="scene" src="/art/castle.jpg" alt="A sunny Highland castle" width={1200} height={675} />
+          <Picture src="/art/castle.jpg" alt="A sunny Highland castle, shown in full" priority />
         </div>
       </section>
 
@@ -44,7 +46,7 @@ function Home() {
 
       <section className="band band-gold">
         <div className="wrap split">
-          <img className="scene" src="/art/homes.jpg" alt="A big house beside a one-room home" width={1200} height={675} />
+          <Picture src="/art/homes.jpg" alt="A big house beside a one-room home, shown in full" />
           <div>
             <h2 className="display section-title">Queen and home</h2>
             <p className="lead">Queen Victoria ruled from 1837 to 1901. She loved Scotland and stayed at Balmoral.</p>
@@ -60,13 +62,13 @@ function Home() {
             <p className="lead">Railways let people travel faster than horses.</p>
             <p className="copy">Trains went from London toward Scotland. Glasgow built ships and engines.</p>
           </div>
-          <img className="scene" src="/art/train.jpg" alt="A green steam train" width={1200} height={675} />
+          <Picture src="/art/train.jpg" alt="A green steam train, shown in full" />
         </div>
       </section>
 
       <section className="band band-paper">
         <div className="wrap split">
-          <img className="scene" src="/art/school.jpg" alt="A bright schoolroom" width={1200} height={675} />
+          <Picture src="/art/school.jpg" alt="A bright schoolroom, shown in full" />
           <div>
             <h2 className="display section-title">School</h2>
             <p className="lead">Early on, many children worked long days.</p>
@@ -83,13 +85,13 @@ function Home() {
             <p className="copy">Many clan tartans became popular because Victorians liked a Highland holiday look.</p>
             <p className="note note-gold">Glasgow built ships and engines.</p>
           </div>
-          <img className="scene" src="/art/ships.jpg" alt="A ship in a riverside yard" width={1200} height={675} />
+          <Picture src="/photos/glasgow.jpg" alt="Ships on the Clyde in 1881, the whole painting" />
         </div>
       </section>
 
       <section className="band band-cloud">
         <div className="wrap split">
-          <img className="scene" src="/art/lamps.jpg" alt="A street of gas lamps" width={1200} height={675} />
+          <Picture src="/photos/london.jpg" alt="Fleet Street in London about 1890, the whole photograph" />
           <div>
             <h2 className="display section-title">Daily life</h2>
             <p className="lead">Gas lamps lit the streets.</p>
@@ -109,7 +111,7 @@ function Home() {
               ))}
             </div>
           </div>
-          <img className="scene" src="/art/inventions.jpg" alt="A stamp, a camera, water, and a lamp" width={900} height={900} />
+          <Picture src="/photos/palace.jpg" alt="The Crystal Palace at the Great Exhibition, the whole picture" />
         </div>
       </section>
 
@@ -132,6 +134,21 @@ function Home() {
             </Link>
           </div>
           <p className="copy"><Link to="/beliefs" style={{ fontWeight: 800 }}>Read the Beliefs page</Link></p>
+        </div>
+      </section>
+
+      <section className="band band-cloud">
+        <div className="wrap">
+          <h2 className="display section-title">Pictures from the time</h2>
+          <p className="lead">Old paintings and photographs. Each one is shown whole.</p>
+          <div className="photo-grid">
+            {regions.flatMap((region) => region.photos).map((photo) => (
+              <figure key={photo.src}>
+                <Picture src={photo.src} alt={photo.alt} />
+                <figcaption>{photo.caption}</figcaption>
+              </figure>
+            ))}
+          </div>
         </div>
       </section>
 
