@@ -1,4 +1,4 @@
-const CACHE = 'victorian-v14'
+const CACHE = 'victorian-v15'
 const IMAGES = [
   '/art/castle.jpg',
   '/art/homes.jpg',
