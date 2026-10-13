@@ -8,6 +8,7 @@ export const languages = [
   { code: 'fr', native: 'Français' },
   { code: 'it', native: 'Italiano' },
   { code: 'es', native: 'Español' },
+  { code: 'de', native: 'Deutsch' },
   { code: 'ru', native: 'Русский' },
 ] as const
 
@@ -20,6 +21,7 @@ const loaders: Record<Exclude<Lang, 'en'>, () => Promise<{ default: Record<strin
   fr: () => import('./locales/fr.json'),
   it: () => import('./locales/it.json'),
   es: () => import('./locales/es.json'),
+  de: () => import('./locales/de.json'),
   ru: () => import('./locales/ru.json'),
 }
 
