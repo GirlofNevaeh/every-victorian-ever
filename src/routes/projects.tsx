@@ -11,7 +11,7 @@ type Task = { title: string; time: string; steps: string[] }
 const stages: { id: string; years: string; age: string; note: string; image: string; imageAlt: string; alone: Task[]; team: Task[] }[] = [
   {
     id: 'P1',
-    years: 'Primary 1',
+    years: 'Age 5-6',
     age: 'About age 5–6',
     note: 'A grown-up stays close. Talking counts as much as writing.',
     image: '/art/homes.jpg',
@@ -59,7 +59,7 @@ const stages: { id: string; years: string; age: string; note: string; image: str
   },
   {
     id: 'P2',
-    years: 'Primary 2',
+    years: 'Age 6-7',
     age: 'About age 6–7',
     note: 'Short sentences. Pictures can hold the idea.',
     image: '/art/inventions.jpg',
@@ -108,7 +108,7 @@ const stages: { id: string; years: string; age: string; note: string; image: str
   },
   {
     id: 'P3',
-    years: 'Primary 3',
+    years: 'Age 7-8',
     age: 'About age 7–8',
     note: 'Use the People pages. Copy facts. Do not invent a new life story.',
     image: '/photos/edinburgh.jpg',
@@ -159,7 +159,7 @@ const stages: { id: string; years: string; age: string; note: string; image: str
   },
   {
     id: 'P4',
-    years: 'Primary 4',
+    years: 'Age 8-9',
     age: 'About age 8–9',
     note: 'Keep the diary kind. Do not joke about hunger or dangerous work.',
     image: '/photos/balmoral.jpg',
@@ -210,7 +210,7 @@ const stages: { id: string; years: string; age: string; note: string; image: str
   },
   {
     id: 'P5',
-    years: 'Primary 5',
+    years: 'Age 9-10',
     age: 'About age 9–10',
     note: 'Use evidence from this site. If you are not sure, write “the page does not say”.',
     image: '/photos/dublin.jpg',
@@ -263,7 +263,7 @@ const stages: { id: string; years: string; age: string; note: string; image: str
   },
   {
     id: 'P6',
-    years: 'Primary 6',
+    years: 'Age 10-11',
     age: 'About age 10–11',
     note: 'Dates matter. A story can be famous and still be untrue.',
     image: '/photos/london.jpg',
@@ -318,7 +318,7 @@ const stages: { id: string; years: string; age: string; note: string; image: str
   },
   {
     id: 'P7',
-    years: 'Primary 7',
+    years: 'Age 11-12',
     age: 'About age 11–12',
     note: 'This is the year to hold a hard idea without flattening it.',
     image: '/photos/glasgow.jpg',
@@ -380,10 +380,10 @@ function Projects() {
   return (
     <div className="page">
       <h1>{t('Projects')}</h1>
-      <p>{t('Work for Primary 1 to Primary 7. Individual means you. Team means a group. Scotland is part of every stage.')}</p>
-      <nav className="chips" aria-label="Primary stages">
+      <p>{t('Work for Age 5-6 to Age 11-12. Individual means you. Team means a group. Scotland is part of every stage.')}</p>
+      <nav className="chips" aria-label="Age groups">
         {stages.map((stage) => (
-          <a key={stage.id} className="chip" href={`#${stage.id}`}>{stage.id}</a>
+          <a key={stage.id} className="chip" href={`#${stage.id}`}>{t(stage.years)}</a>
         ))}
       </nav>
       {stages.map((stage) => (
