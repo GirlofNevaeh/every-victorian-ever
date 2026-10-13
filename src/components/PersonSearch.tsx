@@ -49,8 +49,10 @@ export function PersonSearch({ id, label = 'Find a person', onApply }: { id: str
           onChange={(event) => {
             const next = event.target.value
             setTerm(next)
-            const hit = completePerson(next.trim().toLowerCase())
+            const trimmed = next.trim()
+            const hit = completePerson(trimmed.toLowerCase())
             if (hit) onApply?.(hit.name)
+            else if (trimmed !== applied) onApply?.('')
           }}
           placeholder={t('Type a full name, like Mary Seacole')}
           autoComplete="off"

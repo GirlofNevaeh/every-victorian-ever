@@ -1,21 +1,31 @@
-import { createFileRoute, Link } from '@tanstack/react-router'
+import { createFileRoute, Link, notFound } from '@tanstack/react-router'
 import { people } from '../../data/people'
 import { useT } from '../../i18n/language'
 
 export const Route = createFileRoute('/people/$personId')({
+  loader: ({ params }) => {
+    if (!people.some((item) => item.id === params.personId)) throw notFound()
+  },
+  notFoundComponent: MissingPerson,
   component: PersonPage,
 })
+
+function MissingPerson() {
+  const t = useT()
+  return (
+    <p>
+      {t('That person is not in the list.')}{' '}
+      <Link to="/people" className="underline" activeOptions={{ exact: true }}>{t('Back to people')}</Link>
+    </p>
+  )
+}
 
 function PersonPage() {
   const { personId } = Route.useParams()
   const person = people.find((item) => item.id === personId)
   const t = useT()
   if (!person) {
-    return (
-      <p>
-        {t('That person is not in the list.')} <Link to="/people" className="underline">{t('Back to people')}</Link>
-      </p>
-    )
+    return <MissingPerson />
   }
   return (
     <article className="page story">
@@ -38,7 +48,7 @@ function PersonPage() {
         <strong>{t('Scotland')}</strong>
         <p>{t(person.scottish ? 'Scotland was part of this life, not a side note.' : 'This life belongs to Victorian Britain, and Scotland was part of that same kingdom. Balmoral, Glasgow, and Edinburgh were in the news while this person lived.')}</p>
       </aside>
-      <Link to="/people" className="big-btn">{t('Back to people')}</Link>
+      <Link to="/people" className="big-btn" activeOptions={{ exact: true }}>{t('Back to people')}</Link>
     </article>
   )
 }

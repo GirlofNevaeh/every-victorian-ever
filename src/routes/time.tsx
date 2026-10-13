@@ -37,8 +37,8 @@ function Time() {
         <Picture src={image} alt={text} priority />
       </div>
       <div className="step" style={{ display: 'flex', justifyContent: 'center', gap: 8 }}>
-        <button type="button" disabled={step === 0} onClick={() => setStep(step - 1)} style={{ background: 'var(--color-pine)' }}>{t('Previous')}</button>
-        <button type="button" disabled={step === events.length - 1} onClick={() => setStep(step + 1)} style={{ background: 'var(--color-red)' }}>{t('Next')}</button>
+        <button type="button" disabled={step === 0} onClick={() => setStep(step - 1)} style={{ background: 'var(--pine)' }}>{t('Previous')}</button>
+        <button type="button" disabled={step === events.length - 1} onClick={() => setStep(step + 1)} style={{ background: 'var(--red)' }}>{t('Next')}</button>
       </div>
       <p>{step + 1} {t('of')} {events.length}</p>
       <aside className="scotland" style={{ textAlign: 'left' }}>
