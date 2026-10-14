@@ -398,32 +398,3 @@ img { max-width: 100%; height: auto; display: block; object-fit: contain; object
 @media print {
   .site-header, .pwa-note, button { display: none !important; }
 }
-
-.gate { display: grid; gap: 14px; max-width: 40rem; }
-.gate ul { margin: 0; padding-left: 1.2rem; font-weight: 700; display: grid; gap: 6px; }
-.gate-buy {
-  display: block;
-  text-align: center;
-  text-decoration: none;
-  background: var(--red);
-  color: var(--paper);
-  border: 4px solid var(--ink);
-  border-radius: 16px;
-  font-weight: 800;
-  padding: 14px 16px;
-}
-.gate-form { display: grid; gap: 8px; }
-.gate-form label { font-weight: 800; font-size: 1.15rem; }
-.gate-form button {
-  border: 4px solid var(--ink);
-  border-radius: 16px;
-  background: var(--pine);
-  color: var(--paper);
-  font: inherit;
-  font-weight: 800;
-  min-height: 52px;
-  cursor: pointer;
-}
-.gate-form button:disabled { cursor: wait; }
-.gate-error { font-weight: 800; color: var(--red); }
-.gate-note { font-weight: 700; }

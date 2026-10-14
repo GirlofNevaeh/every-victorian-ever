@@ -1,10 +1,8 @@
-import { createRootRoute, HeadContent, Link, Outlet, Scripts, useRouterState, redirect } from '@tanstack/react-router'
+import { createRootRoute, HeadContent, Link, Outlet, Scripts, useRouterState } from '@tanstack/react-router'
 import { useEffect, useState } from 'react'
 import appCss from '../styles/app.css?url'
 import { siteImages } from '../data/images'
 import { LanguageProvider, languages, useLanguage, type Lang } from '../i18n/language'
-import { Paywall } from '../components/Paywall'
-import { readAccess } from '../server/access'
 
 export const Route = createRootRoute({
   head: () => ({
@@ -20,13 +18,6 @@ export const Route = createRootRoute({
       ...siteImages.map((image) => ({ rel: 'preload', href: image.src, as: 'image' })),
     ],
   }),
-  beforeLoad: async ({ location }) => {
-    const { allowed } = await readAccess()
-    if (!allowed && location.pathname !== '/') {
-      throw redirect({ to: '/' })
-    }
-    return { allowed }
-  },
   shellComponent: RootDocument,
   component: RootComponent,
 })
@@ -58,8 +49,6 @@ const links = [
 ] as const
 
 function RootComponent() {
-  const { allowed } = Route.useRouteContext()
-  if (!allowed) return <Paywall />
   return (
     <LanguageProvider>
       <RootShell />
