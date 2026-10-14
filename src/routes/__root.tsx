@@ -1,8 +1,10 @@
-import { createRootRoute, HeadContent, Link, Outlet, Scripts, useRouterState } from '@tanstack/react-router'
+import { createRootRoute, HeadContent, Link, Outlet, Scripts, useRouterState, redirect } from '@tanstack/react-router'
 import { useEffect, useState } from 'react'
 import appCss from '../styles/app.css?url'
 import { siteImages } from '../data/images'
 import { LanguageProvider, languages, useLanguage, type Lang } from '../i18n/language'
+import { safeNext } from '../gate'
+import { readAccess } from '../server/access'
 
 export const Route = createRootRoute({
   head: () => ({
@@ -18,6 +20,19 @@ export const Route = createRootRoute({
       ...siteImages.map((image) => ({ rel: 'preload', href: image.src, as: 'image' })),
     ],
   }),
+  beforeLoad: async ({ location }) => {
+    if (location.pathname === '/') return { allowed: true }
+    const { allowed } = await readAccess()
+    if (!allowed && location.pathname !== '/locked') {
+      const next = `${location.pathname}${location.searchStr ?? ''}`
+      throw redirect({ href: `/locked?next=${encodeURIComponent(safeNext(next))}` })
+    }
+    if (allowed && location.pathname === '/locked') {
+      const params = new URLSearchParams(location.searchStr ?? '')
+      throw redirect({ href: safeNext(params.get('next') ?? '') })
+    }
+    return { allowed }
+  },
   shellComponent: RootDocument,
   component: RootComponent,
 })

@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as BeliefsRouteImport } from './routes/beliefs'
+import { Route as LockedRouteImport } from './routes/locked'
 import { Route as PlacesRouteImport } from './routes/places'
 import { Route as ProjectsRouteImport } from './routes/projects'
 import { Route as QuizRouteImport } from './routes/quiz'
@@ -33,6 +34,11 @@ const AboutRoute = AboutRouteImport.update({
 const BeliefsRoute = BeliefsRouteImport.update({
   id: '/beliefs',
   path: '/beliefs',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LockedRoute = LockedRouteImport.update({
+  id: '/locked',
+  path: '/locked',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PlacesRoute = PlacesRouteImport.update({
@@ -75,6 +81,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/beliefs': typeof BeliefsRoute
+  '/locked': typeof LockedRoute
   '/places': typeof PlacesRoute
   '/projects': typeof ProjectsRoute
   '/quiz': typeof QuizRoute
@@ -87,6 +94,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/beliefs': typeof BeliefsRoute
+  '/locked': typeof LockedRoute
   '/places': typeof PlacesRoute
   '/projects': typeof ProjectsRoute
   '/quiz': typeof QuizRoute
@@ -100,6 +108,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/beliefs': typeof BeliefsRoute
+  '/locked': typeof LockedRoute
   '/places': typeof PlacesRoute
   '/projects': typeof ProjectsRoute
   '/quiz': typeof QuizRoute
@@ -114,6 +123,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/beliefs'
+    | '/locked'
     | '/places'
     | '/projects'
     | '/quiz'
@@ -126,6 +136,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/beliefs'
+    | '/locked'
     | '/places'
     | '/projects'
     | '/quiz'
@@ -138,6 +149,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/beliefs'
+    | '/locked'
     | '/places'
     | '/projects'
     | '/quiz'
@@ -151,6 +163,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   BeliefsRoute: typeof BeliefsRoute
+  LockedRoute: typeof LockedRoute
   PlacesRoute: typeof PlacesRoute
   ProjectsRoute: typeof ProjectsRoute
   QuizRoute: typeof QuizRoute
@@ -181,6 +194,13 @@ declare module '@tanstack/react-router' {
       path: '/beliefs'
       fullPath: '/beliefs'
       preLoaderRoute: typeof BeliefsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/locked': {
+      id: '/locked'
+      path: '/locked'
+      fullPath: '/locked'
+      preLoaderRoute: typeof LockedRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/places': {
@@ -239,6 +259,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   BeliefsRoute: BeliefsRoute,
+  LockedRoute: LockedRoute,
   PlacesRoute: PlacesRoute,
   ProjectsRoute: ProjectsRoute,
   QuizRoute: QuizRoute,

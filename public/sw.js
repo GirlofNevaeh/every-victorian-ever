@@ -1,4 +1,4 @@
-const CACHE = 'victorian-v17'
+const CACHE = 'victorian-v18'
 const IMAGES = [
   '/art/castle.jpg',
   '/art/homes.jpg',
@@ -36,6 +36,7 @@ self.addEventListener('activate', (event) => {
 self.addEventListener('fetch', (event) => {
   const request = event.request
   if (request.method !== 'GET') return
+  if (request.mode === 'navigate' || request.destination === 'document') return
   event.respondWith(
     fetch(request)
       .then((response) => {
