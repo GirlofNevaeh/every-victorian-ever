@@ -1,7 +1,8 @@
 import { createContext, useContext, useEffect, useMemo, useState, type ReactNode } from 'react'
 
 export const languages = [
-  { code: 'en', native: 'English' },
+  { code: 'en', native: 'British English' },
+  { code: 'en-US', native: 'American English' },
   { code: 'gd', native: 'Gàidhlig' },
   { code: 'cy', native: 'Cymraeg' },
   { code: 'ga', native: 'Gaeilge' },
@@ -15,6 +16,7 @@ export const languages = [
 export type Lang = (typeof languages)[number]['code']
 
 const loaders: Record<Exclude<Lang, 'en'>, () => Promise<{ default: Record<string, string> }>> = {
+  'en-US': () => import('./locales/en-US.json'),
   gd: () => import('./locales/gd.json'),
   cy: () => import('./locales/cy.json'),
   ga: () => import('./locales/ga.json'),
