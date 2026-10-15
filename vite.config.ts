@@ -11,6 +11,6 @@ export default defineConfig({
     tanstackStart(),
     viteReact(),
     tailwindcss(),
-    nitro()
+    nitro({ serverDir: true })
   ]
 })

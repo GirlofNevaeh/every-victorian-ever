@@ -316,6 +316,10 @@ img { max-width: 100%; height: auto; display: block; object-fit: contain; object
   color: var(--paper);
   padding: 10px 16px;
 }
+.step button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
 .actions button.alt { background: var(--red); color: var(--paper); }
 .chip {
   background: var(--cloud);

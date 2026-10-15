@@ -1,4 +1,4 @@
-const CACHE = 'victorian-v18'
+const CACHE = 'victorian-v19'
 const IMAGES = [
   '/art/castle.jpg',
   '/art/homes.jpg',
@@ -37,6 +37,8 @@ self.addEventListener('fetch', (event) => {
   const request = event.request
   if (request.method !== 'GET') return
   if (request.mode === 'navigate' || request.destination === 'document') return
+  const url = new URL(request.url)
+  if (url.pathname.endsWith('.pdf')) return
   event.respondWith(
     fetch(request)
       .then((response) => {
