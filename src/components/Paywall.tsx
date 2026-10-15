@@ -39,7 +39,7 @@ export function Paywall({ next }: { next: string }) {
         <div className="note note-gold">
           <p>{t('Schools buy an access key from Every School Ever, then enter it here.')}</p>
         </div>
-        <a className="gate-buy" href="https://everyschoolever.com">{t('Buy an access key at everyschoolever.com')}</a>
+        <a className="gate-buy" href="https://www.everyschoolever.com/pricing?plan=">{t('Choose a plan')}</a>
         <form className="gate-form" onSubmit={submit}>
           <label htmlFor="access-key">{t('Already have a key?')}</label>
           <input
