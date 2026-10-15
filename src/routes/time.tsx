@@ -12,7 +12,7 @@ const events = [
   [1840, 'The Penny Black stamp starts the Penny Post.', '/art/inventions.jpg'],
   [1842, 'Victoria visits Scotland. She later stays at Balmoral.', '/art/castle.jpg'],
   [1851, 'The Great Exhibition opens in the Crystal Palace.', '/art/palace.jpg'],
-  [1858, 'The Great Stink. Bazalgette builds clean sewers.', '/art/lamps.jpg'],
+  [1858, 'The Great Stink. Bazalgette builds clean sewers.', '/art/inventions.jpg'],
   [1870, 'School boards start. More children can go to school.', '/art/school.jpg'],
   [1880, 'More children must go to school. Glasgow builds ships and engines.', '/art/ships.jpg'],
   [1901, 'Victoria dies. Edinburgh still has schools, publishers, and its New Town.', '/art/school.jpg'],

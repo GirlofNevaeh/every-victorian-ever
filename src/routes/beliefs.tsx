@@ -22,7 +22,7 @@ function Beliefs() {
 
       <section className="scotland">
         <strong>{t('A split in Scotland')}</strong>
-        <p>{t('In 1843 Thomas Chalmers led the Disruption. Hundreds of ministers left the national church and formed the Free Church of Scotland. They said landlords should not pick the minister. New churches rose in towns and glens. Faith and power were the same argument.')}</p>
+        <p>{t('In 1843 Thomas Chalmers led the Disruption. Hundreds of ministers left the national church and formed the Free Church of Scotland. They said landlords should not pick the minister. New churches rose in towns and glens. Faith and power were part of the same argument.')}</p>
         <Picture src="/photos/edinburgh.jpg" alt="Edinburgh Castle firing the noon gun in 1861, shown in full" />
       </section>
 

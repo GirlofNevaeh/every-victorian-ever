@@ -148,6 +148,7 @@ function RootShell() {
           ))}
         </nav>
       </header>
+      <CookieNotice />
       {showPWA && (
         <div className="pwa-note">
           {t('To add to iPhone or iPad: Tap Share, then Add to Home Screen.')}
@@ -157,7 +158,6 @@ function RootShell() {
       <main id="main">
         <Outlet />
       </main>
-      <CookieNotice />
     </div>
   )
 }

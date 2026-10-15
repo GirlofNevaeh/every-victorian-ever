@@ -116,7 +116,7 @@ export function HomePage() {
       <section className="band band-cloud">
         <div className="wrap">
           <h2 className="display section-title">{t('Love, faith, and fairies')}</h2>
-          <p className="lead">{t('The people list is bigger now. Each life has a family story and a belief, not only a job.')}</p>
+          <p className="lead">{t('Each life has a family story and a belief, not only a job.')}</p>
           <div className="cards">
             <Link to="/people/$personId" params={{ personId: 'macdonald' }} className="mini">
               <h3 className="display">George MacDonald</h3>

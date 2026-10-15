@@ -166,7 +166,7 @@ const stages: { id: string; years: string; age: string; note: string; image: str
         steps: [
           'Set up a table with a sign that says Post.',
           'Each child writes a short letter to someone in another group.',
-          'Pay one counter as a penny. A post worker delivers it.',
+          'Use one counter as a penny. A post worker delivers it.',
           'Say how this is like the Penny Post, and how it is only a game.',
         ],
       },
@@ -274,7 +274,7 @@ const stages: { id: string; years: string; age: string; note: string; image: str
           'Team A prepares Glasgow: ships and engines.',
           'Team B prepares Edinburgh: schools, publishers, and the New Town.',
           'Each team speaks for one minute.',
-          'The class says one way the cities were different and one way both were Victorian Scotland.',
+          'The class says one way the cities were different, and one way they both belonged to Victorian Scotland.',
         ],
       },
       {
@@ -290,7 +290,7 @@ const stages: { id: string; years: string; age: string; note: string; image: str
         title: "Two Sundays",
         time: "One afternoon",
         steps: [
-          "One group acts a church Sunday. One group acts a chapel Sunday.",
+          "One group acts out a church Sunday. One group acts out a chapel Sunday.",
           "Each group says who is there and what they do.",
           "End by saying that Victorians did not all worship in the same way.",
         ],
@@ -564,7 +564,7 @@ const stages: { id: string; years: string; age: string; note: string; image: str
           'Jobs: reporter, picture editor, headline writer, fact checker.',
           'Four short pieces: work, home, faith, and one problem.',
           'The checker strikes out anything the class cannot support from this site or a book the teacher provides.',
-          'If you chose Glasgow, the Clyde must be in the paper. If you chose Dublin, the Famine is memory, not the news of that week. Say so.',
+          'If you chose Glasgow, the Clyde must be in the paper. If you chose Dublin, the Famine is a memory, not the news of that week. Say so.',
         ],
       },
       {
@@ -666,7 +666,7 @@ const stages: { id: string; years: string; age: string; note: string; image: str
           'Each team writes 120 to 180 words, chooses one picture or drawing, and prepares a two-minute tour.',
           'The Highlands panel must include both Balmoral’s holiday picture and the Clearances.',
           'A fifth child, or the teacher, listens as a visitor and asks for the source of one claim.',
-          'Leave a comments card: one thing the museum still leaves out.',
+          'Leave a comment card: one thing the museum still leaves out.',
         ],
       },
       {

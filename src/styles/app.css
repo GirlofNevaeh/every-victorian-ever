@@ -432,14 +432,21 @@ img { max-width: 100%; height: auto; display: block; object-fit: contain; object
 .gate-error { font-weight: 800; color: var(--red); }
 .gate-note { font-weight: 700; }
 
+.chip.on {
+  background: var(--pine);
+  color: var(--paper);
+}
+.underline { text-decoration: underline; font-weight: 800; }
+button, .gate-buy, .nav-btn, .surprise, .choice, .chip, .search-row button {
+  cursor: pointer;
+}
+button:disabled, .chip:disabled {
+  cursor: not-allowed;
+}
+
 .cookie-note {
-  position: fixed;
-  left: 12px;
-  right: 12px;
-  bottom: 12px;
-  z-index: 40;
-  max-width: 42rem;
-  margin: 0 auto;
+  margin: 12px auto;
+  max-width: 72rem;
   display: grid;
   gap: 10px;
   background: var(--gold);

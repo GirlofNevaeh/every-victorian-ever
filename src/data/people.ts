@@ -129,7 +129,7 @@ export const people: Person[] = [
     "name": "David Livingstone",
     "role": "Explorer",
     "period": "1837-1860",
-    "bio": "A Scottish explorer and missionary who traveled in Africa.",
+    "bio": "A Scottish explorer and missionary who travelled in Africa.",
     "scottish": true,
     "family": "He was Scottish. His wife Mary and their children often waited while he travelled. That absence hurt the family. Mary died in Africa.",
     "faith": "He was a missionary. He wanted people to hear the Christian gospel, and he wanted the slave trade to stop.",
