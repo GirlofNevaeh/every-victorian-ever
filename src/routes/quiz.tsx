@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { quizQuestions } from '../data/questions'
 import { QuizFaces } from '../components/Faces'
 import { useT } from '../i18n/language'
+import { playCheer, playFart, warmAudio } from '../lib/quiz-sounds'
 
 export const Route = createFileRoute('/quiz')({
   component: Quiz,
@@ -26,6 +27,7 @@ function Quiz() {
   const t = useT()
 
   function start(count: number) {
+    warmAudio()
     const shuffled = [...quizQuestions].sort(() => Math.random() - 0.5).slice(0, count)
     setDeck(shuffled)
     setMainLength(count)
@@ -73,6 +75,9 @@ function Quiz() {
     setScores(nextScores)
     setPicked(option)
     setNote(correct ? 'Correct.' : 'Not quite.')
+    warmAudio()
+    if (correct) playCheer()
+    else playFart()
     window.setTimeout(() => {
       const lastMain = !sudden && index + 1 >= mainLength
       const lastCard = index + 1 >= deck.length
