@@ -89,7 +89,7 @@ export const people: Person[] = [
     "scottish": false,
     "family": "He married his cousin Emma Wedgwood. They had many children and a close home. Emma believed in God. She worried his science might separate them after death. He still loved her.",
     "faith": "He began as a man who expected to be a clergyman. Later he was not sure about a God who planned every creature. He stayed gentle with people who believed.",
-    "more": "On the Origin of Species said living things change over a very long time. That shook many churches. It did not stop him being buried in Westminster Abbey."
+    "more": "On the Origin of Species said living things change over a very long time. That shook many churches. It did not stop him from being buried in Westminster Abbey."
   },
   {
     "id": "bell",

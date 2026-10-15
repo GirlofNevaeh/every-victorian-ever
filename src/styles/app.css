@@ -332,7 +332,7 @@ img { max-width: 100%; height: auto; display: block; object-fit: contain; object
   justify-content: center;
 }
 .page ol { margin: 8px 0 0; padding-left: 1.2rem; }
-.page section[id] { scroll-margin-top: 150px; }
+.page section[id] { scroll-margin-top: 16px; }
 .chip:disabled { opacity: 0.35; cursor: not-allowed; }
 .map-layout { display: grid; gap: 16px; align-items: start; }
 .photo-grid { display: grid; gap: 12px; }
@@ -432,6 +432,10 @@ img { max-width: 100%; height: auto; display: block; object-fit: contain; object
 .gate-error { font-weight: 800; color: var(--red); }
 .gate-note { font-weight: 700; }
 
+.copy a, .page p a, .lead a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
 .chip.on {
   background: var(--pine);
   color: var(--paper);

@@ -31,7 +31,7 @@ export const regions: RegionInfo[] = [
       },
       {
         title: 'Glasgow and the Clyde',
-        text: 'Glasgow became a great industrial city. The river Clyde built ships and engines for the world. A boy could grow up within sound of riveting. Pay was better than a croft, but tenements were crowded, and disease spread in closes and wynds. Clean water from Loch Katrine, brought to the city in 1859, was one of the answers.',
+        text: 'Glasgow became a great industrial city. Shipyards on the Clyde built ships and engines for the world. A boy could grow up within sound of riveting. Pay was better than a croft, but tenements were crowded, and disease spread in closes and wynds. Clean water from Loch Katrine, brought to the city in 1859, was one of the answers.',
       },
       {
         title: 'Edinburgh',
@@ -91,7 +91,7 @@ export const regions: RegionInfo[] = [
     name: 'Wales',
     fill: '#8d4a32',
     years: '1837–1901',
-    summary: 'Wales was small in size and huge in coal, slate, and chapel life. Many families spoke Welsh at home while English ran the law courts and a lot of the bosses.',
+    summary: 'Wales was small in size and huge in coal, slate, and chapel life. Many families spoke Welsh at home. The law courts, and many of the bosses, used English.',
     sections: [
       {
         title: 'Coal valleys',
