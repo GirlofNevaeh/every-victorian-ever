@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import appCss from '../styles/app.css?url'
 import { siteImages } from '../data/images'
 import { LanguageProvider, languages, useLanguage, type Lang } from '../i18n/language'
+import { CookieNotice } from '../components/CookieNotice'
 import { safeNext } from '../gate'
 import { readAccess } from '../server/access'
 
@@ -156,6 +157,7 @@ function RootShell() {
       <main id="main">
         <Outlet />
       </main>
+      <CookieNotice />
     </div>
   )
 }
