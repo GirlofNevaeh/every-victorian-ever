@@ -1,11 +1,46 @@
 let audio: AudioContext | null = null
+let keepalive: OscillatorNode | null = null
+let keepaliveTimer: number | null = null
 
 function context() {
   const Ctx = window.AudioContext || (window as Window & { webkitAudioContext?: typeof AudioContext }).webkitAudioContext
   if (!Ctx) return null
-  if (!audio) audio = new Ctx()
-  if (audio.state === 'suspended') void audio.resume()
+  if (!audio || audio.state === 'closed') audio = new Ctx()
+  if (audio.state !== 'running') void audio.resume()
   return audio
+}
+
+function poke(ctx: AudioContext) {
+  const buffer = ctx.createBuffer(1, 1, ctx.sampleRate)
+  const source = ctx.createBufferSource()
+  source.buffer = buffer
+  source.connect(ctx.destination)
+  source.start()
+}
+
+function holdAudio(ms: number) {
+  const ctx = context()
+  if (!ctx) return
+  if (!keepalive) {
+    const osc = ctx.createOscillator()
+    const gain = ctx.createGain()
+    osc.frequency.value = 1
+    gain.gain.value = 0.0001
+    osc.connect(gain)
+    gain.connect(ctx.destination)
+    osc.start()
+    keepalive = osc
+  }
+  if (keepaliveTimer) window.clearTimeout(keepaliveTimer)
+  keepaliveTimer = window.setTimeout(() => {
+    try {
+      keepalive?.stop()
+    } catch {
+      // It may already have stopped.
+    }
+    keepalive = null
+    keepaliveTimer = null
+  }, ms)
 }
 
 function tone(ctx: AudioContext, frequency: number, start: number, duration: number, volume: number, type: OscillatorType = 'triangle') {
@@ -26,8 +61,22 @@ function withSound(run: (ctx: AudioContext, now: number) => void) {
   try {
     const ctx = context()
     if (!ctx) return
-    if (ctx.state === 'suspended') void ctx.resume()
-    run(ctx, ctx.currentTime + 0.03)
+    poke(ctx)
+    holdAudio(4000)
+    const play = () => {
+      try {
+        run(ctx, ctx.currentTime + 0.03)
+      } catch {
+        // A failed sound should not stop the quiz.
+      }
+    }
+    if (ctx.state === 'running') {
+      play()
+      return
+    }
+    const pending = ctx.resume()
+    if (pending && typeof pending.then === 'function') pending.then(play).catch(() => {})
+    else play()
   } catch {
     // A failed sound should not stop the quiz.
   }
@@ -36,7 +85,10 @@ function withSound(run: (ctx: AudioContext, now: number) => void) {
 export function warmAudio() {
   try {
     const ctx = context()
-    if (ctx && ctx.state !== 'running') void ctx.resume()
+    if (!ctx) return
+    poke(ctx)
+    if (ctx.state !== 'running') void ctx.resume()
+    holdAudio(120000)
   } catch {
     // The quiz still works if this browser will not play sound.
   }
@@ -48,7 +100,7 @@ export function playCheer() {
     notes.forEach((frequency, index) => {
       tone(ctx, frequency, now + index * 0.09, 0.32, 0.28)
     })
-    const noise = ctx.createBuffer(1, ctx.sampleRate * 0.25, ctx.sampleRate)
+    const noise = ctx.createBuffer(1, Math.floor(ctx.sampleRate * 0.25), ctx.sampleRate)
     const data = noise.getChannelData(0)
     for (let i = 0; i < data.length; i++) data[i] = Math.random() * 2 - 1
     const source = ctx.createBufferSource()

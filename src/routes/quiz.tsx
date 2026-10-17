@@ -1,5 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { quizQuestions } from '../data/questions'
 import { QuizFaces } from '../components/Faces'
 import { useT } from '../i18n/language'
@@ -25,6 +25,16 @@ function Quiz() {
   const [winner, setWinner] = useState<number | null>(null)
   const [draw, setDraw] = useState(false)
   const t = useT()
+
+  useEffect(() => {
+    const unlock = () => warmAudio()
+    window.addEventListener('pointerdown', unlock, true)
+    window.addEventListener('keydown', unlock, true)
+    return () => {
+      window.removeEventListener('pointerdown', unlock, true)
+      window.removeEventListener('keydown', unlock, true)
+    }
+  }, [])
 
   function start(count: number) {
     warmAudio()
@@ -109,8 +119,8 @@ function Quiz() {
           />
         </label>
         <div className="actions" style={{ justifyContent: 'center' }}>
-          <button type="button" onClick={() => start(10)}>{t('Quick 10')}</button>
-          <button type="button" className="alt" onClick={() => start(25)}>{t('Mega 25')}</button>
+          <button type="button" onPointerDown={() => warmAudio()} onClick={() => start(10)}>{t('Quick 10')}</button>
+          <button type="button" className="alt" onPointerDown={() => warmAudio()} onClick={() => start(25)}>{t('Mega 25')}</button>
         </div>
         {winner !== null && <p style={{ fontSize: '1.4rem', fontWeight: 800 }}>{t('CONGRATULATIONS')} {t('Team')} {winner + 1}</p>}
         {draw && <p>{t('It is a draw after three clean tied rounds.')}</p>}
@@ -141,6 +151,7 @@ function Quiz() {
             key={option}
             type="button"
             disabled={picked !== null}
+            onPointerDown={() => choose(optionIndex)}
             onClick={() => choose(optionIndex)}
             className="choice"
             style={picked === null ? undefined : optionIndex === card.answer ? { background: '#d9f5e3' } : picked === optionIndex ? { background: '#f8d0cc' } : undefined}
